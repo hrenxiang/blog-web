@@ -1,0 +1,1 @@
+export const LogoIcon = "https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png";
