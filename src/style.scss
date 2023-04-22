@@ -7,71 +7,75 @@ $spacing-lg: 32px;
 // border radius
 $borderRadius: 12px;
 
-:root {
-  // colors
-  --login-color: #050505;
-  --login-bg: #ffffff;
-  --login-input-bg: #FFFFFF;
-  --login-input-button: #9398b3;
-  --login-icon-bg: #FFFFFF;
-  --login-icon-shadow: #9398b2;
-  --login-go-register: #9398b3;
-  --login-go-register-hover: #FFFFFF;
-  --login-gradient-left: #19245b;
-  --login-gradient-middle: #f64f59;
-  --login-gradient-right: #f64f59;
-  --login-form-placeholder: #adabab;
-  --login-other-login: #FFFFFF;
-  --login-other-login-hover: #FFFFFF;
-  --retrieve-the-password: #FFFFFF;
-  --nav-bg: #CCD6A6;
-  --nav-color: #FFFFFF;
-  --nav-coloumn: rgb(37, 36, 36);
-  --nav-button-bg: #9398b3;
-  --nav-border-color: #9398b3;
-  --single-code-padding: #909E83;
-  --single-code-thumb: #FFFFFF;
-  --single-copy-bg: #2a2c2f;
-  --single-copy-color: #ffffff;
-  --single-table-border: rgb(37, 36, 36);
-  --single-copy-hover: #FFFFFF;
-  --single-copy-hover-color: #000000;
-}
+// colors
+$loginColor: #ffffff;
+$loginBg: #252424FF;
+$loginInputBg: #FFFFFF;
+$loginInputButton: #9398b3;
+$loginIconBg: #252424FF;
+$loginIconShadow: #9398b3;
+$loginGoRegister: #9398b3;
+$loginGoRegister-hover: #FFFFFF;
+$loginGradientLeft: #19245b;
+$loginGradientMiddle: #f64f59;
+$loginGradientRight: #f64f59;
+$loginFormPlaceholder: #adabab;
+$loginOtherLogin: #FFFFFF;
+$loginOtherLogin-hover: #FFFFFF;
+$retrieveThePassword: #FFFFFF;
+$navBg: #252424FF;
+$navColor: #FFFFFF;
+$navColoumn: rgb(37, 36, 36);
+$navButtonBg: #9398b3;
+$navBorderColor: #9398b3;
+$navButtonHover: #000000;
+$singleTextColor: #FFFFFF;
+$singleBg: #393E46;
+$singleCodePadding: #2a2c2f;
+$singleCodeThumb: #393E46;
+$singleCopyBg: #2a2c2f;
+$singleCopyColor: #ffffff;
+$singleTableBorder: #FFFFFF;
+$singleCopyHover: #FFFFFF;
+$singleCopyHover-color: #000000;
+$footerBg: #ffffff;
+$aboutCardShadow: #9398b3;
+
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    // colors
-    --login-color: #ffffff;
-    --login-bg: #252424FF;
-    --login-input-bg: #FFFFFF;
-    --login-input-button: #9398b3;
-    --login-icon-bg: #252424FF;
-    --login-icon-shadow: #9398b3;
-    --login-go-register: #9398b3;
-    --login-go-register-hover: #FFFFFF;
-    --login-gradient-left: #19245b;
-    --login-gradient-middle: #f64f59;
-    --login-gradient-right: #f64f59;
-    --login-form-placeholder: #adabab;
-    --login-other-login: #FFFFFF;
-    --login-other-login-hover: #FFFFFF;
-    --retrieve-the-password: #FFFFFF;
-    --nav-bg: #252424FF;
-    --nav-color: #FFFFFF;
-    --nav-coloumn: rgb(37, 36, 36);
-    --nav-button-bg: #9398b3;
-    --nav-border-color: #9398b3;
-    --single-text-color: #FFFFFF;
-    --single-bg: #393E46;
-    --single-code-padding: #2a2c2f;
-    --single-code-thumb: #393E46;
-    --single-copy-bg: #2a2c2f;
-    --single-copy-color: #ffffff;
-    --single-table-border: #FFFFFF;
-    --single-copy-hover: #FFFFFF;
-    --single-copy-hover-color: #000000;
-    --footer-bg: #ffffff;
-  }
+  // colors
+  $loginColor: #ffffff;
+  $loginBg: #252424FF;
+  $loginInputBg: #FFFFFF;
+  $loginInputButton: #9398b3;
+  $loginIconBg: #252424FF;
+  $loginIconShadow: #9398b3;
+  $loginGoRegister: #9398b3;
+  $loginGoRegister-hover: #FFFFFF;
+  $loginGradientLeft: #19245b;
+  $loginGradientMiddle: #f64f59;
+  $loginGradientRight: #f64f59;
+  $loginFormPlaceholder: #adabab;
+  $loginOtherLogin: #FFFFFF;
+  $loginOtherLogin-hover: #FFFFFF;
+  $retrieveThePassword: #FFFFFF;
+  $navBg: #252424FF;
+  $navColor: #FFFFFF;
+  $navColoumn: rgb(37, 36, 36);
+  $navButtonBg: #9398b3;
+  $navBorderColor: #9398b3;
+  $navButtonHover: #000000;
+  $singleTextColor: #FFFFFF;
+  $singleBg: #393E46;
+  $singleCodePadding: #2a2c2f;
+  $singleCodeThumb: #393E46;
+  $singleCopyBg: #2a2c2f;
+  $singleCopyColor: #ffffff;
+  $singleTableBorder: #FFFFFF;
+  $singleCopyHover: #FFFFFF;
+  $singleCopyHover-color: #000000;
+  $footerBg: #ffffff;
+  $aboutCardShadow: #9398b3;
 }
 
 @font-face {
@@ -110,7 +114,7 @@ body {
       width: 100%;
       height: 100%;
       //background-image: url("https://images.huangrx.cn/uploads/2023/04/21/blog-web-log-1.jpg");
-      background-color: var(--login-bg);
+      background-color: $loginBg;
       z-index: -1;
       filter: blur(1px);
     }
@@ -120,8 +124,8 @@ body {
       font-size: 16px;
       font-weight: 400;
       //line-height: 1.8;
-      color: var(--login-color);
-      background-color: var(--backgournd-color);
+      color: $loginColor;
+      background-color: var(--background-color);
       user-select: none;
       -webkit-user-drag: none;
 
@@ -178,22 +182,22 @@ body {
         left: 0;
         width: 280px;
         height: 150px;
-        background: linear-gradient(to right, var(--login-gradient-left), var(--login-gradient-middle), var(--login-gradient-right));
+        background: linear-gradient(to right, $loginGradientLeft, $loginGradientMiddle, $loginGradientRight);
         z-index: -1;
         filter: blur(70px);
       }
 
       .hero a {
         font-weight: 500;
-        color: var(--login-go-register);
+        color: $loginGoRegister;
         transition: color .3s;
         border-radius: 5px;
-        box-shadow: var(--login-icon-shadow) 1px 5px 5px -3px;
+        box-shadow: var($loginIconShadow) 1px 5px 5px -3px;
       }
 
       .hero a:hover,
       form .password a:hover {
-        color: var(--login-go-register-hover);
+        color: var($loginGoRegister-hover);
         text-decoration: none;
       }
 
@@ -229,13 +233,13 @@ body {
       }
 
       input::placeholder {
-        color: var(--login-form-placeholder);
+        color: $loginFormPlaceholder;
         font-family: $selectFontFamily;
         font-size: inherit;
       }
 
       form input:not(.submit) {
-        background-color: var(--login-input-bg);
+        background-color: $loginInputBg;
       }
 
       form .password i {
@@ -250,7 +254,7 @@ body {
 
       form .password a {
         font-size: 13px;
-        color: var(--retrieve-the-password);
+        color: $retrieveThePassword;
         float: right;
         margin: 5px 20px 0 0;
       }
@@ -258,14 +262,14 @@ body {
       form input.submit {
         font-weight: 700;
         //color: var(--light);
-        background-color: var(--login-input-button);
-        box-shadow: var(--login-input-button) 0 20px 30px -10px;
+        background-color: $loginInputButton;
+        box-shadow: $loginInputButton 0 20px 30px -10px;
         cursor: pointer;
         transition: box-shadow .3s;
       }
 
       form input.submit:hover {
-        box-shadow: var(--login-input-button) 0 10px 30px -10px;
+        box-shadow: $loginInputButton 0 10px 30px -10px;
       }
 
       .separator {
@@ -279,7 +283,7 @@ body {
         top: 50%;
         width: 100%;
         height: 1px;
-        background-color: var(--login-other-login);
+        background-color: $loginOtherLogin;
         opacity: .3;
         z-index: 1;
       }
@@ -288,7 +292,7 @@ body {
         font-size: 14px;
         width: fit-content;
         padding: 0 10px;
-        color: var(--login-other-login);
+        color: $loginOtherLogin;
         background-color: var(--background-color);
         margin: 0 auto;
         position: relative;
@@ -309,13 +313,13 @@ body {
         width: 60px;
         height: 60px;
         border-radius: 10px;
-        background-color: rgba(var(--login-icon-bg), 0);
-        box-shadow: var(--login-icon-shadow) 1px 10px 20px -5px;
+        background-color: $loginIconBg;
+        box-shadow: $loginIconShadow 1px 10px 20px -5px;
         transition: all .3s ease-out;
       }
 
       .options ul li a:hover {
-        color: var(--login-other-login-hover);
+        color: $loginOtherLogin-hover;
         box-shadow: none;
       }
 
@@ -334,7 +338,6 @@ body {
     }
 
 
-
     // ======================================= navbar =======================================
     .navbar {
       //width: auto;
@@ -343,7 +346,7 @@ body {
       left: 0;
       right: 0;
       z-index: 1;
-      background: var(--nav-bg);
+      background: rgb($navBg, 0.8);
       padding: 0 1.5rem;
       @include breakpoint(md) {
         padding: 0 3rem;
@@ -352,7 +355,7 @@ body {
 
       .container {
         overflow: hidden;
-        color: var(--nav-color);
+        color: $navColor;
         margin: 0 auto;
         max-width: 1920px;
         height: 100%;
@@ -366,7 +369,7 @@ body {
           font-size: 2rem;
           font-weight: bold;
           text-decoration: none;
-          //color: var(--light);
+          //color: --light);
         }
 
         .nav {
@@ -381,7 +384,7 @@ body {
           justify-content: center;
           align-items: center;
           text-align: center;
-          background: rgba(var(--nav-bg), 0.9);
+          background: $navBg;
           backdrop-filter: blur(2px);
           transform: translate(0);
           transition: 0.3s ease transform;
@@ -426,12 +429,12 @@ body {
                 transition: 0.3s ease all;
 
                 &:hover {
-                  background: var(--nav-button-bg);
+                  background: $navButtonBg;
                 }
 
                 &:active {
                   border-radius: calc(#{$borderRadius} + 6px);
-                  background-color: var(--nav-button-bg);
+                  background-color: $navButtonBg;
                 }
               }
             }
@@ -444,27 +447,27 @@ body {
             border-radius: $borderRadius;
             font-size: 1rem;
             font-family: inherit;
-            background: var(--nav-button-bg);
-            color: var(--nav-color);
+            background: $navButtonBg;
+            color: $navColor;
             border: 1px solid transparent;
             transition: 0.3s ease all;
 
             &:hover {
-              border-color: var(--nav-border-color);
-              background: rgba(var(--nav-border-color), 0.1);
-              color: var(--nav-border-color);
+              border-color: $navBorderColor;
+              background: $navBorderColor;
+              color: $navButtonHover;
             }
 
             &:active {
-              border-color: var(--nav-border-color);
-              background: linear-gradient(rgba(var(--nav-border-color), 0.2), rgba(var(--nav-border-color), 0.3));
-              color: var(--nav-border-color);
+              border-color: $navBorderColor;
+              background: linear-gradient($navBorderColor, $navBorderColor);
+              color: $navBorderColor;
             }
           }
 
           &.isMenu {
             transform: translate(100%);
-            background-color: var(--nav-coloumn);
+            background-color: $navColoumn;
           }
         }
 
@@ -477,7 +480,7 @@ body {
           position: relative;
 
           &:hover {
-            color: var(--nav-border-color);
+            color: $navBorderColor;
           }
 
           @include breakpoint(md) {
@@ -488,23 +491,22 @@ body {
     }
 
 
-
     // ======================================= single =======================================
     .single {
-      background-color: var(--single-bg);
+      background-color: $singleBg;
 
       .container {
         //max-width: 1200px;
         width: 80%;
         margin: 0 10%;
-        background: var(--single-text-color);
+        background: $singleTextColor;
         //box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.7);
 
         .markdown-body {
           padding: 80px 0;
           line-height: 2.6;
-          background-color: var(--single-bg);
-          color: var(--single-text-color);
+          background-color: $singleBg;
+          color: $singleTextColor;
           font-family: $singleFont;
         }
 
@@ -523,13 +525,13 @@ body {
       }
 
       .markdown-body table tr {
-        background-color: var(--single-bg);
-        border-top: 1px solid var(--color-border-muted);
+        background-color: $singleBg;
+        border-top: 1px solid $singleTableBorder;
       }
 
       .markdown-body table th, .markdown-body table td {
         padding: 6px 13px;
-        border: 1px solid var(--single-table-border);
+        border: 1px solid $singleTableBorder;
       }
 
       .markdown-body .highlight pre, .markdown-body pre {
@@ -537,7 +539,7 @@ body {
         overflow: auto;
         font-size: 85%;
         border-radius: 6px;
-        background-color: var(--single-code-padding);
+        background-color: $singleCodePadding;
       }
 
       // 代码块
@@ -556,7 +558,7 @@ body {
 
         /* 设置滚动条滑块的背景颜色 */
         ::-webkit-scrollbar-thumb {
-          background-color: var(--single-code-thumb);
+          background-color: $singleCodeThumb;
           width: 5px;
         }
 
@@ -580,24 +582,111 @@ body {
         cursor: pointer;
         font-size: 0.6rem;
         padding: 2px 4px;
-        background-color: var(--single-copy-bg);
-        color: var(--single-copy-color);
+        background-color: $singleCopyBg;
+        color: $singleCopyColor;
         border-radius: 5px;
         user-select: none;
         transition: all 0.3s ease;
       }
 
       .copy-btn:hover {
-        background-color: var(--single-copy-hover);
-        color: var(--single-copy-hover-color);
+        background-color: $singleCopyHover;
+        color: $singleCopyHover-color;
       }
 
     }
 
 
-
     // ======================================= about =======================================
+    /* 关于页面 */
     .about {
+      width: 100%;
+      min-height: 110vh;
+      background-color: $singleBg;
+      color: $singleTextColor;
+      font-family: $singleFont;
+
+      .container {
+        top: 130px;
+        min-height: 100vh;
+        position: relative;
+
+        .avatar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin: 0 30px;
+
+          .introduce {
+            text-align: center;
+          }
+        }
+
+        .progress-data {
+          padding-top: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .ant-progress {
+            stroke: #89a27e;
+          }
+
+          .ant-progress-text {
+            color: $singleTextColor;
+          }
+
+          .ant-row {
+            margin: 15px 10%;
+          }
+
+          .row .ant-col {
+            gap: 100px;
+            width: 50px;
+            text-align: center;
+            bottom: 100px;
+          }
+
+          .ant-row .ant-col-sm-1 {
+            max-width: 16%;
+            margin-left: 10px;
+          }
+        }
+
+        .record {
+          margin: 20px 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .ant-row {
+            min-width: 50%;
+          }
+
+          .ant-card {
+            transition: all 0.3s ease-in-out;
+            font-family: $singleFont;
+            background-color: rgb($aboutCardShadow, 0.2);
+            color: $singleTextColor;
+          }
+
+          .ant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px $aboutCardShadow;
+          }
+
+          .ant-card-head {
+            color: $singleTextColor;
+          }
+
+          .ant-card-body {
+            height: 200px;
+          }
+        }
+
+      }
+
 
     }
 
@@ -605,28 +694,31 @@ body {
     .footer {
       width: 100%;
       padding: 10px 0;
-      background: var(--nav-bg);
+      background: $navBg;
       text-align: center;
-      color: var(--nav-color);
+      color: $navColor;
+      height:5%;
 
-      .column-xs-12 ul {
-        display: flex;
-        justify-content: center;
-        gap: 45px;
-        padding: 0;
-        list-style: none;
-      }
+      .container {
+        width: 100%;
 
-      .column-xs-12 ul li a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        border-radius: 10px;
-        background-color: rgba(var(--login-icon-bg), 0);
-        box-shadow: var(--login-icon-shadow) 1px 10px 20px -5px;
-        transition: all .3s ease-out;
+        .footer-ul-1 ul {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 45px;
+          padding: 0;
+          list-style: none;
+        }
+
+        .footer-ul-1 ul li a {
+          width: 10%;
+          height: 10%;
+          border-radius: 10px;
+          background-color: $loginIconBg;
+          box-shadow: $loginIconShadow 1px 10px 20px -5px;
+          transition: all .3s ease-out;
+        }
       }
 
     }
