@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {Form, Input, message} from 'antd';
 import {PasswordRegExp, EmailRegExp} from "../constants/RegExpConst";
-import {RiQqLine, RiWechatLine, RiWeiboLine} from "react-icons/ri";
+import {RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiWeiboLine} from "react-icons/ri";
 
 const Login = () => {
 
@@ -89,10 +89,7 @@ const Login = () => {
                                     onChange={handleChange}
                                 />
 
-                                <i
-                                    onClick={handleEyeClick}
-                                    className={state.eyeState ? 'ri-eye-line' : 'ri-eye-off-line'}
-                                />
+                                <i onClick={handleEyeClick}>{state.eyeState ? <RiEyeLine/>: <RiEyeOffLine/>}</i>
 
                                 <Link to='/register'>找回密码</Link>
                             </p>

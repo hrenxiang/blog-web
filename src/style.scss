@@ -1,19 +1,85 @@
 // font
 $selectFontFamily: 'Noto Sans SC', sans-serif;
-// colors
-$dark: rgb(37, 36, 36);
-$dark2: #333333;
-$light: #fff;
-$gray1: #9398b3;
-$primary: rgb(162, 162, 246);
-$primary2: #4460f1;
-$bg: rgb(244, 244, 255);
-$lightGreen: rgb(137, 173, 190);
+$singleFont: "single-font-1", sans-serif;
 // spacing
 $spacing-md: 16px;
 $spacing-lg: 32px;
 // border radius
 $borderRadius: 12px;
+
+:root {
+  // colors
+  --login-color: #050505;
+  --login-bg: #ffffff;
+  --login-input-bg: #FFFFFF;
+  --login-input-button: #9398b3;
+  --login-icon-bg: #FFFFFF;
+  --login-icon-shadow: #9398b2;
+  --login-go-register: #9398b3;
+  --login-go-register-hover: #FFFFFF;
+  --login-gradient-left: #19245b;
+  --login-gradient-middle: #f64f59;
+  --login-gradient-right: #f64f59;
+  --login-form-placeholder: #adabab;
+  --login-other-login: #FFFFFF;
+  --login-other-login-hover: #FFFFFF;
+  --retrieve-the-password: #FFFFFF;
+  --nav-bg: #CCD6A6;
+  --nav-color: #FFFFFF;
+  --nav-coloumn: rgb(37, 36, 36);
+  --nav-button-bg: #9398b3;
+  --nav-border-color: #9398b3;
+  --single-code-padding: #909E83;
+  --single-code-thumb: #FFFFFF;
+  --single-copy-bg: #2a2c2f;
+  --single-copy-color: #ffffff;
+  --single-table-border: rgb(37, 36, 36);
+  --single-copy-hover: #FFFFFF;
+  --single-copy-hover-color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    // colors
+    --login-color: #ffffff;
+    --login-bg: #252424FF;
+    --login-input-bg: #FFFFFF;
+    --login-input-button: #9398b3;
+    --login-icon-bg: #252424FF;
+    --login-icon-shadow: #9398b3;
+    --login-go-register: #9398b3;
+    --login-go-register-hover: #FFFFFF;
+    --login-gradient-left: #19245b;
+    --login-gradient-middle: #f64f59;
+    --login-gradient-right: #f64f59;
+    --login-form-placeholder: #adabab;
+    --login-other-login: #FFFFFF;
+    --login-other-login-hover: #FFFFFF;
+    --retrieve-the-password: #FFFFFF;
+    --nav-bg: #252424FF;
+    --nav-color: #FFFFFF;
+    --nav-coloumn: rgb(37, 36, 36);
+    --nav-button-bg: #9398b3;
+    --nav-border-color: #9398b3;
+    --single-text-color: #FFFFFF;
+    --single-bg: #393E46;
+    --single-code-padding: #2a2c2f;
+    --single-code-thumb: #393E46;
+    --single-copy-bg: #2a2c2f;
+    --single-copy-color: #ffffff;
+    --single-table-border: #FFFFFF;
+    --single-copy-hover: #FFFFFF;
+    --single-copy-hover-color: #000000;
+    --footer-bg: #ffffff;
+  }
+}
+
+@font-face {
+  font-family: "single-font-1";
+  font-weight: 400;
+  src: url("static/font/single-font-1.ttf");
+  font-display: swap;
+}
 
 @mixin breakpoint($point) {
   @if $point == md {
@@ -44,17 +110,17 @@ body {
       width: 100%;
       height: 100%;
       //background-image: url("https://images.huangrx.cn/uploads/2023/04/21/blog-web-log-1.jpg");
-      background-color: $dark;
+      background-color: var(--login-bg);
       z-index: -1;
       filter: blur(1px);
     }
 
     .auth {
-      font-family: $selectFontFamily;
+      font-family: $singleFont;
       font-size: 16px;
       font-weight: 400;
       //line-height: 1.8;
-      color: $dark;
+      color: var(--login-color);
       background-color: var(--backgournd-color);
       user-select: none;
       -webkit-user-drag: none;
@@ -78,11 +144,10 @@ body {
         font-size: 2em;
         font-weight: 700;
         line-height: normal;
-        color: $light;
       }
 
       p {
-        color: $light;
+        //color: var(--light);
       }
 
       .container {
@@ -113,21 +178,23 @@ body {
         left: 0;
         width: 280px;
         height: 150px;
-        background: linear-gradient(to right, $primary2, #c471ed, #f64f59);
+        background: linear-gradient(to right, var(--login-gradient-left), var(--login-gradient-middle), var(--login-gradient-right));
         z-index: -1;
         filter: blur(70px);
       }
 
       .hero a {
         font-weight: 500;
-        color: $primary2;
+        color: var(--login-go-register);
         transition: color .3s;
+        border-radius: 5px;
+        box-shadow: var(--login-icon-shadow) 1px 5px 5px -3px;
       }
 
       .hero a:hover,
       form .password a:hover {
-        color: $dark2;
-        text-decoration: underline;
+        color: var(--login-go-register-hover);
+        text-decoration: none;
       }
 
       .hero p {
@@ -162,13 +229,13 @@ body {
       }
 
       input::placeholder {
-        color: $dark2;
+        color: var(--login-form-placeholder);
         font-family: $selectFontFamily;
         font-size: inherit;
       }
 
       form input:not(.submit) {
-        background-color: $light;
+        background-color: var(--login-input-bg);
       }
 
       form .password i {
@@ -177,28 +244,28 @@ body {
         right: 20px;
         margin-top: -8px;
         line-height: 1;
-        color: $gray1;
+        //color: var(--login-password-eye);
         cursor: pointer;
       }
 
       form .password a {
         font-size: 13px;
-        color: $gray1;
+        color: var(--retrieve-the-password);
         float: right;
         margin: 5px 20px 0 0;
       }
 
       form input.submit {
         font-weight: 700;
-        color: $light;
-        background-color: $primary2;
-        box-shadow: $primary2 0 20px 30px -10px;
+        //color: var(--light);
+        background-color: var(--login-input-button);
+        box-shadow: var(--login-input-button) 0 20px 30px -10px;
         cursor: pointer;
         transition: box-shadow .3s;
       }
 
       form input.submit:hover {
-        box-shadow: $primary2 0 10px 30px -10px;
+        box-shadow: var(--login-input-button) 0 10px 30px -10px;
       }
 
       .separator {
@@ -212,7 +279,7 @@ body {
         top: 50%;
         width: 100%;
         height: 1px;
-        background-color: $gray1;
+        background-color: var(--login-other-login);
         opacity: .3;
         z-index: 1;
       }
@@ -221,7 +288,7 @@ body {
         font-size: 14px;
         width: fit-content;
         padding: 0 10px;
-        color: $gray1;
+        color: var(--login-other-login);
         background-color: var(--background-color);
         margin: 0 auto;
         position: relative;
@@ -231,7 +298,8 @@ body {
       .options ul {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 45px;
+        padding: 0;
       }
 
       .options ul li a {
@@ -241,13 +309,13 @@ body {
         width: 60px;
         height: 60px;
         border-radius: 10px;
-        background-color: $light;
-        box-shadow: $gray1 0 10px 20px -10px;
+        background-color: rgba(var(--login-icon-bg), 0);
+        box-shadow: var(--login-icon-shadow) 1px 10px 20px -5px;
         transition: all .3s ease-out;
       }
 
       .options ul li a:hover {
-        color: $dark;
+        color: var(--login-other-login-hover);
         box-shadow: none;
       }
 
@@ -266,11 +334,16 @@ body {
     }
 
 
+
     // ======================================= navbar =======================================
     .navbar {
-      background: $dark;
-      //width: 100%;
+      //width: auto;
       //height: 80px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background: var(--nav-bg);
       padding: 0 1.5rem;
       @include breakpoint(md) {
         padding: 0 3rem;
@@ -279,7 +352,7 @@ body {
 
       .container {
         overflow: hidden;
-        color: $light;
+        color: var(--nav-color);
         margin: 0 auto;
         max-width: 1920px;
         height: 100%;
@@ -293,7 +366,7 @@ body {
           font-size: 2rem;
           font-weight: bold;
           text-decoration: none;
-          color: $light;
+          //color: var(--light);
         }
 
         .nav {
@@ -308,7 +381,7 @@ body {
           justify-content: center;
           align-items: center;
           text-align: center;
-          background: rgba($dark, 0.9);
+          background: rgba(var(--nav-bg), 0.9);
           backdrop-filter: blur(2px);
           transform: translate(0);
           transition: 0.3s ease transform;
@@ -353,12 +426,12 @@ body {
                 transition: 0.3s ease all;
 
                 &:hover {
-                  background: rgba($light, 0.1);
+                  background: var(--nav-button-bg);
                 }
 
                 &:active {
                   border-radius: calc(#{$borderRadius} + 6px);
-                  background: linear-gradient(rgba($light, 0.1), rgba($light, 0.2));
+                  background-color: var(--nav-button-bg);
                 }
               }
             }
@@ -371,26 +444,27 @@ body {
             border-radius: $borderRadius;
             font-size: 1rem;
             font-family: inherit;
-            background: $primary;
-            color: $dark;
+            background: var(--nav-button-bg);
+            color: var(--nav-color);
             border: 1px solid transparent;
             transition: 0.3s ease all;
 
             &:hover {
-              border-color: $primary;
-              background: rgba($primary, 0.1);
-              color: $primary;
+              border-color: var(--nav-border-color);
+              background: rgba(var(--nav-border-color), 0.1);
+              color: var(--nav-border-color);
             }
 
             &:active {
-              border-color: $primary;
-              background: linear-gradient(rgba($primary, 0.2), rgba($primary, 0.3));
-              color: $primary;
+              border-color: var(--nav-border-color);
+              background: linear-gradient(rgba(var(--nav-border-color), 0.2), rgba(var(--nav-border-color), 0.3));
+              color: var(--nav-border-color);
             }
           }
 
           &.isMenu {
             transform: translate(100%);
+            background-color: var(--nav-coloumn);
           }
         }
 
@@ -403,7 +477,7 @@ body {
           position: relative;
 
           &:hover {
-            color: $primary;
+            color: var(--nav-border-color);
           }
 
           @include breakpoint(md) {
@@ -414,67 +488,28 @@ body {
     }
 
 
+
     // ======================================= single =======================================
     .single {
+      background-color: var(--single-bg);
 
       .container {
-        max-width: 800px;
-        margin: 0 auto;
+        //max-width: 1200px;
+        width: 80%;
+        margin: 0 10%;
+        background: var(--single-text-color);
         //box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.7);
 
-        // 代码块
-        .code-wrapper {
-          position: relative;
-
-
-
-          ::-webkit-scrollbar {
-            width: 8px;
-            height: 10px;
-          }
-
-          /* 设置滚动条轨道的背景颜色 */
-          ::-webkit-scrollbar-track {
-            background-color: #f5f5f5;
-          }
-
-          /* 设置滚动条滑块的背景颜色 */
-          ::-webkit-scrollbar-thumb {
-            background-color: #c1c1c1;
-          }
-
-          /* 设置滚动条滑块的圆角 */
-          ::-webkit-scrollbar-thumb {
-            border-radius: 5px;
-          }
-        }
-
-        // 复制按钮
-        .code-wrapper:hover .copy-btn {
-          display: block;
-        }
-
-        .copy-btn {
-          display: none;
-          position: absolute;
-          top: 5px;
-          right: 10px;
-          cursor: pointer;
-          font-size: 0.8rem;
-          padding: 2px 4px;
-          background-color: $primary;
-          color: $dark;
-          border-radius: 5px;
-          user-select: none;
-          transition: all 0.3s ease;
-        }
-
-        .copy-btn:hover {
-          background-color: $light;
+        .markdown-body {
+          padding: 80px 0;
+          line-height: 2.6;
+          background-color: var(--single-bg);
+          color: var(--single-text-color);
+          font-family: $singleFont;
         }
 
         // 表格
-        table {
+        .markdown-body table {
           border-collapse: collapse;
           border-spacing: 0;
           empty-cells: show;
@@ -485,28 +520,114 @@ body {
           display: table;
           font-size: 14px;
         }
+      }
 
-        table th,
-        table td {
-          padding: 6px 13px;
-          border: 1px solid #dfe2e5;
-          vertical-align: top;
+      .markdown-body table tr {
+        background-color: var(--single-bg);
+        border-top: 1px solid var(--color-border-muted);
+      }
+
+      .markdown-body table th, .markdown-body table td {
+        padding: 6px 13px;
+        border: 1px solid var(--single-table-border);
+      }
+
+      .markdown-body .highlight pre, .markdown-body pre {
+        padding: 0 0.5em;
+        overflow: auto;
+        font-size: 85%;
+        border-radius: 6px;
+        background-color: var(--single-code-padding);
+      }
+
+      // 代码块
+      .code-wrapper {
+        position: relative;
+
+        ::-webkit-scrollbar {
+          width: 8px;
+          height: 5px;
         }
 
-        table th {
-          font-weight: bold;
+        /* 设置滚动条轨道的背景颜色 */
+        ::-webkit-scrollbar-track {
+          //background-color: #f5f5f5;
         }
 
-        table thead th {
-          background-color: #f6f8fa;
-          border-color: #dfe2e5;
+        /* 设置滚动条滑块的背景颜色 */
+        ::-webkit-scrollbar-thumb {
+          background-color: var(--single-code-thumb);
+          width: 5px;
         }
 
-        body table tbody td {
-          border-color: #dfe2e5;
+
+        /* 设置滚动条滑块的圆角 */
+        ::-webkit-scrollbar-thumb {
+          border-radius: 5px;
         }
       }
 
+      // 复制按钮
+      .code-wrapper:hover .copy-btn {
+        display: block;
+      }
+
+      .copy-btn {
+        display: none;
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 0.6rem;
+        padding: 2px 4px;
+        background-color: var(--single-copy-bg);
+        color: var(--single-copy-color);
+        border-radius: 5px;
+        user-select: none;
+        transition: all 0.3s ease;
+      }
+
+      .copy-btn:hover {
+        background-color: var(--single-copy-hover);
+        color: var(--single-copy-hover-color);
+      }
+
+    }
+
+
+
+    // ======================================= about =======================================
+    .about {
+
+    }
+
+    // ======================================= footer =======================================
+    .footer {
+      width: 100%;
+      padding: 10px 0;
+      background: var(--nav-bg);
+      text-align: center;
+      color: var(--nav-color);
+
+      .column-xs-12 ul {
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .column-xs-12 ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        background-color: rgba(var(--login-icon-bg), 0);
+        box-shadow: var(--login-icon-shadow) 1px 10px 20px -5px;
+        transition: all .3s ease-out;
+      }
 
     }
   }

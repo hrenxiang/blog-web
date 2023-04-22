@@ -5,7 +5,7 @@ import gfm from 'remark-gfm';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {HiOutlineCheck} from 'react-icons/hi'
-import {duotoneLight} from "react-syntax-highlighter/dist/cjs/styles/prism";
+import {duotoneLight, atomDark} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import 'github-markdown-css';
 
 const Single = () => {
@@ -13,6 +13,22 @@ const Single = () => {
     const [notificationApi, contextHolderNotification] = notification.useNotification();
 
     const [markdown, setMarkdown] = useState('');
+
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        setIsDarkMode(mediaQuery.matches);
+
+        const onChange = (e) => {
+            setIsDarkMode(e.matches);
+        };
+
+        mediaQuery.addEventListener("change", onChange);
+        return () => {
+            mediaQuery.removeEventListener("change", onChange);
+        };
+    }, []);
 
     useEffect(() => {
         // 读取 Markdown 文件内容
@@ -49,11 +65,12 @@ const Single = () => {
                                     <CopyToClipboard text={String(children).replace(/\n$/, '')}>
                                         <div className="code-wrapper">
                                             <SyntaxHighlighter
-                                                style={duotoneLight}
+                                                style={isDarkMode ? atomDark : duotoneLight}
                                                 language={match[1]}
                                                 PreTag="div"
                                                 children={String(children).replace(/\n$/, '')}
                                                 {...props}
+                                                className='code'
                                             />
                                             <div className="copy-btn" onClick={handleCopy}>
                                                 复制

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {Form, Input, message, notification} from 'antd';
 import {EmailRegExp, PasswordRegExp} from "../constants/RegExpConst";
-import {RiEmotionLine, RiQqLine, RiWechatLine, RiWeiboLine} from "react-icons/ri";
+import {RiEmotionLine, RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiWeiboLine} from "react-icons/ri";
 
 const Register = () => {
 
@@ -114,10 +114,7 @@ const Register = () => {
                                     onClick={openNotification}
                                 />
 
-                                <i
-                                    onClick={handleEyeClick}
-                                    className={state.eyeState ? 'ri-eye-line' : 'ri-eye-off-line'}
-                                />
+                                <i onClick={handleEyeClick}>{state.eyeState ? <RiEyeLine/>: <RiEyeOffLine/>}</i>
                             </p>
 
                             <p className="password">
@@ -129,10 +126,7 @@ const Register = () => {
                                     onClick={openNotification}
                                 />
 
-                                <i
-                                    onClick={handleEyeClick}
-                                    className={state.eyeState ? 'ri-eye-line' : 'ri-eye-off-line'}
-                                />
+                                <i onClick={handleEyeClick}>{state.eyeState ? <RiEyeLine/>: <RiEyeOffLine/>}</i>
                             </p>
 
                             <p>
