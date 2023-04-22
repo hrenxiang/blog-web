@@ -5,8 +5,7 @@ import {RiQqLine, RiWechatLine} from "react-icons/ri";
 const Footer = () => {
     return (
         <div className="footer">
-            <div className="container">
-                <div className="grid">
+                <div className="footer-container">
                     <div className="footer-ul-1">
                         <ul>
                             <li><AiFillGithub/></li>
@@ -17,7 +16,6 @@ const Footer = () => {
 
                     <p className="copyright">&copy; 豫ICP备2022017977号</p>
                 </div>
-            </div>
         </div>
     );
 };

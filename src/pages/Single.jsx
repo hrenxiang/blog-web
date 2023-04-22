@@ -50,7 +50,7 @@ const Single = () => {
 
     return (
         <div className='single'>
-            <div className='container'>
+            <div className='single-container'>
                 {contextHolderNotification}
 
                 <ReactMarkdown

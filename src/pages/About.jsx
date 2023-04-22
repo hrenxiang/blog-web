@@ -6,9 +6,8 @@ import {LogoIcon} from "../constants/IconConst";
 
 function About(props) {
     return (
-
         <div className="about">
-            <div className="container">
+            <div className="about-container">
                 <div className="avatar">
                     <Avatar
                         icon={<AiOutlineUser/>}
@@ -66,7 +65,7 @@ function About(props) {
                             </Card>
                         </Col>
                         <Col span={8}>
-                            <Card title="技能" bordered={false}>
+                            <Card title="技能" bordered={false} className="record-2">
                                 <p>后端 （づ￣3￣）づ╭❤️～</p>
                                 <p>前端 []~(￣▽￣)~*</p>
                             </Card>

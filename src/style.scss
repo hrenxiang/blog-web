@@ -494,8 +494,9 @@ body {
     // ======================================= single =======================================
     .single {
       background-color: $singleBg;
+      padding-top: 5%;
 
-      .container {
+      .single-container {
         //max-width: 1200px;
         width: 80%;
         margin: 0 10%;
@@ -598,17 +599,14 @@ body {
 
 
     // ======================================= about =======================================
-    /* 关于页面 */
     .about {
       width: 100%;
-      min-height: 110vh;
       background-color: $singleBg;
       color: $singleTextColor;
       font-family: $singleFont;
 
-      .container {
-        top: 130px;
-        min-height: 100vh;
+      .about-container {
+        padding-top: 120px;
         position: relative;
 
         .avatar {
@@ -624,7 +622,7 @@ body {
         }
 
         .progress-data {
-          padding-top: 50px;
+          padding-top: 30px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -655,7 +653,8 @@ body {
         }
 
         .record {
-          margin: 20px 20px;
+          margin: 0 20px;
+          padding: 80px 0;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -671,10 +670,16 @@ body {
             color: $singleTextColor;
           }
 
-          .ant-card:hover {
+          .ant-card {
             transform: translateY(-5px);
             box-shadow: 0 5px 20px $aboutCardShadow;
           }
+
+          .ant-card:hover {
+            transform: translateY(0);
+            box-shadow: 0 0 0 $aboutCardShadow;
+          }
+
 
           .ant-card-head {
             color: $singleTextColor;
@@ -684,23 +689,20 @@ body {
             height: 200px;
           }
         }
-
       }
-
 
     }
 
     // ======================================= footer =======================================
     .footer {
       width: 100%;
-      padding: 10px 0;
       background: $navBg;
       text-align: center;
       color: $navColor;
-      height:5%;
+      padding: 2% 0;
+      font-size: 80%;
 
-      .container {
-        width: 100%;
+      .footer-container {
 
         .footer-ul-1 ul {
           display: flex;
@@ -709,17 +711,22 @@ body {
           gap: 45px;
           padding: 0;
           list-style: none;
+          margin: 0;
         }
 
         .footer-ul-1 ul li a {
-          width: 10%;
-          height: 10%;
           border-radius: 10px;
           background-color: $loginIconBg;
           box-shadow: $loginIconShadow 1px 10px 20px -5px;
           transition: all .3s ease-out;
         }
+
+        p {
+          margin: 0;
+          font-size: 80%;
+        }
       }
+
 
     }
   }
