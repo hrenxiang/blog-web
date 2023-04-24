@@ -13,8 +13,8 @@
 
 .profile {
   position: fixed;
-  bottom: 8%;
-  left: 8%;
+  bottom: 5vw;
+  left: 11vh;
   z-index: 9999;
   display: flex;
 
@@ -145,12 +145,12 @@
 
     opacity: 0;
 
-    @include size(90px, 90px);
+    @include size(50px, 50px);
     margin-left: 10px;
     @include bdrs(50%);
     position: absolute;
     top: 15px;
-    right: -90%;
+    right: -40%;
     background-color: rgba(white, .7);
     transform: translate(-40%, -50%);
     transition-duration: .3s;
@@ -163,16 +163,15 @@
       background-color: #ececec;
       //font-size: 26px;
       text-align: center;
-      line-height: 20px;
+      line-height: 25px;
       position: absolute;
-      left: 30px;
-      top: 25px;
+      left: 20px;
+      top: 10px;
       box-shadow: 0 0 .5rem #babbbc;
       transition-duration: .3s;
 
       :hover {
         transition-delay: initial !important;
-        box-shadow: 0 0 0 5px #babbbc
       }
 
     }
@@ -186,7 +185,7 @@
         @for $i from 0 through ($item - 1) {
           $deg: calc(180deg / ($item - 1)); //因圍繞半圓，為頭尾垂直對齊使item-1
           &:nth-of-type(#{$i + 1}) {
-            transform: rotate($deg * $i - 90) translateX(80px) rotate(-$deg * $i + 90);
+            transform: rotate($deg * $i - 90) translateX(50px) rotate(-$deg * $i + 90);
             transition-delay: 0.1s * $i;
           }
         }
