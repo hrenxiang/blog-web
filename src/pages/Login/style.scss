@@ -1,4 +1,4 @@
-@import "../../style.scss";
+@import "../../style.css";
 
 .auth::before {
   content: '';
@@ -6,18 +6,18 @@
   width: 100%;
   height: 100%;
   //background-image: url("https://images.huangrx.cn/uploads/2023/04/21/blog-web-log-1.jpg");
-  background-color: $loginBg;
+  background-color: var(--loginBg);
   z-index: -1;
   filter: blur(1px);
 }
 
 .auth {
-  font-family: $blogFont;
+  font-family: var(--blogFont);
   font-size: 16px;
   font-weight: 400;
   //line-height: 1.8;
-  color: $loginColor;
-  background-color: var(--background-color);
+  color: var(--loginColor);
+  /*background-color: var(--background-color);*/
   user-select: none;
 
   display: flex;
@@ -28,7 +28,7 @@
 
   .login-canvas {
     canvas {
-      background-color: rgb(255,255,255,0) !important;
+      background-color: rgb(255, 255, 255, 0) !important;
     }
   }
 
@@ -81,22 +81,22 @@
     left: 0;
     width: 280px;
     height: 150px;
-    background: linear-gradient(to right, $loginGradientLeft, $loginGradientMiddle, $loginGradientRight);
+    background: linear-gradient(to right, var(--loginGradientLeft), var(--loginGradientMiddle), var(--loginGradientRight));
     z-index: -1;
     filter: blur(70px);
   }
 
   .hero a {
     font-weight: 500;
-    color: $loginGoRegister;
+    color: var(--loginGoRegister);
     transition: color .3s;
     border-radius: 5px;
-    box-shadow: var($loginIconShadow) 1px 5px 5px -3px;
+    box-shadow: var(var(--loginIconShadow)) 1px 5px 5px -3px;
   }
 
   .hero a:hover,
   form .password a:hover {
-    color: var($loginGoRegister-hover);
+    color: var(--loginGoRegister-hover);
     text-decoration: none;
   }
 
@@ -132,13 +132,13 @@
   }
 
   input::placeholder {
-    color: $loginFormPlaceholder;
-    font-family: $selectFontFamily;
+    color: var(--loginFormPlaceholder);
+    font-family: var(--selectFontFamily);
     font-size: inherit;
   }
 
   form input:not(.submit) {
-    background-color: $loginInputBg;
+    background-color: var(--loginInputBg);
   }
 
   form .password i {
@@ -153,7 +153,7 @@
 
   form .password a {
     font-size: 13px;
-    color: $retrieveThePassword;
+    color: var(--retrieveThePassword);
     float: right;
     margin: 5px 20px 0 0;
   }
@@ -161,14 +161,14 @@
   form input.submit {
     font-weight: 700;
     //color: var(--light);
-    background-color: $loginInputButton;
-    box-shadow: $loginInputButton 0 20px 30px -10px;
+    background-color: var(--loginInputButton);
+    box-shadow: var(--loginInputButton) 0 20px 30px -10px;
     cursor: pointer;
     transition: box-shadow .3s;
   }
 
   form input.submit:hover {
-    box-shadow: $loginInputButton 0 10px 30px -10px;
+    box-shadow: var(--loginInputButton) 0 10px 30px -10px;
   }
 
   .separator {
@@ -182,7 +182,7 @@
     top: 50%;
     width: 100%;
     height: 1px;
-    background-color: $loginOtherLogin;
+    background-color: var(--loginOtherLogin);
     opacity: .3;
     z-index: 1;
   }
@@ -191,8 +191,8 @@
     font-size: 14px;
     width: fit-content;
     padding: 0 10px;
-    color: $loginOtherLogin;
-    background-color: var(--background-color);
+    color: var(--loginOtherLogin);
+    /*background-color: var(--background-color);*/
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -212,13 +212,13 @@
     width: 60px;
     height: 60px;
     border-radius: 10px;
-    background-color: $loginIconBg;
-    box-shadow: $loginIconShadow 1px 10px 20px -5px;
+    background-color: var(--loginIconBg);
+    box-shadow: var(--loginIconShadow) 1px 10px 20px -5px;
     transition: all .3s ease-out;
   }
 
   .options ul li a:hover {
-    color: $loginOtherLogin-hover;
+    color: var(--loginOtherLogin-hover);
     box-shadow: none;
   }
 
@@ -233,5 +233,5 @@
   .options ul li:nth-child(3) a:hover {
     background-color: #e77070;
   }
-
 }
+

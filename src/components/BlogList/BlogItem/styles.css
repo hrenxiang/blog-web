@@ -1,6 +1,7 @@
 .blogItem-wrap {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 .blogItem-cover {
   width: 100%;

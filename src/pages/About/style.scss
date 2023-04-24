@@ -1,11 +1,11 @@
-@import "../../style.scss";
+@import "../../style.css";
 
 .about {
   width: 100%;
   height: 100vh;
-  background-color: $blogBg;
-  color: $blogTextColor;
-  font-family: $blogFont;
+  background-color: var(--aboutBg);
+  color: var(--blogTextColor);
+  font-family: var(--blogFont);
 
   .about-container {
     padding-top: 120px;
@@ -34,7 +34,7 @@
       }
 
       .ant-progress-text {
-        color: $blogTextColor;
+        color: var(--blogTextColor);
       }
 
       .ant-row {
@@ -67,24 +67,24 @@
 
       .ant-card {
         transition: all 0.3s ease-in-out;
-        font-family: $blogFont;
-        background-color: rgb($aboutCardShadow, 0.2);
-        color: $blogTextColor;
+        font-family: var(--blogFont);
+        background-color: rgb(var(--aboutCardShadow), 0.2);
+        color: var(--blogTextColor);
       }
 
       .ant-card {
         transform: translateY(-5px);
-        box-shadow: 0 5px 20px $aboutCardShadow;
+        box-shadow: 0 5px 20px var(--aboutCardShadow);
       }
 
       .ant-card:hover {
         transform: translateY(0);
-        box-shadow: 0 0 0 $aboutCardShadow;
+        box-shadow: 0 0 0 var(--aboutCardShadow);
       }
 
 
       .ant-card-head {
-        color: $blogTextColor;
+        color: var(--blogTextColor);
       }
 
       .ant-card-body {

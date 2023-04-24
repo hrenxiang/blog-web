@@ -25,7 +25,7 @@ const SuspensionFrame = () => {
     };
 
     const switchTemplate = () => {
-
+        document.documentElement.classList.toggle('dark-mode')
     }
 
 

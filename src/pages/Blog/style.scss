@@ -1,8 +1,8 @@
-@import "../../style.scss";
+@import "../../style.css";
 
 
 .blog {
-  background-color: $blogBg;
+  background-color: var(--blogBg);
   padding-top: 8%;
 
   .blog-container {
@@ -14,7 +14,7 @@
 
   .blog-wrap {
     margin: 0 auto;
-    color: $blogTextColor;
+    color: var(--blogTextColor);
   }
 
   .blog-goBack {
@@ -32,9 +32,9 @@
   .markdown-body {
     padding: 80px 0;
     line-height: 2.6;
-    background-color: $blogBg;
-    color: $blogTextColor;
-    font-family: $blogFont;
+    background-color: var(--blogBg);
+    color: var(--blogTextColor);
+    font-family: var(--blogFont);
   }
 
   // 表格
@@ -56,7 +56,7 @@
   }
 
   .blog-wrap img {
-    width: 100%;
+    width: 45%;
   }
 
   .blog-subCategory {
@@ -74,18 +74,18 @@
   }
 
   .markdown-body table tr {
-    background-color: $blogBg;
-    border-top: 1px solid $blogTableBorder;
+    background-color: var(--blogBg);
+    border-top: 1px solid var(--blogTableBorder);
   }
 
   .markdown-body table tr:nth-child(2n) {
-    background-color: $blogBg;
-    border-top: 1px solid $blogTableBorder;
+    background-color: var(--blogBg);
+    border-top: 1px solid var(--blogTableBorder);
   }
 
   .markdown-body table th, .markdown-body table td {
     padding: 6px 13px;
-    border: 1px solid $blogTableBorder;
+    border: 1px solid var(--blogTableBorder);
   }
 
   .markdown-body .highlight pre, .markdown-body pre {
@@ -93,7 +93,7 @@
     overflow: auto;
     font-size: 85%;
     border-radius: 6px;
-    background-color: $blogCodePadding;
+    background-color: var(--blogCodePadding);
   }
 
   // 代码块
@@ -112,7 +112,7 @@
 
     /* 设置滚动条滑块的背景颜色 */
     ::-webkit-scrollbar-thumb {
-      background-color: $blogCodeThumb;
+      background-color: var(--blogCodeThumb);
       width: 5px;
     }
 
@@ -136,16 +136,16 @@
     cursor: pointer;
     font-size: 0.6rem;
     padding: 2px 4px;
-    background-color: $blogCopyBg;
-    color: $blogCopyColor;
+    background-color: var(--blogCopyBg);
+    color: var(--blogCopyColor);
     border-radius: 5px;
     user-select: none;
     transition: all 0.3s ease;
   }
 
   .copy-btn:hover {
-    background-color: $blogCopyHover;
-    color: $blogCopyHover-color;
+    background-color: var(--blogCopyHover);
+    color: var(--blogCopyHover-color);
   }
 
 }

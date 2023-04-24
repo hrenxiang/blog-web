@@ -1,15 +1,15 @@
 export const blogList = [
   {
     id: 1,
-    title: '7 CSS tools you should be using ',
+    title: '什么时hook',
     category: 'development',
     subCategory: ['frontend', 'ui/ux', 'design'],
     description:
       "/example.md",
-    authorName: 'John Doe',
-    authorAvatar: '/assets/images/author.jpg',
+    authorName: 'huangrx',
+    authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/designer-1.jpg',
+    cover: '/assets/images/img.png',
   },
   {
     id: 2,
@@ -17,11 +17,18 @@ export const blogList = [
     category: 'travel',
     subCategory: ['vacation', 'holidays', 'sight seeing'],
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorName: 'John Doe',
-    authorAvatar: '/assets/images/author.jpg',
+      "1、什么是 Hook？\n" +
+        "\n" +
+        "Hook 是一些可以让你在函数组件里“钩入” React state 及生命周期等特性的函数。\n" +
+        "\n" +
+        "注意：\n" +
+        "\n" +
+        "Hook 不能和 class 组件中使用\n" +
+        "Hook 的名字总是以 use 开头",
+    authorName: 'huangrx',
+    authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/f67396fc3cfce63a28e07ebb35d974ac.jpg',
+    cover: '/assets/images/img.png',
   },
   {
     id: 3,
@@ -30,10 +37,10 @@ export const blogList = [
     subCategory: ['e-commerce store', 'clothing', 'shopping store'],
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorName: 'John Doe',
-    authorAvatar: '/assets/images/author.jpg',
+    authorName: 'huangrx',
+    authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/fQwuyKJ9qxjSbr6REcgtmW-1200-80.jpg',
+    cover: '/assets/images/img.png',
   },
   {
     id: 4,
@@ -42,10 +49,10 @@ export const blogList = [
     subCategory: ['adrenaline', 'stay-fit', 'lifestyle'],
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorName: 'John Doe',
-    authorAvatar: '/assets/images/author.jpg',
+    authorName: 'huangrx',
+    authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/graphic-design-trends.png',
+    cover: '/assets/images/img.png',
   },
   {
     id: 5,
@@ -54,10 +61,10 @@ export const blogList = [
     subCategory: ['bbq', 'food', 'lifestyle'],
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorName: 'John Doe',
-    authorAvatar: '/assets/images/author.jpg',
+    authorName: 'huangrx',
+    authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/make-it-personal.jpg',
+    cover: '/assets/images/img.png',
   },
   {
     id: 6,
@@ -66,11 +73,10 @@ export const blogList = [
     subCategory: ['beaches', 'sea', 'holidays'],
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorName: 'John Doe',
-    authorAvatar: '/assets/images/author.jpg',
+    authorName: 'huangrx',
+    authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover:
-      '/assets/images/Purple-Combination-colors-graphic-design-predictions-1024x576-1024x576.jpg',
+    cover: '/assets/images/img.png',
   },
   {
     id: 7,
@@ -79,9 +85,9 @@ export const blogList = [
     subCategory: ['skill', 'design', 'passion'],
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorName: 'John Doe',
-    authorAvatar: '/assets/images/author.jpg',
+    authorName: 'huangrx',
+    authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/Synthwave-Postmodern.jpg',
+    cover: '/assets/images/img.png',
   },
 ];

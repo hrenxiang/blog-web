@@ -86,8 +86,9 @@ const Blog = () => {
                                     </div>
                                 ))}
                             </div>
+                            <img src={blog.cover} alt='cover'/>
                         </header>
-                        <img src={blog.cover} alt='cover'/>
+
 
                         {/*markdown 部分*/}
                         <ReactMarkdown

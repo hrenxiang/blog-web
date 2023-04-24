@@ -1,4 +1,13 @@
-@import "../../style.scss";
+@import "../../style.css";
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
+}
 
 .navbar {
   //width: auto;
@@ -7,7 +16,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  background: rgb($navBg, 0.8);
+  background: var(--navBg-80);
   padding: 0 1.5rem;
   @include breakpoint(md) {
     padding: 0 3rem;
@@ -16,7 +25,7 @@
 
   .container {
     overflow: hidden;
-    color: $navColor;
+    color: var(--navColor);
     margin: 0 auto;
     max-width: 1920px;
     height: 100%;
@@ -45,7 +54,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: $navBg;
+      background: var(--navBg);
       backdrop-filter: blur(2px);
       transform: translate(0);
       transition: 0.3s ease transform;
@@ -65,20 +74,20 @@
         display: flex;
         flex-direction: column;
         margin-top: 0;
-        margin-bottom: $spacing-lg;
+        margin-bottom: var(--spacing-lg);
         @include breakpoint(md) {
           flex-direction: row;
           align-items: center;
           margin-bottom: 0;
-          margin-right: calc(0.5rem + #{$spacing-md});
+          margin-right: calc(0.5rem + #{var(--spacing-md)});
         }
 
         li {
           &:not(:last-child) {
-            margin-bottom: $spacing-lg;
+            margin-bottom: var(--spacing-lg);
             @include breakpoint(md) {
               margin-bottom: 0;
-              margin-right: $spacing-md;
+              margin-right: var(--spacing-md);
             }
           }
 
@@ -86,16 +95,16 @@
             text-decoration: none;
             color: inherit;
             padding: 0.75rem 1.25rem;
-            border-radius: $borderRadius;
+            border-radius: var(--borderRadius);
             transition: 0.3s ease all;
 
             &:hover {
-              background: $navButtonBg;
+              background: var(--navButtonBg);
             }
 
             &:active {
-              border-radius: calc(#{$borderRadius} + 6px);
-              background-color: $navButtonBg;
+              border-radius: calc(#{var(--borderRadius)} + 6px);
+              background-color: var(--navButtonBg);
             }
           }
         }
@@ -105,30 +114,30 @@
         cursor: pointer;
         outline: none;
         padding: 0.75rem 1.25rem;
-        border-radius: $borderRadius;
+        border-radius: var(--borderRadius);
         font-size: 1rem;
         font-family: inherit;
-        background: $navButtonBg;
-        color: $navColor;
+        background: var(--navButtonBg);
+        color: var(--navColor);
         border: 1px solid transparent;
         transition: 0.3s ease all;
 
         &:hover {
-          border-color: $navBorderColor;
-          background: $navBorderColor;
-          color: $navButtonHover;
+          border-color: var(--navBorderColor);
+          background: var(--navBorderColor);
+          color: var(--navButtonHover);
         }
 
         &:active {
-          border-color: $navBorderColor;
-          background: linear-gradient($navBorderColor, $navBorderColor);
-          color: $navBorderColor;
+          border-color: var(--navBorderColor);
+          background: linear-gradient(var(--navBorderColor), var(--navBorderColor));
+          color: var(--navBorderColor);
         }
       }
 
       &.isMenu {
         transform: translate(100%);
-        background-color: $navColoumn;
+        background-color: var(--navColoumn);
       }
     }
 
@@ -141,7 +150,7 @@
       position: relative;
 
       &:hover {
-        color: $navBorderColor;
+        color: var(--navBorderColor);
       }
 
       @include breakpoint(md) {

@@ -1,6 +1,6 @@
-@import "../../style.scss";
+@import "../../style.css";
 
 .notes {
-  padding: 10% 10%;
-  background-color: $blogBg;
+  padding: 20vh 10%;
+  background-color: var(--blogBg);
 }
