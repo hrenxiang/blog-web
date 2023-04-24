@@ -1,0 +1,96 @@
+@import "../../style.scss";
+
+.about {
+  width: 100%;
+  height: 100vh;
+  background-color: $blogBg;
+  color: $blogTextColor;
+  font-family: $blogFont;
+
+  .about-container {
+    padding-top: 120px;
+    position: relative;
+
+    .avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 0 30px;
+
+      .introduce {
+        text-align: center;
+      }
+    }
+
+    .progress-data {
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .ant-progress {
+        stroke: #89a27e;
+      }
+
+      .ant-progress-text {
+        color: $blogTextColor;
+      }
+
+      .ant-row {
+        margin: 15px 10%;
+      }
+
+      .row .ant-col {
+        gap: 100px;
+        width: 50px;
+        text-align: center;
+        bottom: 100px;
+      }
+
+      .ant-row .ant-col-sm-1 {
+        max-width: 16%;
+        margin-left: 10px;
+      }
+    }
+
+    .record {
+      margin: 0 20px;
+      padding: 80px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .ant-row {
+        min-width: 50%;
+      }
+
+      .ant-card {
+        transition: all 0.3s ease-in-out;
+        font-family: $blogFont;
+        background-color: rgb($aboutCardShadow, 0.2);
+        color: $blogTextColor;
+      }
+
+      .ant-card {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px $aboutCardShadow;
+      }
+
+      .ant-card:hover {
+        transform: translateY(0);
+        box-shadow: 0 0 0 $aboutCardShadow;
+      }
+
+
+      .ant-card-head {
+        color: $blogTextColor;
+      }
+
+      .ant-card-body {
+        height: 200px;
+      }
+    }
+  }
+
+}

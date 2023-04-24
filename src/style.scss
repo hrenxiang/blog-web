@@ -1,6 +1,6 @@
 // font
 $selectFontFamily: 'Noto Sans SC', sans-serif;
-$singleFont: "single-font-1", sans-serif;
+$blogFont: "blog-font-1", sans-serif;
 // spacing
 $spacing-md: 16px;
 $spacing-lg: 32px;
@@ -9,7 +9,7 @@ $borderRadius: 12px;
 
 // colors
 $loginColor: #ffffff;
-$loginBg: #252424FF;
+$loginBg: #ffffff;
 $loginInputBg: #FFFFFF;
 $loginInputButton: #9398b3;
 $loginIconBg: #252424FF;
@@ -29,17 +29,23 @@ $navColoumn: rgb(37, 36, 36);
 $navButtonBg: #9398b3;
 $navBorderColor: #9398b3;
 $navButtonHover: #000000;
-$singleTextColor: #FFFFFF;
-$singleBg: #393E46;
-$singleCodePadding: #2a2c2f;
-$singleCodeThumb: #393E46;
-$singleCopyBg: #2a2c2f;
-$singleCopyColor: #ffffff;
-$singleTableBorder: #FFFFFF;
-$singleCopyHover: #FFFFFF;
-$singleCopyHover-color: #000000;
+$blogTextColor: #FFFFFF;
+$blogBg: #393E46;
+$blogCodePadding: #2a2c2f;
+$blogCodeThumb: #393E46;
+$blogCopyBg: #2a2c2f;
+$blogCopyColor: #ffffff;
+$blogTableBorder: #FFFFFF;
+$blogCopyHover: #FFFFFF;
+$blogCopyHover-color: #000000;
 $footerBg: #ffffff;
 $aboutCardShadow: #9398b3;
+$suspensionBg: #FFFFFF;
+$suspensionShadowColor: #babbbc;
+//$suspensionContentBefore: #e9f3e6;
+$suspensionContentBefore: rgba(136, 160, 125, 0.63);
+$suspensionButtonColor: #000000;
+$suspensionButtonBg: rgb(255, 255, 255, 0);
 
 
 @media (prefers-color-scheme: dark) {
@@ -65,23 +71,36 @@ $aboutCardShadow: #9398b3;
   $navButtonBg: #9398b3;
   $navBorderColor: #9398b3;
   $navButtonHover: #000000;
-  $singleTextColor: #FFFFFF;
-  $singleBg: #393E46;
-  $singleCodePadding: #2a2c2f;
-  $singleCodeThumb: #393E46;
-  $singleCopyBg: #2a2c2f;
-  $singleCopyColor: #ffffff;
-  $singleTableBorder: #FFFFFF;
-  $singleCopyHover: #FFFFFF;
-  $singleCopyHover-color: #000000;
+  $blogTextColor: #FFFFFF;
+  $blogBg: #393E46;
+  $blogCodePadding: #2a2c2f;
+  $blogCodeThumb: #393E46;
+  $blogCopyBg: #2a2c2f;
+  $blogCopyColor: #ffffff;
+  $blogTableBorder: #FFFFFF;
+  $blogCopyHover: #FFFFFF;
+  $blogCopyHover-color: #000000;
   $footerBg: #ffffff;
   $aboutCardShadow: #9398b3;
+  $suspensionBg: #FFFFFF;
+  $suspensionShadowColor: #babbbc;
+  //$suspensionContentBefore: #e9f3e6;
+  $suspensionContentBefore: rgba(136, 160, 125, 0.63);
+  $suspensionButtonColor: #000000;
+  $suspensionButtonBg: rgb(255, 255, 255, 0);
+}
+
+$use-light-theme: true;
+
+@if $use-light-theme {
+  // 使用浅色主题
+  $loginBg: #000000;
 }
 
 @font-face {
-  font-family: "single-font-1";
+  font-family: "blog-font-1";
   font-weight: 400;
-  src: url("static/font/single-font-1.ttf");
+  src: url("assets/font/blog-font-1.ttf");
   font-display: swap;
 }
 
@@ -104,630 +123,7 @@ body {
 }
 
 .app {
-
   .container {
 
-    // ======================================= login and register =======================================
-    .auth::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      //background-image: url("https://images.huangrx.cn/uploads/2023/04/21/blog-web-log-1.jpg");
-      background-color: $loginBg;
-      z-index: -1;
-      filter: blur(1px);
-    }
-
-    .auth {
-      font-family: $singleFont;
-      font-size: 16px;
-      font-weight: 400;
-      //line-height: 1.8;
-      color: $loginColor;
-      background-color: var(--background-color);
-      user-select: none;
-      -webkit-user-drag: none;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-
-      a {
-        text-decoration: none;
-        color: inherit;
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      ul {
-        list-style: none;
-      }
-
-      h2 {
-        font-size: 2em;
-        font-weight: 700;
-        line-height: normal;
-      }
-
-      p {
-        //color: var(--light);
-      }
-
-      .container {
-        max-width: 1000px;
-        width: 100%;
-        padding: 0 30px;
-        margin: 0 auto;
-      }
-
-      .login {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .hero {
-        flex: 1 0 66.6666%;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        padding: 70px 0;
-      }
-
-      .hero::before {
-        content: '';
-        position: absolute;
-        top: 15%;
-        left: 0;
-        width: 280px;
-        height: 150px;
-        background: linear-gradient(to right, $loginGradientLeft, $loginGradientMiddle, $loginGradientRight);
-        z-index: -1;
-        filter: blur(70px);
-      }
-
-      .hero a {
-        font-weight: 500;
-        color: $loginGoRegister;
-        transition: color .3s;
-        border-radius: 5px;
-        box-shadow: var($loginIconShadow) 1px 5px 5px -3px;
-      }
-
-      .hero a:hover,
-      form .password a:hover {
-        color: var($loginGoRegister-hover);
-        text-decoration: none;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      .main {
-        flex: 1 0 33.3333%;
-      }
-
-      .main form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .main form p {
-        position: relative;
-      }
-
-      form input {
-        font: inherit;
-        font-size: 14px;
-        width: 100%;
-        border: 0;
-        outline: 0;
-        padding: 0 20px;
-        line-height: 60px;
-        border-radius: 10px;
-        /*修复input 加入padding之后大小变化的问题*/
-        box-sizing: border-box;
-      }
-
-      input::placeholder {
-        color: $loginFormPlaceholder;
-        font-family: $selectFontFamily;
-        font-size: inherit;
-      }
-
-      form input:not(.submit) {
-        background-color: $loginInputBg;
-      }
-
-      form .password i {
-        position: absolute;
-        top: calc(60px / 2);
-        right: 20px;
-        margin-top: -8px;
-        line-height: 1;
-        //color: var(--login-password-eye);
-        cursor: pointer;
-      }
-
-      form .password a {
-        font-size: 13px;
-        color: $retrieveThePassword;
-        float: right;
-        margin: 5px 20px 0 0;
-      }
-
-      form input.submit {
-        font-weight: 700;
-        //color: var(--light);
-        background-color: $loginInputButton;
-        box-shadow: $loginInputButton 0 20px 30px -10px;
-        cursor: pointer;
-        transition: box-shadow .3s;
-      }
-
-      form input.submit:hover {
-        box-shadow: $loginInputButton 0 10px 30px -10px;
-      }
-
-      .separator {
-        position: relative;
-        margin: 50px 0 30px;
-      }
-
-      .separator::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        height: 1px;
-        background-color: $loginOtherLogin;
-        opacity: .3;
-        z-index: 1;
-      }
-
-      .separator p {
-        font-size: 14px;
-        width: fit-content;
-        padding: 0 10px;
-        color: $loginOtherLogin;
-        background-color: var(--background-color);
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-      }
-
-      .options ul {
-        display: flex;
-        justify-content: center;
-        gap: 45px;
-        padding: 0;
-      }
-
-      .options ul li a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        border-radius: 10px;
-        background-color: $loginIconBg;
-        box-shadow: $loginIconShadow 1px 10px 20px -5px;
-        transition: all .3s ease-out;
-      }
-
-      .options ul li a:hover {
-        color: $loginOtherLogin-hover;
-        box-shadow: none;
-      }
-
-      .options ul li:nth-child(1) a:hover {
-        background-color: #6c86c2;
-      }
-
-      .options ul li:nth-child(2) a:hover {
-        background-color: #68cb5d;
-      }
-
-      .options ul li:nth-child(3) a:hover {
-        background-color: #e77070;
-      }
-
-    }
-
-
-    // ======================================= navbar =======================================
-    .navbar {
-      //width: auto;
-      //height: 80px;
-      position: fixed;
-      left: 0;
-      right: 0;
-      z-index: 1;
-      background: rgb($navBg, 0.8);
-      padding: 0 1.5rem;
-      @include breakpoint(md) {
-        padding: 0 3rem;
-      }
-      transition: 0.3s ease all;
-
-      .container {
-        overflow: hidden;
-        color: $navColor;
-        margin: 0 auto;
-        max-width: 1920px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        z-index: 100;
-
-        .logo {
-          font-size: 2rem;
-          font-weight: bold;
-          text-decoration: none;
-          //color: --light);
-        }
-
-        .nav {
-          top: 0;
-          right: 100%;
-          bottom: 0;
-          width: 100%;
-          height: 100vh;
-          position: fixed;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          background: $navBg;
-          backdrop-filter: blur(2px);
-          transform: translate(0);
-          transition: 0.3s ease transform;
-
-          @include breakpoint(md) {
-            transform: none;
-            flex-direction: row;
-            background: transparent;
-            width: auto;
-            height: 100%;
-            position: static;
-          }
-
-          ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            margin-top: 0;
-            margin-bottom: $spacing-lg;
-            @include breakpoint(md) {
-              flex-direction: row;
-              align-items: center;
-              margin-bottom: 0;
-              margin-right: calc(0.5rem + #{$spacing-md});
-            }
-
-            li {
-              &:not(:last-child) {
-                margin-bottom: $spacing-lg;
-                @include breakpoint(md) {
-                  margin-bottom: 0;
-                  margin-right: $spacing-md;
-                }
-              }
-
-              a {
-                text-decoration: none;
-                color: inherit;
-                padding: 0.75rem 1.25rem;
-                border-radius: $borderRadius;
-                transition: 0.3s ease all;
-
-                &:hover {
-                  background: $navButtonBg;
-                }
-
-                &:active {
-                  border-radius: calc(#{$borderRadius} + 6px);
-                  background-color: $navButtonBg;
-                }
-              }
-            }
-          }
-
-          button {
-            cursor: pointer;
-            outline: none;
-            padding: 0.75rem 1.25rem;
-            border-radius: $borderRadius;
-            font-size: 1rem;
-            font-family: inherit;
-            background: $navButtonBg;
-            color: $navColor;
-            border: 1px solid transparent;
-            transition: 0.3s ease all;
-
-            &:hover {
-              border-color: $navBorderColor;
-              background: $navBorderColor;
-              color: $navButtonHover;
-            }
-
-            &:active {
-              border-color: $navBorderColor;
-              background: linear-gradient($navBorderColor, $navBorderColor);
-              color: $navBorderColor;
-            }
-          }
-
-          &.isMenu {
-            transform: translate(100%);
-            background-color: $navColoumn;
-          }
-        }
-
-        .toggle {
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          font-size: 1rem;
-          transition: 0.3s ease all;
-          position: relative;
-
-          &:hover {
-            color: $navBorderColor;
-          }
-
-          @include breakpoint(md) {
-            display: none;
-          }
-        }
-      }
-    }
-
-
-    // ======================================= single =======================================
-    .single {
-      background-color: $singleBg;
-      padding-top: 5%;
-
-      .single-container {
-        //max-width: 1200px;
-        width: 80%;
-        margin: 0 10%;
-        background: $singleTextColor;
-        //box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.7);
-
-        .markdown-body {
-          padding: 80px 0;
-          line-height: 2.6;
-          background-color: $singleBg;
-          color: $singleTextColor;
-          font-family: $singleFont;
-        }
-
-        // 表格
-        .markdown-body table {
-          border-collapse: collapse;
-          border-spacing: 0;
-          empty-cells: show;
-          margin: 0;
-          width: 100%;
-          max-width: 100%;
-          overflow-x: auto;
-          display: table;
-          font-size: 14px;
-        }
-      }
-
-      .markdown-body table tr {
-        background-color: $singleBg;
-        border-top: 1px solid $singleTableBorder;
-      }
-
-      .markdown-body table th, .markdown-body table td {
-        padding: 6px 13px;
-        border: 1px solid $singleTableBorder;
-      }
-
-      .markdown-body .highlight pre, .markdown-body pre {
-        padding: 0 0.5em;
-        overflow: auto;
-        font-size: 85%;
-        border-radius: 6px;
-        background-color: $singleCodePadding;
-      }
-
-      // 代码块
-      .code-wrapper {
-        position: relative;
-
-        ::-webkit-scrollbar {
-          width: 8px;
-          height: 5px;
-        }
-
-        /* 设置滚动条轨道的背景颜色 */
-        ::-webkit-scrollbar-track {
-          //background-color: #f5f5f5;
-        }
-
-        /* 设置滚动条滑块的背景颜色 */
-        ::-webkit-scrollbar-thumb {
-          background-color: $singleCodeThumb;
-          width: 5px;
-        }
-
-
-        /* 设置滚动条滑块的圆角 */
-        ::-webkit-scrollbar-thumb {
-          border-radius: 5px;
-        }
-      }
-
-      // 复制按钮
-      .code-wrapper:hover .copy-btn {
-        display: block;
-      }
-
-      .copy-btn {
-        display: none;
-        position: absolute;
-        top: 8px;
-        right: 10px;
-        cursor: pointer;
-        font-size: 0.6rem;
-        padding: 2px 4px;
-        background-color: $singleCopyBg;
-        color: $singleCopyColor;
-        border-radius: 5px;
-        user-select: none;
-        transition: all 0.3s ease;
-      }
-
-      .copy-btn:hover {
-        background-color: $singleCopyHover;
-        color: $singleCopyHover-color;
-      }
-
-    }
-
-
-    // ======================================= about =======================================
-    .about {
-      width: 100%;
-      background-color: $singleBg;
-      color: $singleTextColor;
-      font-family: $singleFont;
-
-      .about-container {
-        padding-top: 120px;
-        position: relative;
-
-        .avatar {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          margin: 0 30px;
-
-          .introduce {
-            text-align: center;
-          }
-        }
-
-        .progress-data {
-          padding-top: 30px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          .ant-progress {
-            stroke: #89a27e;
-          }
-
-          .ant-progress-text {
-            color: $singleTextColor;
-          }
-
-          .ant-row {
-            margin: 15px 10%;
-          }
-
-          .row .ant-col {
-            gap: 100px;
-            width: 50px;
-            text-align: center;
-            bottom: 100px;
-          }
-
-          .ant-row .ant-col-sm-1 {
-            max-width: 16%;
-            margin-left: 10px;
-          }
-        }
-
-        .record {
-          margin: 0 20px;
-          padding: 80px 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          .ant-row {
-            min-width: 50%;
-          }
-
-          .ant-card {
-            transition: all 0.3s ease-in-out;
-            font-family: $singleFont;
-            background-color: rgb($aboutCardShadow, 0.2);
-            color: $singleTextColor;
-          }
-
-          .ant-card {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px $aboutCardShadow;
-          }
-
-          .ant-card:hover {
-            transform: translateY(0);
-            box-shadow: 0 0 0 $aboutCardShadow;
-          }
-
-
-          .ant-card-head {
-            color: $singleTextColor;
-          }
-
-          .ant-card-body {
-            height: 200px;
-          }
-        }
-      }
-
-    }
-
-    // ======================================= footer =======================================
-    .footer {
-      width: 100%;
-      background: $navBg;
-      text-align: center;
-      color: $navColor;
-      padding: 2% 0;
-      font-size: 80%;
-
-      .footer-container {
-
-        .footer-ul-1 ul {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 45px;
-          padding: 0;
-          list-style: none;
-          margin: 0;
-        }
-
-        .footer-ul-1 ul li a {
-          border-radius: 10px;
-          background-color: $loginIconBg;
-          box-shadow: $loginIconShadow 1px 10px 20px -5px;
-          transition: all .3s ease-out;
-        }
-
-        p {
-          margin: 0;
-          font-size: 80%;
-        }
-      }
-
-
-    }
   }
 }

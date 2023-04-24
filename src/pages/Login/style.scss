@@ -1,0 +1,237 @@
+@import "../../style.scss";
+
+.auth::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  //background-image: url("https://images.huangrx.cn/uploads/2023/04/21/blog-web-log-1.jpg");
+  background-color: $loginBg;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+.auth {
+  font-family: $blogFont;
+  font-size: 16px;
+  font-weight: 400;
+  //line-height: 1.8;
+  color: $loginColor;
+  background-color: var(--background-color);
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+
+  .login-canvas {
+    canvas {
+      background-color: rgb(255,255,255,0) !important;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0;
+  }
+
+  p {
+    //color: var(--light);
+  }
+
+  .auth-container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+  }
+
+  .login {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    flex: 1 0 66.6666%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 70px 0 30px 0;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 280px;
+    height: 150px;
+    background: linear-gradient(to right, $loginGradientLeft, $loginGradientMiddle, $loginGradientRight);
+    z-index: -1;
+    filter: blur(70px);
+  }
+
+  .hero a {
+    font-weight: 500;
+    color: $loginGoRegister;
+    transition: color .3s;
+    border-radius: 5px;
+    box-shadow: var($loginIconShadow) 1px 5px 5px -3px;
+  }
+
+  .hero a:hover,
+  form .password a:hover {
+    color: var($loginGoRegister-hover);
+    text-decoration: none;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .main {
+    flex: 1 0 33.3333%;
+  }
+
+  .main form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main form p {
+    position: relative;
+  }
+
+  form input {
+    font: inherit;
+    font-size: 14px;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0 20px;
+    line-height: 60px;
+    border-radius: 10px;
+    /*修复input 加入padding之后大小变化的问题*/
+    box-sizing: border-box;
+  }
+
+  input::placeholder {
+    color: $loginFormPlaceholder;
+    font-family: $selectFontFamily;
+    font-size: inherit;
+  }
+
+  form input:not(.submit) {
+    background-color: $loginInputBg;
+  }
+
+  form .password i {
+    position: absolute;
+    top: calc(60px / 2);
+    right: 20px;
+    margin-top: -8px;
+    line-height: 1;
+    //color: var(--login-password-eye);
+    cursor: pointer;
+  }
+
+  form .password a {
+    font-size: 13px;
+    color: $retrieveThePassword;
+    float: right;
+    margin: 5px 20px 0 0;
+  }
+
+  form input.submit {
+    font-weight: 700;
+    //color: var(--light);
+    background-color: $loginInputButton;
+    box-shadow: $loginInputButton 0 20px 30px -10px;
+    cursor: pointer;
+    transition: box-shadow .3s;
+  }
+
+  form input.submit:hover {
+    box-shadow: $loginInputButton 0 10px 30px -10px;
+  }
+
+  .separator {
+    position: relative;
+    margin: 50px 0 30px;
+  }
+
+  .separator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: $loginOtherLogin;
+    opacity: .3;
+    z-index: 1;
+  }
+
+  .separator p {
+    font-size: 14px;
+    width: fit-content;
+    padding: 0 10px;
+    color: $loginOtherLogin;
+    background-color: var(--background-color);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .options ul {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    padding: 0;
+  }
+
+  .options ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: $loginIconBg;
+    box-shadow: $loginIconShadow 1px 10px 20px -5px;
+    transition: all .3s ease-out;
+  }
+
+  .options ul li a:hover {
+    color: $loginOtherLogin-hover;
+    box-shadow: none;
+  }
+
+  .options ul li:nth-child(1) a:hover {
+    background-color: #6c86c2;
+  }
+
+  .options ul li:nth-child(2) a:hover {
+    background-color: #68cb5d;
+  }
+
+  .options ul li:nth-child(3) a:hover {
+    background-color: #e77070;
+  }
+
+}

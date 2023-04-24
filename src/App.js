@@ -1,5 +1,5 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import routers from "./routers/Router";
+import routers from "./router/Router";
 
 import "./style.scss";
 
