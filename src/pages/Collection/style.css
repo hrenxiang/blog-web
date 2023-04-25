@@ -1,0 +1,27 @@
+@import "../../style.css";
+
+.collection {
+    overflow: hidden;
+    background-color: var(--blogBg);
+}
+
+.collection-layout {
+    min-height: 100vh;
+    background: var(--blogBg) !important;
+}
+
+.collection-layout-sider {
+    height: 100vh !important;
+    position: fixed !important;
+    padding-top: 11vh;
+    background-color: white !important;
+}
+
+.collection-layout-sider-menu {
+    background-color: white !important;
+    color: black!important;
+}
+
+.collection-layout-content {
+    background-color: gray !important;
+}

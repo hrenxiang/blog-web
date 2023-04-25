@@ -6,9 +6,11 @@ import Layout from "../components/Layout";
 import Images from "../pages/Images";
 import Categories from "../pages/Categories";
 import About from "../pages/About";
-import Tag from "../pages/Tag";
 import Notes from "../pages/Notes";
 import Blog from "../pages/Blog";
+import Collection from "../pages/Collection";
+import Chat from "../pages/Collection/Chat";
+import Palette from "../pages/Collection/Palette";
 
 const routers = [
     {
@@ -28,10 +30,6 @@ const routers = [
                 element: <Blog/>
             },
             {
-                path: '/tag',
-                element: <Tag/>
-            },
-            {
                 path: '/write',
                 element: <Write/>
             },
@@ -48,6 +46,10 @@ const routers = [
                 element: <About/>
             }
         ]
+    },
+    {
+        path: '/collection',
+        element: <Collection/>,
     },
     {
         path: "/register",

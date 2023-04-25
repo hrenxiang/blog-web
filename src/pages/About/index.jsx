@@ -5,7 +5,6 @@ import {LogoIcon} from "../../constants/IconConst";
 
 import "./style.scss"
 
-
 function About(props) {
     return (
         <div className="about">
@@ -56,30 +55,28 @@ function About(props) {
                         </Col>
                     </Row>
                 </div>
-                <div className="record">
-                    <Row
-                        gutter={16}>
-                        <Col span={8}>
-                            <Card title="喜欢" bordered={false}>
-                                <p>我家小茜 ❤️</p>
-                                <p>是编程啦 💻</p>
-                                <p>当然有它 🎮</p>
-                            </Card>
-                        </Col>
-                        <Col span={8}>
-                            <Card title="技能" bordered={false} className="record-2">
-                                <p>后端 （づ￣3￣）づ╭❤️～</p>
-                                <p>前端 []~(￣▽￣)~*</p>
-                            </Card>
-                        </Col>
-                        <Col span={8}>
-                            <Card title="为人" bordered={false}>
-                                <p>本分</p>
-                                <p>谦和</p>
-                                <p>耐劳</p>
-                            </Card>
-                        </Col>
-                    </Row>
+                <div className="about-record">
+                    <div className="about-record-item">
+                        <Card title="喜欢" bordered={false}>
+                            <p>我家小茜 ❤️</p>
+                            <p>是编程啦 💻</p>
+                            <p>当然有它 🎮</p>
+                        </Card>
+                    </div>
+                    <div className="about-record-item">
+                        <Card title="技能" bordered={false}>
+                            <p>后端 （づ￣3￣）づ╭❤️～</p>
+                            <p>前端 []~(￣▽￣)~*</p>
+                        </Card>
+                    </div>
+                    <div className="about-record-item">
+                        <Card title="为人" bordered={false}>
+                            <p>本分</p>
+                            <p>谦和</p>
+                            <p>耐劳</p>
+                        </Card>
+                    </div>
+
                 </div>
             </div>
         </div>

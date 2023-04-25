@@ -1,34 +1,24 @@
 import React, {useEffect, useState} from 'react';
 
 import "./style.scss"
-import axios from "axios";
-import {EditOutlined, EllipsisOutlined, SettingOutlined} from "@ant-design/icons";
 import {Avatar, Button, Card} from "antd";
 import Meta from "antd/es/card/Meta";
+import {downloadImage, fetchImages} from "../../api/Unsplash";
+import {AiOutlineDownload, AiOutlineHeart} from "react-icons/ai";
 
 function Images() {
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [perPage] = useState(10);
+    const [perPage] = useState(9);
     const [images, setImages] = useState([]);
 
-
-
-
     useEffect(() => {
-        async function fetchImages() {
-            return await axios.get(
-                `https://api.unsplash.com/photos?page=${currentPage}&per_page=${perPage}&client_id=cNqUFkkZcby8fkXLUrm-H5ericWkMcWZ5eXeC-lRE64`
-            );
-        }
-
-        fetchImages().then(response => {
+        fetchImages(currentPage, perPage).then(response => {
             setImages((preImages) => [...preImages, ...response.data]);
         })
     }, [currentPage, perPage]);
 
     const acquireMore = () => {
-        console.log("5")
         setCurrentPage((currentPage) => currentPage + 1);
     };
 
@@ -50,9 +40,12 @@ function Images() {
                                     />
                                 }
                                 actions={[
-                                    <SettingOutlined key="setting"/>,
-                                    <EditOutlined key="edit"/>,
-                                    <EllipsisOutlined key="ellipsis"/>,
+                                    <span className="images-items-card-action-span">
+                                        <AiOutlineHeart key="love"/>
+                                        {image.likes}
+                                    </span>,
+                                    <AiOutlineDownload key="download"
+                                                       onClick={() => downloadImage(image.urls.raw)}/>,
                                 ]}
                             >
                                 <Meta

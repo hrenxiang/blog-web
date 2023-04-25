@@ -69,11 +69,6 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/tag" onClick={menuToggleHandler}>
-                                标签
-                            </Link>
-                        </li>
-                        <li>
                             <Link to="/categories" onClick={menuToggleHandler}>
                                 分类
                             </Link>
@@ -81,6 +76,11 @@ const Navbar = () => {
                         <li>
                             <Link to="/images" onClick={menuToggleHandler}>
                                 摄影
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/collection" onClick={menuToggleHandler}>
+                                收藏
                             </Link>
                         </li>
                         <li>

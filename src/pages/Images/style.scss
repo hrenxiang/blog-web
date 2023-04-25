@@ -1,6 +1,6 @@
 .images {
   background-color: black;
-  padding-top: 2rem;
+  padding-top: 1rem;
   overflow: hidden;
 }
 
@@ -52,4 +52,11 @@
   width: 80vw;
   padding: 2rem 0;
   background: linear-gradient(318deg, rgb(72, 118, 252) 0%, rgb(69, 165, 249) 50%, rgb(62, 202, 242) 100%) !important;
+}
+
+.images-items-card-action-span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
