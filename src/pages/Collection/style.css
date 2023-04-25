@@ -11,17 +11,25 @@
 }
 
 .collection-layout-sider {
-    height: 100vh !important;
-    position: fixed !important;
-    padding-top: 11vh;
+    max-width: none !important;
     background-color: white !important;
+    padding-top: 10vh;
+    z-index: 2;
 }
 
 .collection-layout-sider-menu {
     background-color: white !important;
     color: black!important;
+    border-inline-end: none !important;
+    font-size: 1.2rem !important;
+}
+
+.collection-layout-sider-menu .ant-menu-item-icon {
+    font-size: 1.2rem !important;
+    margin-right: 2rem;
 }
 
 .collection-layout-content {
-    background-color: gray !important;
+    background-color: #000000 !important;
+    position: relative;
 }

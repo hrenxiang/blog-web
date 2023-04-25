@@ -50,6 +50,16 @@ const routers = [
     {
         path: '/collection',
         element: <Collection/>,
+        children: [
+            {
+                path: "chat",
+                element: <Chat/>
+            },
+            {
+                path: "palette",
+                element: <Palette/>
+            }
+        ]
     },
     {
         path: "/register",

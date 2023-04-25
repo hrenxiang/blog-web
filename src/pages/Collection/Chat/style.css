@@ -1,0 +1,63 @@
+.chat {
+    height: 100vh;
+    width: 100%;
+
+}
+
+.chat > p {
+    font-size: 36px;
+    position: relative;
+    left: 1%;
+    color: white;
+}
+
+.chat-body {
+    background-color: white;
+    width: 98%;
+    height: calc((100vh - 120px) * 0.98);
+    position: relative;
+    left: 1%;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.chat-body-space {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    width: 80%;
+}
+
+.chat-body-space  .ant-space-compact {
+    height: 5vh;
+    width: 100%;
+}
+
+.chat-body-space .ant-space-item {
+    width: 100%;
+}
+
+.chat-body-space  .ant-input {
+    height: 5vh;
+    width: 90%;
+    border-right: none;
+}
+
+.chat-body-space  .ant-btn {
+    height: 5vh;
+    width: 10%;
+    border: 1px solid #d9d9d9;
+    border-left: none;
+}
+
+.chat-body-space:hover .ant-input {
+    border-color: #6c86c2;
+}
+
+.chat-body-space:hover .ant-btn {
+    border-color: #6c86c2;
+}
+
+.chat-body-space .ant-btn:active {
+    box-shadow: none !important;
+}

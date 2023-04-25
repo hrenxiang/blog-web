@@ -2,7 +2,6 @@ import React from 'react';
 import {Layout, Menu} from 'antd';
 
 import "./style.css"
-import MenuItem from "antd/es/menu/MenuItem";
 import {BsRobot} from "react-icons/bs";
 import {IoArrowBackCircleOutline} from "react-icons/io5";
 import {Link, Outlet} from "react-router-dom";
@@ -10,20 +9,14 @@ import {VscSymbolColor} from "react-icons/vsc";
 
 const Collection = () => {
 
-    const {Content, Sider} = Layout;
-
-    const menuItems = (
-        <>
-
-        </>
-    );
+    const {Sider} = Layout;
 
     return (
+
         <div className="collection">
             <div className="collection-body">
                 <Layout hasSider className="collection-layout">
                     <Sider className="collection-layout-sider"
-
                            breakpoint="lg"
                            collapsedWidth="0"
                            onBreakpoint={(broken) => {
@@ -31,20 +24,38 @@ const Collection = () => {
                            }}
                            onCollapse={(collapsed, type) => {
                                console.log(collapsed, type);
-                           }}
-                    >
+                           }}>
                         <div className="logo"/>
-                        <Menu className="collection-layout-sider-menu">
-                            <Menu.Item key="1" icon={<IoArrowBackCircleOutline/>}> <Link to="/">GoBack</Link></>
-                            <Menu.Item key="2" icon={<BsRobot/>}>ChatBot</Menu.Item>
-                            <Menu.Item key="3" icon={<VscSymbolColor/>}>Palette</Menu.Item>
+                        <Menu className="collection-layout-sider-menu"
+                              defaultSelectedKeys={['2']}
+                              items={[
+                                  {
+                                      key: 1,
+                                      icon: <IoArrowBackCircleOutline/>,
+                                      label: '主页',
+                                      to: '/'
+                                  },
+                                  {
+                                      key: 2,
+                                      icon: <BsRobot/>,
+                                      label: '智能',
+                                      to: '/collection/chat'
+                                  },
+                                  {
+                                      key: 3,
+                                      icon: <VscSymbolColor/>,
+                                      label: '颜色',
+                                      to: '/collection/palette'
+                                  }
+                              ].map(item => ({
+                                  ...item,
+                                  label: <Link to={item.to}>{item.label}</Link>
+
+                              }))}>
                         </Menu>
                     </Sider>
-                    <Layout className="collection-layout">
-                        <Content className="collection-layout-content">
-                            <div>content</div>
-                            <Outlet/>
-                        </Content>
+                    <Layout className="collection-layout-content">
+                        <Outlet/>
                     </Layout>
                 </Layout>
             </div>

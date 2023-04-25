@@ -79,7 +79,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/collection" onClick={menuToggleHandler}>
+                            <Link to="/collection/chat" onClick={menuToggleHandler}>
                                 收藏
                             </Link>
                         </li>
