@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {Form, Input, message} from 'antd';
 import {PasswordRegExp, EmailRegExp} from "../../constants/RegExpConst";
-import {RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiWeiboLine} from "react-icons/ri";
+import {RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiSmartphoneLine} from "react-icons/ri";
 import TsParticles from "../../components/TsParticles";
 
 import "./style.scss"
@@ -117,7 +117,7 @@ const Login = () => {
                             <ul>
                                 <li><Link to='/register'><RiQqLine className="ri-2x"/></Link></li>
                                 <li><Link to='/register'><RiWechatLine className="ri-2x"/></Link></li>
-                                <li><Link to='/register'><RiWeiboLine className="ri-2x"/></Link></li>
+                                <li><Link to='/register'><RiSmartphoneLine className="ri-2x"/></Link></li>
                             </ul>
                         </div>
 

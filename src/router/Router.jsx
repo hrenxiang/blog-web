@@ -11,6 +11,8 @@ import Blog from "../pages/Blog";
 import Collection from "../pages/Collection";
 import Chat from "../pages/Collection/Chat";
 import Palette from "../pages/Collection/Palette";
+import Navigation from "../pages/Collection/Navigation";
+import Gallery from "../pages/Collection/Gallery";
 
 const routers = [
     {
@@ -52,12 +54,20 @@ const routers = [
         element: <Collection/>,
         children: [
             {
+                path: "navigation",
+                element: <Navigation/>
+            },
+            {
                 path: "chat",
                 element: <Chat/>
             },
             {
                 path: "palette",
                 element: <Palette/>
+            },
+            {
+                path: "gallery",
+                element: <Gallery/>
             }
         ]
     },

@@ -1,0 +1,58 @@
+@import "../../../style.css";
+
+
+.navigation {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.navigation-body {
+    margin: 5%;
+}
+
+.navigation-title {
+    font-size: 18px;
+    position: relative;
+    color: white;
+}
+
+.navigation-body-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.navigation-body-item .ant-card {
+    margin: 15px 15px 0 15px;
+    /*animation-name: slideInUp;*/
+    /*animation-duration: 0.5s;*/
+    /*animation-timing-function: ease-out;*/
+    /*animation-fill-mode: both;*/
+    transition: transform 0.5s;
+}
+
+/*缩放效果*/
+.navigation-body-item .ant-card:hover {
+    transform: scale(1.05);
+}
+
+/*上滑效果*/
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.navigation-body-card-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}

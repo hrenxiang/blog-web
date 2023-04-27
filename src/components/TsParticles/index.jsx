@@ -23,6 +23,9 @@ const TsParticles = () => {
             options={{
                 // 可以在此处添加自定义的配置选项
                 preset: "bubbles",
+                particles: {
+                    speed: 5, // 调整粒子速度
+                },
                 interactivity: {
                     events: {
                         onclick: {

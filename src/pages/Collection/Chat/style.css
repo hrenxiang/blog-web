@@ -1,7 +1,6 @@
 .chat {
     height: 100vh;
     width: 100%;
-
 }
 
 .chat > p {
@@ -13,22 +12,34 @@
 
 .chat-body {
     background-color: white;
-    width: 98%;
+    width: calc((100vw - 200px) * 0.98);
     height: calc((100vh - 120px) * 0.98);
     position: relative;
     left: 1%;
     z-index: 1;
     border-radius: 20px;
+    overflow: auto;
+    background-image: url("../../../assets/chat-bg.jpg");
+    object-fit: contain;
+}
+
+.chat-body-messages {
+    position: relative;
+    width: 90%;
+    top: 5%;
+    bottom: 5%;
+    left: 5%;
 }
 
 .chat-body-space {
     position: absolute;
-    bottom: 20px;
+    width: calc((100vw - 200px) * 0.8);
+    bottom: 5%;
     left: 10%;
-    width: 80%;
+    z-index: 2;
 }
 
-.chat-body-space  .ant-space-compact {
+.chat-body-space .ant-space-compact {
     height: 5vh;
     width: 100%;
 }
@@ -37,13 +48,13 @@
     width: 100%;
 }
 
-.chat-body-space  .ant-input {
+.chat-body-space .ant-input {
     height: 5vh;
     width: 90%;
     border-right: none;
 }
 
-.chat-body-space  .ant-btn {
+.chat-body-space .ant-btn {
     height: 5vh;
     width: 10%;
     border: 1px solid #d9d9d9;
@@ -60,4 +71,13 @@
 
 .chat-body-space .ant-btn:active {
     box-shadow: none !important;
+}
+
+@media screen and (max-width: 990px) {
+    .chat-body {
+        width: 98%;
+    }
+    .chat-body-space {
+        width: 80%;
+    }
 }

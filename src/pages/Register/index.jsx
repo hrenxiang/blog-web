@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {Form, Input, message, notification} from 'antd';
 import {EmailRegExp, PasswordRegExp} from "../../constants/RegExpConst";
 import TsParticles from "../../components/TsParticles";
-import {RiEmotionLine, RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiWeiboLine} from "react-icons/ri";
+import {RiEmotionLine, RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiSmartphoneLine} from "react-icons/ri";
 
 import "./style.scss"
 
@@ -152,7 +152,7 @@ const Register = () => {
                             <ul>
                                 <li><Link to='/register'><RiQqLine className="ri-2x"/></Link></li>
                                 <li><Link to='/register'><RiWechatLine className="ri-2x"/></Link></li>
-                                <li><Link to='/register'><RiWeiboLine className="ri-2x"/></Link></li>
+                                <li><Link to='/register'><RiSmartphoneLine className="ri-2x"/></Link></li>
                             </ul>
                         </div>
 

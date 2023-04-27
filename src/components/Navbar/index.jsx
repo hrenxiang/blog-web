@@ -40,7 +40,7 @@ const Navbar = () => {
 
     const ctaClickHandler = () => {
         menuToggleHandler();
-        navigate("/login");
+        navigate("/collection/navigation");
     };
 
     return (
@@ -79,17 +79,12 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/collection/chat" onClick={menuToggleHandler}>
-                                收藏
-                            </Link>
-                        </li>
-                        <li>
                             <Link to="/about" onClick={menuToggleHandler}>
                                 关于
                             </Link>
                         </li>
                     </ul>
-                    <button onClick={ctaClickHandler}>登录</button>
+                    <button onClick={ctaClickHandler}>收藏</button>
                 </nav>
                 <div className="toggle">
                     {!menuOpen ? (

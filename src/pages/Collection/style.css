@@ -11,17 +11,58 @@
 }
 
 .collection-layout-sider {
+    width: 200px;
+    min-width: 200px;
     max-width: none !important;
     background-color: white !important;
-    padding-top: 10vh;
     z-index: 2;
+    padding-top: 6rem;
+    position: fixed !important;
+    height: 100vh !important;
+    overflow-y: auto;
+    border: 1px solid black;
 }
+
+.collection-layout-sider::-webkit-scrollbar {
+    display: none;
+}
+
+.collection-layout-sider-button {
+    opacity: 0;
+    z-index: 2;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    top: 10vh;
+    pointer-events: none;
+}
+
 
 .collection-layout-sider-menu {
     background-color: white !important;
-    color: black!important;
+    color: black !important;
     border-inline-end: none !important;
     font-size: 1.2rem !important;
+}
+
+.collection-layout-sider-menu .ant-menu-item {
+    cursor: pointer;
+    outline: none;
+    border-radius: var(--borderRadius);
+    font-size: 1rem;
+    font-family: inherit;
+    color: black;
+    transition: 0.3s ease all;
+}
+
+.collection-layout-sider-menu .ant-menu-item:active {
+    border-color: var(--navBorderColor);
+    background: linear-gradient(var(--navBorderColor), var(--navBorderColor));
+    color: var(--navBorderColor);
+}
+
+.collection-layout-sider-menu .ant-menu-item-selected {
+    background-color: var(--navBorderColor) !important;
 }
 
 .collection-layout-sider-menu .ant-menu-item-icon {
@@ -32,4 +73,96 @@
 .collection-layout-content {
     background-color: #000000 !important;
     position: relative;
+    left: 200px;
+}
+
+@media screen and (max-width: 990px) {
+    .collection-layout-sider {
+        opacity: 0;
+        pointer-events: none
+    }
+
+    .collection-layout-sider-logo {
+        opacity: 0;
+        pointer-events: none
+    }
+
+    .collection-layout-sider-bottom {
+        opacity: 0;
+        pointer-events: none
+    }
+
+    .collection-layout-sider-button {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .collection-layout-content {
+        left: 0;
+    }
+}
+
+.collection-layout-sider-show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.collection-layout-sider-button-show {
+    left: 200px;
+}
+
+.collection-layout-sider-logo {
+    height: 80px;
+    z-index: 3;
+    box-shadow: 0 5px 20px var(--aboutCardShadow);
+    width: 200px;
+    position: fixed;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+
+.collection-layout-sider-logo img {
+    width: 50px;
+}
+
+.collection-layout-sider-bottom {
+    height: 80px;
+    bottom: 0;
+    z-index: 3;
+    box-shadow: 0 5px 20px var(--aboutCardShadow);
+    width: 200px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: black;
+    background-color: white;
+}
+
+.collection-layout-sider-bottom a {
+    cursor: pointer;
+    outline: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--borderRadius);
+    font-size: 1rem;
+    font-family: inherit;
+    color: black;
+    transition: 0.3s ease all;
+}
+
+.collection-layout-sider-bottom a:hover {
+    border-color: var(--navBorderColor);
+    background: var(--navBorderColor);
+    color: var(--navButtonHover);
+}
+
+.collection-layout-sider-bottom a:active {
+    border-color: var(--navBorderColor);
+    background: linear-gradient(var(--navBorderColor), var(--navBorderColor));
+    color: var(--navBorderColor);
 }
