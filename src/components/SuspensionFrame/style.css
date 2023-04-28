@@ -1,0 +1,155 @@
+@import "../../style.css";
+
+.profile {
+  position: fixed;
+  bottom: 5vw;
+  left: 11vh;
+  z-index: 9999;
+  display: flex;
+  width: 110px;
+  height: 33px;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  background-color: var(--suspensionBg);
+  box-shadow: 0 0 2rem var(--suspensionShadowColor);
+  animation: show-profile 0.5s forwards ease-in-out;
+}
+.profile.open {
+  opacity: 0;
+}
+@keyframes show-profile {
+  0% {
+    width: 0;
+  }
+}
+.profile .photo, .profile .content {
+  box-sizing: border-box;
+  gap: 0;
+}
+.profile .photo {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--suspensionBg);
+  background-color: var(--suspensionBg);
+  margin-left: -20px;
+  box-shadow: 0 0 0.5rem var(--suspensionShadowColor);
+  animation: rotate-photo 0.5s forwards ease-in-out;
+}
+@keyframes rotate-photo {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.profile .photo img {
+  width: 100%;
+}
+.profile .content {
+  padding: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.profile .content::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 70px;
+  background-color: var(--suspensionContentBefore);
+  left: 0;
+  top: -20px;
+  z-index: -1;
+  transform: rotate(-8deg);
+}
+.profile .content .text {
+  margin-top: 6px;
+  margin-left: 20px;
+}
+@keyframes to-hamburger {
+  from {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+}
+@keyframes to-arrow {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+.profile .content .ant-btn-primary {
+  background-color: var(--suspensionButtonBg);
+  color: var(--suspensionButtonColor);
+  z-index: -1;
+}
+.profile .content .btn {
+  cursor: pointer;
+  position: relative;
+  animation: to-hamburger 0.3s forwards ease-in-out;
+}
+.profile .content .btn::before, .profile .content .btn::after {
+  width: 60%;
+  right: -1px;
+}
+.profile .content .btn::before {
+  transform: rotate(45deg);
+}
+.profile .content .btn::after {
+  transform: rotate(-45deg);
+}
+.profile .content:hover span {
+  animation: none;
+}
+.profile .sf-expansion {
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: -40%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: translate(-40%, -50%);
+  transition-duration: 0.3s;
+  z-index: -1;
+}
+.profile .sf-expansion button {
+  cursor: pointer;
+  width: 20px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ececec;
+  text-align: center;
+  line-height: 25px;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  box-shadow: 0 0 0.5rem #babbbc;
+  transition-duration: 0.3s;
+}
+.profile .sf-expansion button :hover {
+  transition-delay: initial !important;
+}
+.profile .sf-expansion.active {
+  opacity: 1;
+}
+.sf-expansion.active button:nth-of-type(1) {
+  transform: rotate(-90deg) translateX(50px) rotate(90deg);
+  transition-delay: 0.1s;
+}
+.sf-expansion.active button:nth-of-type(2) {
+  transform: rotate(0deg) translateX(50px) rotate(0deg);
+  transition-delay: 0.2s;
+}
+.sf-expansion.active button:nth-of-type(3) {
+  transform: rotate(90deg) translateX(50px) rotate(-90deg);
+  transition-delay: 0.3s;
+}

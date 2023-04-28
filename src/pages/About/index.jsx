@@ -3,7 +3,7 @@ import {Avatar, Card, Progress, Row, Col} from "antd"
 import {AiOutlineUser} from "react-icons/ai";
 import {LogoIcon} from "../../constants/IconConst";
 
-import "./style.scss"
+import "./style.css"
 
 function About(props) {
     return (

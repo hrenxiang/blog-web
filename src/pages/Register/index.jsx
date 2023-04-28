@@ -5,7 +5,7 @@ import {EmailRegExp, PasswordRegExp} from "../../constants/RegExpConst";
 import TsParticles from "../../components/TsParticles";
 import {RiEmotionLine, RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiSmartphoneLine} from "react-icons/ri";
 
-import "./style.scss"
+import "./style.css"
 
 const Register = () => {
 

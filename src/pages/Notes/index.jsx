@@ -3,7 +3,7 @@ import EmptyList from '../../components/EmptyList';
 import BlogList from '../../components/BlogList';
 import { blogList } from '../../assets/config/data';
 
-import "./style.scss"
+import "./style.css"
 
 const Notes = () => {
   const [blogs] = useState(blogList);

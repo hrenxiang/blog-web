@@ -1,0 +1,6 @@
+@import "../../style.css";
+
+.notes {
+  padding: 20vh 10%;
+  background-color: var(--blogBg);
+}

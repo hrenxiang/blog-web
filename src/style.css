@@ -15,7 +15,7 @@
     --loginOtherLogin-hover: #FFFFFF;
     --retrieveThePassword: #FFFFFF;
     --navBg: #252424FF;
-    --navBg-80: rgb(37, 36, 36, 0.8);
+    --navBg-80: rgb(37, 36, 36, 0);
     --navColor: #FFFFFF;
     --navColoumn: rgb(37, 36, 36);
     --navButtonBg: #9398b3;
@@ -39,7 +39,7 @@
     --suspensionButtonColor: #000000;
     --suspensionButtonBg: rgb(255, 255, 255, 0);
 
-    --home-color: #FFFFFF;
+    --home-color: #000000;
     --home-a-color: #2192d3;
     --home-images-color1: #8baaaa;
     --home-images-color2: #ae8b9c;
@@ -47,6 +47,7 @@
 
     --selectFontFamily: 'Noto Sans SC', sans-serif;
     --blogFont: "blog-font-1", sans-serif;
+    --zhuziawan: "zhuziawan", sans-serif;
     --spacing-md: 16px;
     --spacing-lg: 32px;
     --borderRadius: 12px;
@@ -92,7 +93,7 @@
     --suspensionButtonColor: #000000;
     --suspensionButtonBg: rgb(255, 255, 255, 0);
 
-    --home-color: #FFFFFF;
+    --home-color: #000000;
     --home-a-color: #2192d3;
     --home-images-color1: #8baaaa;
     --home-images-color2: #ae8b9c;
@@ -147,7 +148,7 @@
         --suspensionButtonColor: #000000;
         --suspensionButtonBg: rgb(255, 255, 255, 0);
 
-        --home-color: #FFFFFF;
+        --home-color: #000000;
         --home-a-color: #2192d3;
         --home-images-color1: #8baaaa;
         --home-images-color2: #ae8b9c;
@@ -168,6 +169,13 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "zhuziawan";
+    font-weight: 400;
+    src: url("assets/font/zhuziawan.ttc");
+    font-display: swap;
+}
+
 
 /*一键置为灰色*/
 /*html {*/
@@ -178,6 +186,9 @@ body {
     margin: 0;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
 .app {
 
 }

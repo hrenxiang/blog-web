@@ -1,100 +1,79 @@
-import React, {useEffect, useState} from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import { AntDesignOutlined } from '@ant-design/icons';
+import React, {useState} from 'react';
+import {Link} from "react-router-dom";
+import {AntDesignOutlined} from '@ant-design/icons';
 import {Avatar} from "antd";
-import {AiOutlineClose} from "react-icons/ai";
-import {BiMenuAltRight} from "react-icons/bi";
 import {LogoIcon} from "../../constants/IconConst";
+import {TbMenu2} from "react-icons/tb";
+import {IoClose} from "react-icons/io5";
 
-import "./style.scss"
+import "./style.css";
 
 const Navbar = () => {
-    const navigate = useNavigate();
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [size, setSize] = useState({
-        width: undefined,
-        height: undefined,
-    });
 
-    useEffect(() => {
-        const handleResize = () => {
-            setSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        };
-        window.addEventListener("resize", handleResize);
+    const [toggle, setToggle] = useState(false);
 
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    useEffect(() => {
-        if (size.width > 768 && menuOpen) {
-            setMenuOpen(false);
-        }
-    }, [size.width, menuOpen]);
-
-    const menuToggleHandler = () => {
-        setMenuOpen((p) => !p);
-    };
-
-    const ctaClickHandler = () => {
-        menuToggleHandler();
-        navigate("/collection/navigation");
-    };
+    // 开关菜单
+    const handlerToggle = () => {
+        setToggle(!toggle);
+    }
 
     return (
-        <header className="navbar">
-            <div className="container">
-                <Link to="/" className="logo">
-                    <Avatar
-                        size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
-                        icon={<AntDesignOutlined />}
-                        src={<img src={LogoIcon} alt="avatar" />}
-                    />
-                </Link>
-                <nav
-                    className={`nav ${
-                        menuOpen && size.width < 768 ? "isMenu" : ""}`}
-                >
+        <div className="navbar">
+            <header className="container">
+                <div className="navbar-logo">
+                    <Link to="/">
+                        <Avatar
+                            size={{xs: 24, sm: 32, md: 40, lg: 50, xl: 60, xxl: 60}}
+                            icon={<AntDesignOutlined/>}
+                            src={<img src={LogoIcon} alt="avatar"/>}
+                        />
+                    </Link>
+                </div>
+                <div className="navbar-toggle">
+                    <button><TbMenu2 onClick={handlerToggle}/></button>
+                </div>
+            </header>
+            <div className="navbar-collapse">
+                <div className={`navbar-overlay ${toggle ? "overlay-active" : ""}`}></div>
+                <nav className={`navbar-nav ${toggle ? "isActive" : ""}`}>
+                    <button className="navbar-close">
+                        <IoClose onClick={handlerToggle}/>
+                    </button>
                     <ul>
                         <li>
-                            <Link to="/" onClick={menuToggleHandler}>
-                                首页
+                            <Link to="/" onClick={handlerToggle}>
+                                首页 👀
                             </Link>
                         </li>
                         <li>
-                            <Link to="/notes" onClick={menuToggleHandler}>
-                                笔记
+                            <Link to="/notes" onClick={handlerToggle}>
+                                笔记 🏚️
                             </Link>
                         </li>
                         <li>
-                            <Link to="/categories" onClick={menuToggleHandler}>
-                                分类
+                            <Link to="/categories" onClick={handlerToggle}>
+                                分类 🍃
                             </Link>
                         </li>
                         <li>
-                            <Link to="/images" onClick={menuToggleHandler}>
-                                摄影
+                            <Link to="/images" onClick={handlerToggle}>
+                                摄影 🍓
                             </Link>
                         </li>
                         <li>
-                            <Link to="/about" onClick={menuToggleHandler}>
-                                关于
+                            <Link to="/about" onClick={handlerToggle}>
+                                关于 🍉
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/collection/navigation" onClick={handlerToggle}>
+                                收藏 🍊
                             </Link>
                         </li>
                     </ul>
-                    <button onClick={ctaClickHandler}>收藏</button>
                 </nav>
-                <div className="toggle">
-                    {!menuOpen ? (
-                        <BiMenuAltRight onClick={menuToggleHandler} />
-                    ) : (
-                        <AiOutlineClose onClick={menuToggleHandler} />
-                    )}
-                </div>
             </div>
-        </header>
+        </div>
     );
 };
 

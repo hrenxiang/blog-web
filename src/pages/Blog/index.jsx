@@ -11,7 +11,7 @@ import Chip from "../../components/Chip";
 import EmptyList from "../../components/EmptyList";
 import {blogList} from "../../assets/config/data";
 
-import "./style.scss"
+import "./style.css"
 import 'github-markdown-css';
 
 const Blog = () => {

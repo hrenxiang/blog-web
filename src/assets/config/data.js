@@ -5,11 +5,11 @@ export const blogList = [
     category: 'development',
     subCategory: ['frontend', 'ui/ux', 'design'],
     description:
-      "/example.md",
+      "https://huangrx.cn/document/MySql%20%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6.md",
     authorName: 'huangrx',
     authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/img.png',
+    cover: 'https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png',
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const blogList = [
     authorName: 'huangrx',
     authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/img.png',
+    cover: 'https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png',
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ export const blogList = [
     authorName: 'huangrx',
     authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/img.png',
+    cover: 'https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png',
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ export const blogList = [
     authorName: 'huangrx',
     authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/img.png',
+    cover: 'https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png',
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ export const blogList = [
     authorName: 'huangrx',
     authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/img.png',
+    cover: 'https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png',
   },
   {
     id: 6,
@@ -76,7 +76,7 @@ export const blogList = [
     authorName: 'huangrx',
     authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/img.png',
+    cover: 'https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png',
   },
   {
     id: 7,
@@ -88,6 +88,6 @@ export const blogList = [
     authorName: 'huangrx',
     authorAvatar: 'https://images.huangrx.cn/uploads/2023/04/21/blog-web-logo-2.png',
     createdAt: 'June 03, 2021',
-    cover: '/assets/images/img.png',
+    cover: 'https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png',
   },
 ];

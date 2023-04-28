@@ -1,0 +1,46 @@
+@import "../../style.css";
+
+.footer {
+
+}
+
+.footer-container {
+  width: 100%;
+  background: black;
+  text-align: center;
+  color: var(--navColor);
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  font-family: var(--zhuziawan);
+
+}
+
+.footer-record {
+  margin: 0;
+}
+
+.footer-record a {
+  /*清除a标签默认样式*/
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.footer-record button {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0 0 2rem 1rem;
+
+  cursor: pointer;
+}
+
+.footer-record button:hover {
+  color: #6190e8;
+}
+

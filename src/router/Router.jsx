@@ -1,5 +1,4 @@
 import Home from "../pages/Home";
-import Write from "../pages/Write";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Layout from "../components/Layout";
@@ -30,10 +29,6 @@ const routers = [
             {
                 path: '/blog/:id',
                 element: <Blog/>
-            },
-            {
-                path: '/write',
-                element: <Write/>
             },
             {
                 path: '/categories',

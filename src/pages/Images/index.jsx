@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-import "./style.scss"
+import "./style.css"
 import {Avatar, Button, Card} from "antd";
 import Meta from "antd/es/card/Meta";
-import {downloadImage, fetchImages} from "../../api/Unsplash";
+import {downloadImage, fetchImages} from "../../api/unsplash";
 import {AiOutlineDownload, AiOutlineHeart} from "react-icons/ai";
 
 function Images() {

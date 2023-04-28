@@ -1,0 +1,227 @@
+@import "../../style.css";
+
+.auth::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*background-image: url("https://images.huangrx.cn/uploads/2023/04/21/blog-web-log-1.jpg");*/
+  background-color: var(--loginBg);
+  z-index: -1;
+  filter: blur(1px);
+}
+
+.auth {
+  font-family: var(--blogFont);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--loginColor);
+  /*background-color: var(--background-color);*/
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.auth .login-canvas canvas {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.auth a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.auth ul {
+  list-style: none;
+}
+
+.auth h2 {
+  font-size: 2em;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.auth .auth-container {
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.auth .login {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.auth .hero {
+  flex: 1 0 66.6666%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 70px 0 30px 0;
+}
+
+.auth .hero::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 280px;
+  height: 150px;
+  background: linear-gradient(to right, var(--loginGradientLeft), var(--loginGradientMiddle), var(--loginGradientRight));
+  z-index: -1;
+  filter: blur(70px);
+}
+
+.auth .hero a {
+  font-weight: 500;
+  color: var(--loginGoRegister);
+  transition: color 0.3s;
+  border-radius: 5px;
+  box-shadow: var(var(--loginIconShadow)) 1px 5px 5px -3px;
+}
+
+.auth .hero a:hover,
+.auth form .password a:hover {
+  color: var(--loginGoRegister-hover);
+  text-decoration: none;
+}
+
+.auth .hero p {
+  font-size: 18px;
+}
+
+.auth .main {
+  flex: 1 0 33.3333%;
+}
+
+.auth .main form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth .main form p {
+  position: relative;
+}
+
+.auth form input {
+  font: inherit;
+  font-size: 14px;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0 20px;
+  line-height: 60px;
+  border-radius: 10px;
+  /*修复input 加入padding之后大小变化的问题*/
+  box-sizing: border-box;
+}
+
+.auth input::placeholder {
+  color: var(--loginFormPlaceholder);
+  font-family: var(--selectFontFamily);
+  font-size: inherit;
+}
+
+.auth form input:not(.submit) {
+  background-color: var(--loginInputBg);
+}
+
+.auth form .password i {
+  position: absolute;
+  top: calc(60px / 2);
+  right: 20px;
+  margin-top: -8px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.auth form .password a {
+  font-size: 13px;
+  color: var(--retrieveThePassword);
+  float: right;
+  margin: 5px 20px 0 0;
+}
+
+.auth form input.submit {
+  font-weight: 700;
+  background-color: var(--loginInputButton);
+  box-shadow: var(--loginInputButton) 0 20px 30px -10px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.auth form input.submit:hover {
+  box-shadow: var(--loginInputButton) 0 10px 30px -10px;
+}
+
+.auth .separator {
+  position: relative;
+  margin: 50px 0 30px;
+}
+
+.auth .separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: var(--loginOtherLogin);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.auth .separator p {
+  font-size: 14px;
+  width: fit-content;
+  padding: 0 10px;
+  color: var(--loginOtherLogin);
+  /*background-color: var(--background-color);*/
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.auth .options ul {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  padding: 0;
+}
+
+.auth .options ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: var(--loginIconBg);
+  box-shadow: var(--loginIconShadow) 1px 10px 20px -5px;
+  transition: all 0.3s ease-out;
+}
+
+.auth .options ul li a:hover {
+  color: var(--loginOtherLogin-hover);
+  box-shadow: none;
+}
+
+.auth .options ul li:nth-child(1) a:hover {
+  background-color: #6c86c2;
+}
+
+.auth .options ul li:nth-child(2) a:hover {
+  background-color: #68cb5d;
+}
+
+.auth .options ul li:nth-child(3) a:hover {
+  background-color: #e77070;
+}
+

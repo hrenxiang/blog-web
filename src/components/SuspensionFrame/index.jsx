@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button} from 'antd';
 import {HiArrowSmRight} from "react-icons/hi"
 import {useNavigate} from "react-router-dom";
-import "./style.scss"
+import "./style.css"
 import {LogoIcon} from "../../constants/IconConst";
 import {AiOutlineMenu} from "react-icons/ai";
 import {RiArrowGoBackFill, RiMoreLine} from "react-icons/ri";

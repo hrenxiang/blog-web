@@ -1,0 +1,147 @@
+@import "../../style.css";
+
+
+.blog {
+  background-color: var(--blogBg);
+  padding-top: 8%;
+}
+
+.blog .blog-container {
+  /* max-width: 1200px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.7); */
+  width: 80%;
+  margin: 0 10%;
+}
+
+.blog .blog-wrap {
+  margin: 0 auto;
+  color: var(--blogTextColor);
+}
+
+.blog .blog-goBack {
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.blog .blog-wrap header {
+  text-align: center;
+}
+
+.blog .markdown-body {
+  padding: 80px 0;
+  line-height: 2.6;
+  background-color: var(--blogBg);
+  color: var(--blogTextColor);
+  font-family: var(--blogFont);
+}
+
+/* Table */
+.blog .markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: table;
+  font-size: 14px;
+}
+
+.blog .blog-date {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.blog .blog-wrap img {
+  width: 45%;
+}
+
+.blog .blog-subCategory {
+  display: flex;
+  justify-content: center;
+}
+
+.blog .blog-subCategory > div {
+  margin: 1rem;
+}
+
+.blog .blog-desc {
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.blog .markdown-body table tr {
+  background-color: var(--blogBg);
+  border-top: 1px solid var(--blogTableBorder);
+}
+
+.blog .markdown-body table tr:nth-child(2n) {
+  background-color: var(--blogBg);
+  border-top: 1px solid var(--blogTableBorder);
+}
+
+.blog .markdown-body table th,
+.blog .markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid var(--blogTableBorder);
+}
+
+.blog .markdown-body .highlight pre,
+.blog .markdown-body pre {
+  padding: 0 0.5em;
+  overflow: auto;
+  font-size: 85%;
+  border-radius: 6px;
+  background-color: var(--blogCodePadding);
+}
+
+/* Code block */
+.blog .code-wrapper {
+  position: relative;
+}
+
+.blog .code-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+
+.blog .code-wrapper::-webkit-scrollbar-track {
+  /* background-color: #f5f5f5; */
+}
+
+.blog .code-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--blogCodeThumb);
+  width: 5px;
+}
+
+.blog .code-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+}
+
+.blog .code-wrapper:hover .copy-btn {
+  display: block;
+}
+
+.blog .copy-btn {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 0.6rem;
+  padding: 2px 4px;
+  background-color: var(--blogCopyBg);
+  color: var(--blogCopyColor);
+  border-radius: 5px;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.blog .copy-btn:hover {
+  background-color: var(--blogCopyHover);
+  color: var(--blogCopyHover-color);
+}

@@ -5,7 +5,7 @@ import {PasswordRegExp, EmailRegExp} from "../../constants/RegExpConst";
 import {RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiSmartphoneLine} from "react-icons/ri";
 import TsParticles from "../../components/TsParticles";
 
-import "./style.scss"
+import "./style.css"
 
 const Login = () => {
 
