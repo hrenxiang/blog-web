@@ -1,6 +1,8 @@
 @import "../../style.css";
 
 .notes {
-  padding: 20vh 10%;
+  padding: 5rem 1rem;
   background-color: var(--blogBg);
+
+  min-height: 100vh;
 }

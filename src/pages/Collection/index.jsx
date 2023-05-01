@@ -69,7 +69,7 @@ const Collection = () => {
                         </Menu>
                     </div>
                     <div className={`collection-layout-sider-bottom ${opacity ? 'collection-layout-sider-show' : ''}`}>
-                        <Link to="/register" style={{pointerEvents: 'none'}}>注册</Link>
+                        <Link to="/register">注册</Link>
                         <Link to="/login">登录</Link>
                     </div>
 

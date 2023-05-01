@@ -44,7 +44,7 @@ const Blog = () => {
     // 临时读取文件内容
     useEffect(() => {
         // 读取 Markdown 文件内容
-        fetch("/example.md")
+        fetch("https://huangrx.cn/document/MySql%20%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6.md")
             .then(response => response.text())
             .then(text => setMarkdown(text))
             .catch(error => console.log(error));
@@ -73,64 +73,72 @@ const Blog = () => {
             <div className='blog-container'>
                 {contextHolderNotification}
 
-                {blog ? (
-                    <div className='blog-wrap'>
+                {blog ?
+                    (
+                        <div className='blog-wrap'>
 
-                        <header>
-                            <p className='blog-date'>Published {blog.createdAt}</p>
-                            <h1>{blog.title}</h1>
-                            <div className='blog-subCategory'>
-                                {blog.subCategory.map((category, i) => (
-                                    <div key={i}>
-                                        <Chip label={category}/>
-                                    </div>
-                                ))}
-                            </div>
-                            <img src={blog.cover} alt='cover'/>
-                        </header>
+                            <header>
+                                <div className="blog-cover">
+                                    <img src={blog.cover} alt='cover'/>
+                                </div>
+
+                                <p className='blog-date'>Published {blog.createdAt}</p>
+                                <h1>{blog.title}</h1>
+                                <div className='blog-subCategory'>
+                                    {blog.subCategory.map((category, i) => (
+                                        <div key={i}>
+                                            <Chip label={category}/>
+                                        </div>
+                                    ))}
+                                </div>
+                            </header>
 
 
-                        {/*markdown 部分*/}
-                        <ReactMarkdown
-                            className="markdown-body"
-                            remarkPlugins={[gfm]}
-                            children={markdown}
-                            components={{
-                                code({node, inline, className, children, ...props}) {
-                                    const match = /language-(\w+)/.exec(className || '');
-                                    return !inline && match ?
-                                        (
-                                            <CopyToClipboard text={String(children).replace(/\n$/, '')}>
+                            {/*markdown 部分*/}
+                            <ReactMarkdown
+                                className="markdown-body"
+                                remarkPlugins={[gfm]}
+                                children={markdown}
+                                components={{
+                                    code({node, inline, className, children, ...props}) {
+                                        const match = /language-(\w+)/.exec(className || '');
+                                        return !inline && match ?
+                                            (
+                                                <CopyToClipboard text={String(children).replace(/\n$/, '')}>
+                                                    <div className="code-wrapper">
+                                                        <SyntaxHighlighter
+                                                            style={isDarkMode ? duotoneLight : atomDark}
+                                                            language={match[1]}
+                                                            PreTag="div"
+                                                            children={String(children).replace(/\n$/, '')}
+                                                            {...props}
+                                                            className='code'
+                                                        />
+                                                        <div className="copy-btn" onClick={handleCopy}>
+                                                            复制
+                                                        </div>
+                                                    </div>
+                                                </CopyToClipboard>
+                                            )
+                                            :
+                                            (
                                                 <div className="code-wrapper">
-                                                    <SyntaxHighlighter
-                                                        style={isDarkMode ? atomDark : duotoneLight}
-                                                        language={match[1]}
-                                                        PreTag="div"
-                                                        children={String(children).replace(/\n$/, '')}
-                                                        {...props}
-                                                        className='code'
-                                                    />
-                                                    <div className="copy-btn" onClick={handleCopy}>
-                                                        复制
+                                                    <div className="code code-not-language">
+                                                        <code className={className} {...props}>
+                                                            {children}
+                                                        </code>
                                                     </div>
                                                 </div>
-                                            </CopyToClipboard>
-                                        )
-                                        :
-                                        (
-                                            <code className={className} {...props}>
-                                                {children}
-                                            </code>
-                                        );
-                                },
-                            }}
-                        />
-                    </div>
-                ) : (
-                    <EmptyList/>
-                )}
-
-
+                                            );
+                                    },
+                                }}
+                            />
+                        </div>
+                    ) :
+                    (
+                        <EmptyList/>
+                    )
+                })
             </div>
         </div>
     );

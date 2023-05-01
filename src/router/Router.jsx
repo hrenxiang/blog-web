@@ -12,6 +12,8 @@ import Chat from "../pages/Collection/Chat";
 import Palette from "../pages/Collection/Palette";
 import Navigation from "../pages/Collection/Navigation";
 import Gallery from "../pages/Collection/Gallery";
+import CustomTimeLine from "../pages/CustomTimeLine"
+import CustomValine from "../pages/CustomValine";
 
 const routers = [
     {
@@ -37,6 +39,14 @@ const routers = [
             {
                 path: '/images',
                 element: <Images/>
+            },
+            {
+                path: '/timeline',
+                element: <CustomTimeLine/>
+            },
+            {
+                path: '/message',
+                element: <CustomValine/>
             },
             {
                 path: '/about',

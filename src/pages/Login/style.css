@@ -1,29 +1,32 @@
 @import "../../style.css";
 
-.auth::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  /*background-image: url("https://images.huangrx.cn/uploads/2023/04/21/blog-web-log-1.jpg");*/
-  background-color: var(--loginBg);
-  z-index: -1;
-  filter: blur(1px);
-}
+
 
 .auth {
   font-family: var(--blogFont);
   font-size: 16px;
   font-weight: 400;
   color: var(--loginColor);
-  /*background-color: var(--background-color);*/
   user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--loginBg);
+  overflow: hidden;
 }
+
+/*.auth::before {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  !*background-image: url("https://images.huangrx.cn/uploads/2023/04/21/blog-web-log-1.jpg");*!*/
+/*  background-color: var(--loginBg);*/
+/*  z-index: -1;*/
+/*  filter: blur(1px);*/
+/*}*/
 
 .auth .login-canvas canvas {
   background-color: rgba(255, 255, 255, 0) !important;
@@ -65,6 +68,8 @@
   flex-direction: column;
   gap: 50px;
   padding: 70px 0 30px 0;
+
+  z-index: 1;
 }
 
 .auth .hero::before {

@@ -7,8 +7,13 @@
     overflow: auto;
 }
 
+.navigation-container {
+    overflow: hidden;
+    width: calc(100vw - 200px);
+}
+
 .navigation-body {
-    margin: 5%;
+    padding: 2rem;
 }
 
 .navigation-title {
@@ -18,14 +23,15 @@
 }
 
 .navigation-body-item {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 0 auto;
 }
 
 
 .navigation-body-item .ant-card {
-    margin: 15px 15px 0 15px;
+    /*margin: 15px 15px 0 15px;*/
     /*animation-name: slideInUp;*/
     /*animation-duration: 0.5s;*/
     /*animation-timing-function: ease-out;*/
@@ -55,4 +61,26 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
+}
+
+@media screen and (max-width: 1500px) {
+    .navigation-body-item {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .navigation-container {
+        width: 100vw;
+    }
+
+    .navigation-body-item {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navigation-body-item {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

@@ -130,62 +130,63 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/*博客*/}
-                <section className="home-document">
-                    <div className="home-document-body">
-                        <div className="home-document-inner">
-                            <div className="home-document-item">
-                                <div className="home-document-item-image">
-                                    <img src="https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png"/>
-                                </div>
-                                <div className="home-document-item-content">
-                                    <header>
-                                        <h3>111</h3>
-                                        <p>1231111111</p>
-                                    </header>
-                                    <p>123123123123</p>
-                                </div>
-                            </div>
-
-                            <div className="home-document-item">
-                                <div className="home-document-item-image">
-                                    <img src="https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png"/>
-                                </div>
-                                <div className="home-document-item-content">
-                                    <header>
-                                        <h3>111</h3>
-                                        <p>1231111111</p>
-                                    </header>
-                                    <p>123123123123</p>
-                                </div>
-                            </div>
-
-                            <div className="home-document-item">
-                                <div className="home-document-item-image">
-                                    <img src="https://images.huangrx.cn/uploads/2023/04/29/1682699075719.png"/>
-                                </div>
-                                <div className="home-document-item-content">
-                                    <header>
-                                        <h3>地址地址</h3>
-                                        <p>地址   地址</p>
-                                    </header>
+                {/*动画*/}
+                <section className="home-like">
+                    <div className="like-header">
+                        <p>一些喜欢</p>
+                    </div>
+                    <div className="like-body">
+                        <div>
+                            <a href="https://www.bilibili.com/cheese/category?first=89" target="_blank" rel="noopener noreferrer"
+                               className="card">
+                                <div className="thumb"
+                                     style={{backgroundImage: "url(https://images.huangrx.cn/uploads/2023/04/29/1682764591454.jpg)"}}></div>
+                                <article>
+                                    <h1>实时的技术</h1>
                                     <p>
-                                        尹街06680号, 开封, 辽 210599
-                                        傅街8597号, 诸暨, 青 201436
-                                        尹街06680号, 开封, 辽 210599
-                                        傅街8597号, 诸暨, 青 201436
-                                        尹街06680号, 开封, 辽 210599
-                                        傅街8597号, 诸暨, 青 201436
-                                        尹街06680号, 开封, 辽 210599
-                                        傅街8597号, 诸暨, 青 201436
-                                        尹街06680号, 开封, 辽 210599
-                                        傅街8597号, 诸暨, 青 201436
+                                        学习实时技术对我来说非常重要，因为它可以让我不断掌握最新的技术知识，从而不断提高自己的技能水平。
+                                        在编程方面，实时技术可以帮助我了解并使用最新的框架、库、API等，从而更好地解决现实生活中的问题。
+                                        此外，通过学习实时技术，我还可以更好地了解行业趋势和发展方向，从而更好地规划和发展自己的职业生涯。
                                     </p>
-                                </div>
-                            </div>
+                                    <span>HUANG RX</span>
+                                </article>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.bilibili.com/anime/index/"  target="_blank" rel="noopener noreferrer"
+                               className="card">
+                                <div className="thumb"
+                                     style={{backgroundImage: "url('https://images.huangrx.cn/uploads/2023/04/29/home-haimian-baby.jpg')"}}></div>
+                                <article>
+                                    <h1>动画 动漫</h1>
+                                    <p>
+                                        喜欢动画和动漫是很多人的爱好之一，因为它们可以让我们沉浸在另一个世界中，感受到不同的情感和体验。作为一个追番党，我很享受每一部动画或动漫的故事情节、画风、配乐等元素。
+                                        每一部作品都是一个独特的艺术品，让人无法忘怀。 除了享受观看的过程，还是享受。总的来说，追番是一种能够让我获得快乐和知识的爱好。
+                                    </p>
+                                    <span>HUANG RX</span>
+                                </article>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.bilibili.com/video/BV12441167ru/"  target="_blank" rel="noopener noreferrer"
+                               className="card">
+                                <div className="thumb"
+                                     style={{backgroundImage: "url(https://images.huangrx.cn/uploads/2023/04/29/1682765854067.jpg)"}}></div>
+                                <article>
+                                    <h1>骑行的快乐</h1>
+                                    <p>
+                                        我很喜欢骑行，这基本是一项我每天都要进行的运动。当我骑着自行车在城市中穿梭时，我可以感受到风吹拂我的脸庞，享受着自由和快乐的感觉。
+                                        骑行也是一种探索城市的方式，让我可以看到更多的地方，体验更多的文化和生活方式。
+                                        每次骑行结束时，虽然很累，但是都会感觉到不一样的轻松和舒适，这让我感到非常愉悦。
+                                        骑行也是一项很好的锻炼方式，可以帮助我保持健康的身体和心态，我享受着这种活动带来的乐趣和挑战。
+                                    </p>
+                                    <span>HUANG RX</span>
+                                </article>
+                            </a>
                         </div>
                     </div>
                 </section>
+
 
                 <section className="home-images home-section">
                     <div className="home-images-body">
@@ -195,7 +196,7 @@ const Home = () => {
                             <p>那些被镜头定格的画面让人感受到时光与自然的交织，也让我感受到生命的无限可能。</p>
                             <p>我相信，我的镜头能够记录下这个世界的点点滴滴，用心传递每一份美好，这就是我作为一个摄影师的梦想。</p>
                             <br/>
-                            <Link to="/images">看看我的技术如何</Link>
+                            <Link to="/images">看下好看的照片吧</Link>
                         </div>
 
                     </div>

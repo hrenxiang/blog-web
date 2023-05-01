@@ -9,8 +9,7 @@ const Chat = () => {
     const [messages, setMessages] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const messageListRef = useRef(null);
-    const inputRef = useRef(null);
-
+    useRef(null);
     const handleInputPressEnter = () => {
         if (inputValue.trim() !== '') {
             setMessages([...messages, { content: inputValue }]);

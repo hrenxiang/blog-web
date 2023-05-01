@@ -1,0 +1,78 @@
+@import "../../style.css";
+
+.valine-comment {
+    height: 100%;
+    width: 100%;
+    padding: 8rem 0;
+    background-color: var(--blogBg);
+    color: white;
+    font-family: var(--zhuziawan);
+    overflow: auto;
+}
+
+.valine-comment header {
+    text-align: center;
+    padding: 0 0 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.valine-comment-animation {
+    width: 10rem;
+}
+
+.valine-comment-container {
+    min-height: 100vh;
+    height: 100vh;
+
+    width: 80%;
+    margin: 0 auto;
+
+    color: white;
+}
+
+.valine-comment-container .vpanel .vwrap {
+    border-radius: 0;
+    border: none;
+}
+
+.valine-comment-container .vpanel .vwrap .vheader input,
+.valine-comment-container .vpanel .vwrap .vedit textarea,
+.valine-comment-container .vpanel .vwrap .vedit .vrow .vcol .vicon,
+.valine-comment-container .vpanel .vwrap .vrow .vcol .vsubmit {
+    color: white;
+}
+
+.valine-comment-container .vcards .vcard .vquote {
+    border-left: none !important;
+}
+
+.valine-comment-container .vcards .vcard .vh {
+    border-bottom: none !important;
+}
+
+.valine-comment-container .vcards > .vcard {
+    border-bottom: 1px solid rgb(245,245,245,0.3);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+.valine-comment-container .vcards .vcard .vnick, .valine-comment-container .vcards .vcard .vh .vmeta .vat {
+    color: #8baaaa !important;
+}
+
+.valine-comment-container .vcards .vcard .vcontent p {
+    color: white;
+}
+
+
+@media only screen and (max-width: 990px) {
+    .valine-comment-container {
+        min-height: 100vh;
+        height: 100vh;
+
+        width: 90%;
+        margin: 0 auto;
+    }
+}

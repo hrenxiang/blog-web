@@ -42,32 +42,42 @@ const Navbar = () => {
                     <ul>
                         <li>
                             <Link to="/" onClick={handlerToggle}>
-                                首页 👀
+                                首页
                             </Link>
                         </li>
                         <li>
                             <Link to="/notes" onClick={handlerToggle}>
-                                笔记 🏚️
+                                笔记
                             </Link>
                         </li>
                         <li>
                             <Link to="/categories" onClick={handlerToggle}>
-                                分类 🍃
+                                分类
                             </Link>
                         </li>
                         <li>
                             <Link to="/images" onClick={handlerToggle}>
-                                摄影 🍓
+                                摄影师
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/timeline" onClick={handlerToggle}>
+                                时光轴
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/message" onClick={handlerToggle}>
+                                留言板
                             </Link>
                         </li>
                         <li>
                             <Link to="/about" onClick={handlerToggle}>
-                                关于 🍉
+                                关于我
                             </Link>
                         </li>
                         <li>
                             <Link to="/collection/navigation" onClick={handlerToggle}>
-                                收藏 🍊
+                                收藏家
                             </Link>
                         </li>
                     </ul>
