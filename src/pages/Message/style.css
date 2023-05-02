@@ -1,0 +1,33 @@
+@import "../../style.css";
+
+.message {
+    height: 100%;
+    width: 100%;
+    padding: 8rem 0;
+    background-color: var(--black-1b);
+    color: white;
+    font-family: var(--zhuziawan);
+    overflow: auto;
+}
+
+.message header {
+    text-align: center;
+    padding: 0 0 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-animation {
+    width: 10rem;
+}
+
+.message-container {
+    min-height: 100vh;
+    height: 100vh;
+
+    width: 80%;
+    margin: 0 auto;
+
+    color: white;
+}

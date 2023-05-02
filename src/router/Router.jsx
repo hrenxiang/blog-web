@@ -13,7 +13,7 @@ import Palette from "../pages/Collection/Palette";
 import Navigation from "../pages/Collection/Navigation";
 import Gallery from "../pages/Collection/Gallery";
 import CustomTimeLine from "../pages/CustomTimeLine"
-import CustomValine from "../pages/CustomValine";
+import Message from "../pages/Message";
 
 const routers = [
     {
@@ -46,7 +46,7 @@ const routers = [
             },
             {
                 path: '/message',
-                element: <CustomValine/>
+                element: <Message/>
             },
             {
                 path: '/about',

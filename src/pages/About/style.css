@@ -38,7 +38,7 @@
 }
 
 .about-content {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding: 3rem;
 
@@ -130,7 +130,7 @@ h3:before {
     color: var(--white);
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 990px) {
     .about-content {
         width: 100%;
     }
@@ -157,14 +157,14 @@ h3:before {
         grid-template-rows: repeat(1, 1fr);
         grid-gap: 2rem;
     }
+}
 
-    @media only screen and (max-width: 786px) {
-        .about-container-header {
-            grid-template-columns: repeat(1, 1fr);
-        }
+@media only screen and (max-width: 786px) {
+    .about-container-header {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-        .about-container-header-lottie, .about-container-header h1 {
-            justify-self: center;
-        }
+    .about-container-header-lottie, .about-container-header h1 {
+        justify-self: center;
     }
 }

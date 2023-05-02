@@ -19,7 +19,7 @@
   color: var(--navColor);
   font-size: 1.2rem;
   font-family: var(--zhuziawan);
-  background: black;
+  background: var(--black-1b);
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
