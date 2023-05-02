@@ -9,7 +9,7 @@
   z-index:99;
 
   border: none;
-  color: #ffffff;
+  color: var(--white);
   background-color: rgba(0, 0, 0, 0);
   transition: background-color 1s ease 0s;
 
@@ -25,14 +25,14 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: white;
+  color: var(--white);
 }
 
 .navbar-overlay {
   position: fixed;
   left: 0;
   top: 0;
-  background: var(--navBg);
+  background: var(--black-1b);
   width: 100%;
   height: 100%;
   transition: opacity .3s ease;
@@ -44,15 +44,15 @@
 .navbar-nav {
   position: fixed;
   height: 100%;
-  width: 20em;
-  max-width: 80%;
+  width: 15rem;
+  max-width: 65%;
   padding: 3em 1.5em;
   right: 0;
   top: 0;
 
-  background-color: #000;
+  background-color: var(--black-1b);
   box-shadow: none;
-  color: #ffffff;
+  color: var(--white);
   font-family: var(--zhuziawan);
 
   overflow-y: auto;
@@ -85,7 +85,7 @@
 }
 
 .navbar-nav ul li:hover {
-  color: #6190e8;
+  color: var(--blue);
 }
 
 .navbar-close {
@@ -97,7 +97,7 @@
   cursor: pointer;
   /* 可以继续添加其他需要修改的样式 */
   padding-right: 1.25em;
-  color: #fff;
+  color: var(--white);
 
   display: block;
   height: 3.25em;
@@ -118,4 +118,14 @@
 .overlay-active {
   opacity: 0.6;
   z-index: 100;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .container {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-toggle button {
+    font-size: 15px;
+  }
 }

@@ -1,7 +1,7 @@
 .blogItem-wrap {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: var(--white);
 }
 .blogItem-cover {
   width: 100%;
@@ -21,7 +21,7 @@
   overflow: hidden;
   padding-right: 0.6rem;
   font-size: 0.8rem;
-  color: #a9a9a9;
+  color: var(--white-219-60);
 
   margin: 0;
   display: -webkit-box;
@@ -56,6 +56,6 @@
 
 .blogItem-author p {
   font-size: 0.6rem;
-  color: #a9a9a9;
+  color: var(--white-219-60);
   font-weight: 600;
 }

@@ -21,12 +21,14 @@ const Message = () => {
 
     return (
         <div className="message">
-            <header>
-                <div className="message-animation">{lottie}</div>
-                <h2>留 言 板</h2>
-            </header>
             <div className="message-container">
-                <Waline/>
+                <header>
+                    <div className="message-animation">{lottie}</div>
+                    <h2>留 言 板</h2>
+                </header>
+                <div className="message-waline-body">
+                    <Waline/>
+                </div>
             </div>
         </div>
     );

@@ -1,8 +1,24 @@
 @import "../../style.css";
 
 .notes {
-  padding: 5rem 1rem;
-  background-color: var(--blogBg);
+    padding: var(--padding-td) var(--padding-lr);
+    background-color: var(--black-1b);
 
-  min-height: 100vh;
+    min-height: 100vh;
+}
+
+.notes-pagination {
+    padding: 3rem 0;
+    margin: 0 auto;
+
+    text-align: center;
+    color: white !important;
+}
+
+.ant-pagination, .ant-pagination-item a, .ant-pagination-item-link, .ant-pagination-item-ellipsis {
+    color: white !important;
+}
+
+.ant-pagination-item-active {
+    background: none !important;
 }

@@ -1,18 +1,19 @@
 @import "../../style.css";
 
 .message {
-    height: 100%;
-    width: 100%;
-    padding: 8rem 0;
     background-color: var(--black-1b);
-    color: white;
+    color: var(--white);
     font-family: var(--zhuziawan);
-    overflow: auto;
+}
+
+.message-container {
+    min-height: 100vh;
+    padding: var(--padding-td) var(--padding-lr);
 }
 
 .message header {
     text-align: center;
-    padding: 0 0 5rem 0;
+    padding-bottom: var(--padding-td);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,12 +23,6 @@
     width: 10rem;
 }
 
-.message-container {
-    min-height: 100vh;
-    height: 100vh;
+.message-waline-body {
 
-    width: 80%;
-    margin: 0 auto;
-
-    color: white;
 }

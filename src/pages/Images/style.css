@@ -1,11 +1,12 @@
 .images {
-  background-color: black;
-  padding-top: 1rem;
+  background-color: var(--black-1b);
   overflow: hidden;
 }
 
 .images-body {
   width: 100%;
+  min-height: 100vh;
+  padding: var(--padding-td);
 }
 
 .images-items {
@@ -13,7 +14,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0 2rem 0;
+  padding: var(--padding-lr);
 }
 
 .images-item {

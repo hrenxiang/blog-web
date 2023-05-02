@@ -13,6 +13,7 @@ import {blogList} from "../../assets/config/data";
 
 import "./style.css"
 import 'github-markdown-css';
+import Waline from "../../components/Waline";
 
 const Blog = () => {
 
@@ -138,7 +139,9 @@ const Blog = () => {
                     (
                         <EmptyList/>
                     )
-                })
+                }
+
+                <Waline/>
             </div>
         </div>
     );

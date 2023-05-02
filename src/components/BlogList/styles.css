@@ -1,9 +1,10 @@
 .blogList-wrap {
-  width: 90%;
+  width: 80%;
+  padding: 3rem 0;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 3rem;
+  grid-gap: var(--padding-td);
 }
 
 @media (max-width: 992px) {

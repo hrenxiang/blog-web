@@ -2,12 +2,12 @@
 
 .collection {
     overflow: hidden;
-    background-color: var(--blogBg);
+    background-color: var(--black-1b);
 }
 
 .collection-layout {
     min-height: 100vh;
-    background: var(--blogBg) !important;
+    background: var(--black-1b) !important;
 }
 
 .collection-layout-sider {
@@ -48,7 +48,7 @@
 .collection-layout-sider-menu .ant-menu-item {
     cursor: pointer;
     outline: none;
-    border-radius: var(--borderRadius);
+    border-radius: var(--padding-lr);
     font-size: 1rem;
     font-family: inherit;
     color: black;
@@ -56,13 +56,13 @@
 }
 
 .collection-layout-sider-menu .ant-menu-item:active {
-    border-color: var(--navBorderColor);
-    background: linear-gradient(var(--navBorderColor), var(--navBorderColor));
-    color: var(--navBorderColor);
+    border-color: var(--purple);
+    background: linear-gradient(var(--purple), var(--purple));
+    color: var(--purple);
 }
 
 .collection-layout-sider-menu .ant-menu-item-selected {
-    background-color: var(--navBorderColor) !important;
+    background-color: var(--purple) !important;
 }
 
 .collection-layout-sider-menu .ant-menu-item-icon {
@@ -114,7 +114,7 @@
 .collection-layout-sider-logo {
     height: 80px;
     z-index: 3;
-    box-shadow: 0 5px 20px var(--aboutCardShadow);
+    box-shadow: 0 5px 20px var(--white-219-60);
     width: 200px;
     position: fixed;
     background-color: black;
@@ -133,7 +133,7 @@
     height: 80px;
     bottom: 0;
     z-index: 3;
-    box-shadow: 0 5px 20px var(--aboutCardShadow);
+    box-shadow: 0 5px 20px var(--white-219-60);
     width: 200px;
     position: fixed;
     display: flex;
@@ -148,7 +148,7 @@
     cursor: pointer;
     outline: none;
     padding: 0.75rem 1.25rem;
-    border-radius: var(--borderRadius);
+    border-radius: var(--padding-lr);
     font-size: 1rem;
     font-family: inherit;
     color: black;
@@ -156,13 +156,13 @@
 }
 
 .collection-layout-sider-bottom a:hover {
-    border-color: var(--navBorderColor);
-    background: var(--navBorderColor);
-    color: var(--navButtonHover);
+    border-color: var(--purple);
+    background: var(--purple);
+    color: var(--black-1b);
 }
 
 .collection-layout-sider-bottom a:active {
-    border-color: var(--navBorderColor);
-    background: linear-gradient(var(--navBorderColor), var(--navBorderColor));
-    color: var(--navBorderColor);
+    border-color: var(--purple);
+    background: linear-gradient(var(--purple), var(--purple));
+    color: var(--purple);
 }

@@ -10,16 +10,18 @@
 }
 
 .about-container {
-    margin: 5rem 3rem;
+    margin: var(--padding-td);
 }
 
 .about-container-header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 2rem auto;
+
     grid-gap: 2rem;
     justify-content: center;
     align-items: center;
+
+    padding: var(--padding-lr) 0;
 }
 
 .about-container-header-lottie {
@@ -38,9 +40,9 @@
 }
 
 .about-content {
-    width: 90%;
+    width: 65%;
     margin: 0 auto;
-    padding: 3rem;
+    padding: 2rem;
 
     display: grid;
     grid-template-rows: 1fr 2fr;
@@ -108,7 +110,7 @@ h3:before {
 .about-cr-experience,
 .about-cr-skill {
     height: 100%;
-    background-color: var(--black-31);
+    background-color: var(--black-2b);
     padding: 2rem;
 }
 
@@ -130,12 +132,15 @@ h3:before {
     color: var(--white);
 }
 
+@media screen and (max-width: 1450px) {
+    .about-content {
+        width: 90%;
+    }
+}
+
 @media screen and (max-width: 990px) {
     .about-content {
         width: 100%;
-    }
-    .about-container {
-        margin: 3rem 0 3rem 0;
     }
 
     .about-content {

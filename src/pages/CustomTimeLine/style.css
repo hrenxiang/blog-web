@@ -3,9 +3,9 @@
 
 .custom-timeline {
     min-height: 100vh;
-    padding: 2rem;
-    background-color: var(--blogBg);
-    color: white;
+    padding: var(--padding-td);
+    background-color: var(--black-1b);
+    color: var(--white);
     font-family: var(--zhuziawan);
 }
 
@@ -15,9 +15,9 @@
 
 .custom-timeline-title {
     text-align: center;
-    margin-bottom: 60px;
-    padding: 3em 0;
-    border-bottom: 1px solid #E4EAEC;
+    margin-bottom: 3rem;
+    padding: var(--padding-lr) 0;
+    border-bottom: 1px solid var(--white);
 }
 
 .custom-timeline-title-header {
@@ -47,6 +47,7 @@
     margin: 0 auto;
     font-size: 16px;
     max-width: 400px;
+    line-height: 2;
 }
 
 .custom-timeline-body {
@@ -62,8 +63,8 @@
 }
 
 .custom-timeline-item {
-    min-width: 33.3%;
-    max-width: 33.3%;
+    min-width: 65%;
+    max-width: 65%;
     margin: 0 auto;
     display: flex;
     /*justify-content: center;*/
@@ -72,6 +73,11 @@
 .timeline-item-glass {
     position: relative;
     margin-left: 3.2rem;
+
+    background: var(--black-2b);
+    box-shadow: 0 0 3px 1px var(--white-219-30);
+    padding: var(--padding-lr);
+    margin-bottom: var(--padding-lr);
 }
 
 .timeline-item-glass::before {
@@ -99,7 +105,7 @@
 }
 
 .custom-timeline-marker:before {
-    background: #FF6B6B;
+    background: var(--red-f80);
     border: 3px solid transparent;
     border-radius: 100%;
     content: "";
@@ -115,7 +121,7 @@
 .custom-timeline-marker:after {
     content: "";
     width: 0.2rem;
-    background: #CCD5DB;
+    background: var(--white);
     display: block;
     position: absolute;
     top: 24px;
@@ -124,11 +130,12 @@
 }
 
 .custom-timeline-content {
-    padding-bottom: 40px;
+    padding-bottom: var(--padding-td);
 }
 
-.custom-timeline-content p:last-child {
-    margin-bottom: 0;
+.custom-timeline-content p {
+    /*margin-bottom: 0;*/
+    line-height: 2;
 }
 
 .period {
@@ -150,8 +157,8 @@
     top: 0;
     bottom: 30px;
     position: absolute;
-    border-top: 3px solid #CCD5DB;
-    border-bottom: 3px solid #CCD5DB;
+    border-top: 3px solid var(--white);
+    border-bottom: 3px solid var(--white);
 }
 
 .period-timeline-content {
@@ -167,18 +174,7 @@
 
     .custom-timeline-item {
         margin: 0;
-
         min-width: 100%;
         max-width: 100%;
-    }
-}
-
-@media only screen and (max-width: 786px) {
-    .custom-timeline-title-header {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .custom-timeline-time-lottie, .custom-timeline-title-header h2 {
-        justify-self: center;
     }
 }

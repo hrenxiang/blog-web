@@ -16,7 +16,7 @@
 .footer-container {
   width: 100%;
   text-align: center;
-  color: var(--navColor);
+  color: var(--white);
   font-size: 1.2rem;
   font-family: var(--zhuziawan);
   background: var(--black-1b);
@@ -34,13 +34,14 @@
 .footer-waves {
   position:absolute;
   text-align:center;
-  color:white;
+  color: var(--white);
 
   min-height: 15rem;
   max-height: 15rem;
   top: 0;
   width: 100%;
-  background-color: var(--blogBg);
+  /*需要调颜色*/
+  background-color: var(--black-1b);
 }
 .footer-waves-body {
   position:relative;
@@ -100,15 +101,15 @@
   background-color: transparent;
   border: none;
   margin: 0;
-  color: white;
+  color: var(--white);
   font-size: 1.2rem;
   padding: 0 0 2rem 1rem;
 
   cursor: pointer;
 }
 
-.footer-record button:hover {
-  color: #6190e8;
+.footer-record button:hover, .footer-record-body h5:hover {
+  color: var(--blue);
 }
 
 

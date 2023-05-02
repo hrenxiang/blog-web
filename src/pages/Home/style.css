@@ -5,8 +5,8 @@
 }
 
 .home-container {
-    background-color: var(--blogBg);
-    color: #ffffff;
+    background-color: var(--black-1b);
+    color: var(--white);
     font-family: var(--zhuziawan);
 
     width: 100%;
@@ -16,7 +16,6 @@
 }
 
 .home-banner {
-    height: 100vh;
     min-height: 100vh;
     width: 100%;
     position: relative;
@@ -71,7 +70,7 @@
 }
 
 .inner-button:hover {
-    box-shadow: 0 0 30px #ffffff;
+    box-shadow: 0 0 30px var(--white);
 }
 
 
@@ -81,16 +80,17 @@
 
 .home-article-all {
     overflow: hidden;
-    padding: 10vh 10vw;
-    background-color: white;
-    color: black;
+    padding: 10vh 0;
+    background-color: var(--white);
+    color: var(--black-1b);
 }
 
 .home-article-inner {
-    width: 100%;
+    width: 50%;
     height: 100%;
+    margin: 0 auto;
     border-radius: 1rem;
-    box-shadow: 0 0 2rem var(--suspensionShadowColor);
+    box-shadow: 0 0 2rem var(--white-219-60);
 }
 
 .article-body {
@@ -110,21 +110,21 @@
 
 .article-title span:hover {
     cursor: pointer;
-    color: #6190e8;
+    color: var(--blue);
 }
 
 .article-content p {
-    line-height: 3rem;
+    line-height: 2;
+    margin-bottom: 0;
 }
 
-
-.article-content-html{
+.article-content-html {
     /*最多展示多少行， 剩下的用...替代*/
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 12;
+    -webkit-line-clamp: 8;
 }
 
 .article-content-html-more {
@@ -145,7 +145,7 @@
 }
 
 .article-content-html-btn button:hover {
-    color: #6190e8;
+    color: var(--blue);
 }
 
 .home-section {
@@ -208,23 +208,22 @@
     justify-content: center;
 
     padding: 1.5rem;
-    line-height: 2.5rem;
 }
 
 .home-images-body a {
-    color: #6190e8;
+    color: var(--blue);
     text-decoration: none;
 }
 
 /*喜欢 gird示例*/
 .home-like {
-    background-color: white;
+    background-color: var(--white);
     padding: 2rem 0;
     overflow: hidden;
 }
 
 .like-header {
-    color: black;
+    color: var(--black-1b);
     font-size: 2rem;
     font-weight: 80;
     text-align: center;
@@ -252,12 +251,12 @@
 
 .card {
     min-height: 100%;
-    background: white;
-    box-shadow: 4px 12px 15px rgba(0,0,0,0.1);
+    background: var(--white);
+    box-shadow: 4px 12px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color: #444;
+    color: var(--black-46);
     position: relative;
     top: 0;
     transition: all .1s ease-in;
@@ -266,7 +265,7 @@
 
 .card:hover {
     top: -1rem;
-    box-shadow: 0 14px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 14px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card article {
@@ -294,13 +293,13 @@
 .card h1 {
     font-size: 20px;
     margin: 0;
-    color: #333;
+    color: var(--black-31);
 }
 
 .card span {
     font-size: 12px;
     font-weight: bold;
-    color: #999;
+    color: var(--white-219-60);
     text-transform: uppercase;
     letter-spacing: .05em;
     margin: 2em 0 0 0;
@@ -312,7 +311,7 @@
     }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 990px) {
     .home-banner {
         min-height: 0;
         height: auto !important;
@@ -332,17 +331,21 @@
         padding: 0 10%;
     }
 
+    .home-article-inner {
+        width: 90%;
+    }
+
     .home-article-all {
         padding: 5vh 0;
     }
 
     .article-content p {
-        line-height: 2rem;
+        line-height: 2;
     }
 
-    .article-content-html{
+    .article-content-html {
         /*最多展示多少行， 剩下的用...替代*/
-        -webkit-line-clamp: 5;
+        -webkit-line-clamp: 3;
     }
 
     .article-body {
@@ -352,9 +355,11 @@
     .like-body {
         grid-template-columns: 1fr 1fr;
     }
+
     .like-body div:nth-child(1) {
         grid-column: 1/ span 1;
     }
+
     .like-body div:nth-child(1) h1 {
         font-size: 20px;
     }

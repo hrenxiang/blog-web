@@ -1,180 +1,72 @@
 :root {
-    --loginColor: #ffffff;
-    --loginBg: #252323FF;
-    --loginInputBg: #FFFFFF;
-    --loginInputButton: #9398b3;
-    --loginIconBg: #252424FF;
-    --loginIconShadow: #9398b3;
-    --loginGoRegister: #9398b3;
-    --loginGoRegister-hover: #FFFFFF;
-    --loginGradientLeft: #19245b;
-    --loginGradientMiddle: #f64f59;
-    --loginGradientRight: #f64f59;
-    --loginFormPlaceholder: #adabab;
-    --loginOtherLogin: #FFFFFF;
-    --loginOtherLogin-hover: #FFFFFF;
-    --retrieveThePassword: #FFFFFF;
-    --navBg: #252424FF;
-    --navBg-80: rgb(37, 36, 36, 0);
-    --navColor: #FFFFFF;
-    --navColoumn: rgb(37, 36, 36);
-    --navButtonBg: #9398b3;
-    --navBorderColor: #9398b3;
-    --navButtonHover: #000000;
-    --blogTextColor: #FFFFFF;
-    --blogBg: #222222;
-    --blogCodePadding: #2a2c2f;
-    --blogCodeThumb: #393E46;
-    --blogCopyBg: #2a2c2f;
-    --blogCopyColor: #ffffff;
-    --blogTableBorder: #FFFFFF;
-    --blogCopyHover: #FFFFFF;
-    --blogCopyHover-color: #000000;
-    --footerBg: #ffffff;
-    --aboutCardShadow: #9398b3;
-    --aboutBg: #222222;
-    --suspensionBg: #FFFFFF;
-    --suspensionShadowColor: #babbbc;
-    --suspensionContentBefore: rgba(136, 160, 125, 0.63);
-    --suspensionButtonColor: #000000;
-    --suspensionButtonBg: rgb(255, 255, 255, 0);
 
-    --home-color: #000000;
-    --home-a-color: #2192d3;
-    --home-images-color1: #8baaaa;
-    --home-images-color2: #ae8b9c;
-
-
-    --selectFontFamily: 'Noto Sans SC', sans-serif;
-    --blogFont: "blog-font-1", sans-serif;
-    --zhuziawan: "zhuziawan", sans-serif;
-    --spacing-md: 16px;
-    --spacing-lg: 32px;
-    --borderRadius: 12px;
-
-
+    /*颜色*/
     --black-10: #101010;
     --black-1b: #1b1b1b;
     --black-22: #222222;
     --black-2b: #2b2b2b;
     --black-31: #313131;
-    --shadow-80: hsla(0, 100%, 100%, 0.8);
+    --black-46: #464646;
+    --white-219-30: rgb(219, 219, 219, 30%);
+    --white-219-60: rgb(219, 219, 219, 60%);
     --white: #FFFFFF;
+    --shadow-80: hsla(0, 100%, 100%, 0.8);
+    --red-f80: #ff8080;
+    --red: #f64f59;
+    --blue: #6190e8;
+    --blue-192b45: #19245b;
+    --purple: #9398b3;
+    --green-63: rgba(136, 160, 125, 0.63);
 
+    /*间距高度*/
+    --padding-td: 2rem;
+    --padding-middle: 1.5rem;
+    --padding-lr: 1rem;
 
-
-    --line-height: 2;
-}
-
-.dark-mode {
-    --loginColor: #ffffff;
-    --loginBg: #252323FF;
-    --loginInputBg: #FFFFFF;
-    --loginInputButton: #9398b3;
-    --loginIconBg: #252424FF;
-    --loginIconShadow: #9398b3;
-    --loginGoRegister: #9398b3;
-    --loginGoRegister-hover: #FFFFFF;
-    --loginGradientLeft: #19245b;
-    --loginGradientMiddle: #f64f59;
-    --loginGradientRight: #f64f59;
-    --loginFormPlaceholder: #adabab;
-    --loginOtherLogin: #FFFFFF;
-    --loginOtherLogin-hover: #FFFFFF;
-    --retrieveThePassword: #FFFFFF;
-    --navBg: #252424FF;
-    --navBg-80: rgb(37, 36, 36, 0.8);
-    --navColor: #FFFFFF;
-    --navColoumn: rgb(37, 36, 36);
-    --navButtonBg: #9398b3;
-    --navBorderColor: #9398b3;
-    --navButtonHover: #000000;
-    --blogTextColor: #FFFFFF;
-    --blogBg: #393E46;
-    --blogCodePadding: #2a2c2f;
-    --blogCodeThumb: #393E46;
-    --blogCopyBg: #2a2c2f;
-    --blogCopyColor: #ffffff;
-    --blogTableBorder: #FFFFFF;
-    --blogCopyHover: #FFFFFF;
-    --blogCopyHover-color: #000000;
-    --footerBg: #ffffff;
-    --aboutCardShadow: #9398b3;
-    --suspensionBg: #FFFFFF;
-    --suspensionShadowColor: #babbbc;
-    --suspensionContentBefore: rgba(136, 160, 125, 0.63);
-    --suspensionButtonColor: #000000;
-    --suspensionButtonBg: rgb(255, 255, 255, 0);
-
-    --home-color: #000000;
-    --home-a-color: #2192d3;
-    --home-images-color1: #8baaaa;
-    --home-images-color2: #ae8b9c;
-
-
-    --selectFontFamily: 'Noto Sans SC', sans-serif;
+    /*字体*/
     --blogFont: "blog-font-1", sans-serif;
-    --spacing-md: 16px;
-    --spacing-lg: 32px;
-    --borderRadius: 12px;
+    --zhuziawan: "zhuziawan", sans-serif;
+
 }
 
+/*手动暗黑*/
+.dark-mode {
+    /*颜色*/
+    --black-10: #ffffff;
+    --black-1b: #ffffff;
+    --black-22: #ffffff;
+    --black-2b: #ffffff;
+    --black-31: #ffffff;
+    --black-46: #ffffff;
+    --white-219-30: rgba(255, 255, 255, 0.3);
+    --white-219-60: rgba(255, 255, 255, 0.6);
+    --white: #000000;
+    --shadow-80: hsla(0, 100%, 100%, 0.8);
+    --red-f80: #ff8080;
+    --red: #f64f59;
+    --blue: #6190e8;
+    --blue-192b45: #19245b;
+    --purple: #9398b3;
+    --green-63: rgba(136, 160, 125, 0.63);
 
+    /*间距高度*/
+    --padding-td: 2rem;
+    --padding-middle: 1.5rem;
+    --padding-lr: 1rem;
+
+    /*字体*/
+    --blogFont: "blog-font-1", sans-serif;
+    --zhuziawan: "zhuziawan", sans-serif;
+}
+
+/*系统暗黑*/
 @media (prefers-color-scheme: dark) {
     :root {
-        --loginColor: #ffffff;
-        --loginBg: #252323FF;
-        --loginInputBg: #FFFFFF;
-        --loginInputButton: #9398b3;
-        --loginIconBg: #252424FF;
-        --loginIconShadow: #9398b3;
-        --loginGoRegister: #9398b3;
-        --loginGoRegister-hover: #FFFFFF;
-        --loginGradientLeft: #19245b;
-        --loginGradientMiddle: #f64f59;
-        --loginGradientRight: #f64f59;
-        --loginFormPlaceholder: #adabab;
-        --loginOtherLogin: #FFFFFF;
-        --loginOtherLogin-hover: #FFFFFF;
-        --retrieveThePassword: #FFFFFF;
-        --navBg: #252424FF;
-        --navBg-80: rgb(37, 36, 36, 0.8);
-        --navColor: #FFFFFF;
-        --navColoumn: rgb(37, 36, 36);
-        --navButtonBg: #9398b3;
-        --navBorderColor: #9398b3;
-        --navButtonHover: #000000;
-        --blogTextColor: #FFFFFF;
-        --blogBg: #393E46;
-        --blogCodePadding: #2a2c2f;
-        --blogCodeThumb: #393E46;
-        --blogCopyBg: #2a2c2f;
-        --blogCopyColor: #ffffff;
-        --blogTableBorder: #FFFFFF;
-        --blogCopyHover: #FFFFFF;
-        --blogCopyHover-color: #000000;
-        --footerBg: #ffffff;
-        --aboutCardShadow: #9398b3;
-        --suspensionBg: #FFFFFF;
-        --suspensionShadowColor: #babbbc;
-        --suspensionContentBefore: rgba(136, 160, 125, 0.63);
-        --suspensionButtonColor: #000000;
-        --suspensionButtonBg: rgb(255, 255, 255, 0);
 
-        --home-color: #000000;
-        --home-a-color: #2192d3;
-        --home-images-color1: #8baaaa;
-        --home-images-color2: #ae8b9c;
-
-
-        --selectFontFamily: 'Noto Sans SC', sans-serif;
-        --blogFont: "blog-font-1", sans-serif;
-        --spacing-md: 16px;
-        --spacing-lg: 32px;
-        --borderRadius: 12px;
     }
 }
 
+/*=============================================字体==============================================*/
 @font-face {
     font-family: "blog-font-1";
     font-weight: 400;
@@ -189,11 +81,11 @@
     font-display: swap;
 }
 
-
+/*===============================================全局共用=============================================*/
 /*一键置为灰色*/
-/*html {*/
-/*  filter: grayscale(100%);*/
-/*}*/
+html {
+  /*filter: grayscale(100%);*/
+}
 
 body {
     margin: 0;

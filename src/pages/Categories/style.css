@@ -11,15 +11,15 @@
 }
 
 .categories-body {
-    color: #555;
-    background: #222;
+    color: var(--white);
+    background: var(--black-1b);
     text-align: center;
     min-height: 100vh;
+    padding: var(--padding-td);
 }
 
 .categories-body-h1 {
-    margin: 0;
-    padding-top: 12vh;
+    margin: 3rem 0 0 0;
 }
 
 .categories-item {
@@ -82,9 +82,9 @@
 .flip {
     position: relative;
     display: inline-block;
-    margin-right: 1vh;
-    margin-bottom: 1vh;
     width: 21rem;
+
+    margin: var(--padding-lr) auto;
 }
 
 .flip > .front {
@@ -95,13 +95,13 @@
 .flip > .front,
 .flip > .back {
     display: block;
-    color: white;
+    color: var(--white);
     width: inherit;
     background-size: cover !important;
     background-position: center !important;
     height: 220px;
     padding: 1em 2em;
-    background: #313131;
+    background: var(--black-31);
     border-radius: 10px;
 }
 
@@ -112,7 +112,7 @@
 .flip > .front p {
     font-size: 0.9125rem;
     line-height: 160%;
-    color: #999;
+    color: var(--shadow-80);
 }
 
 

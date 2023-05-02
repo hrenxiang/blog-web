@@ -2,20 +2,23 @@
 
 
 .blog {
-    background-color: var(--blogBg);
+    background-color: var(--black-1b);
+    padding: 5rem 0 3rem 0;
 }
 
 .blog .blog-container {
     /* max-width: 1200px;
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.7); */
     width: 50%;
+    min-height: 100vh;
     margin: 0 auto;
-    background-color: #313131;
+    padding: 1rem;
+    background-color: var(--black-31);
 }
 
 .blog .blog-wrap {
     margin: 0 auto;
-    color: var(--blogTextColor);
+    color: var(--white);
 }
 
 .blog .blog-goBack {
@@ -37,14 +40,14 @@
 .blog-cover img {
     object-fit: cover;
     width: 100%;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 1rem;
 }
 
 .blog .markdown-body {
     padding: 2rem 2rem;
     line-height: 2.6;
-    background-color: #313131;
-    color: var(--blogTextColor);
+    background-color: var(--black-31);
+    color: var(--white);
     font-family: var(--zhuziawan);
 }
 
@@ -85,19 +88,19 @@
 }
 
 .markdown-body table tr {
-    background-color: #313131 !important;
-    border-top: 1px solid var(--blogTableBorder);
+    background-color: var(--black-31) !important;
+    border-top: 1px solid var(--white);
 }
 
 .markdown-body table tr:nth-child(2n) {
-    background-color: #313131 !important;
-    border-top: 1px solid var(--blogTableBorder);
+    background-color: var(--black-31) !important;
+    border-top: 1px solid var(--white);
 }
 
 .markdown-body table th,
 .markdown-body table td {
     padding: 6px 13px;
-    border: 1px solid var(--blogTableBorder);
+    border: 1px solid var(--white);
 }
 
 .markdown-body .highlight pre,
@@ -108,7 +111,7 @@
 }
 
 .markdown-body .code {
-    background-color: var(--blogBg) !important;
+    background-color: var(--black-31) !important;
     margin: 0 !important;
 }
 
@@ -118,13 +121,13 @@
 }
 
 .markdown-body .code::-webkit-scrollbar-thumb {
-    background-color: #ccc;
+    background-color: var(--white-219-60);
     border-radius: 2px;
 }
 
 .markdown-body .code::-webkit-scrollbar-track {
     /* Add styles to the scrollbar track */
-    background-color: var(--blogBg);
+    background-color: var(--black-31);
 }
 
 .blog .code-wrapper:hover .copy-btn {
@@ -139,20 +142,20 @@
     cursor: pointer;
     font-size: 0.6rem;
     padding: 2px 4px;
-    background-color: var(--blogCopyBg);
-    color: var(--blogCopyColor);
+    background-color: var(--black-31);
+    color: var(--white);
     border-radius: 5px;
     user-select: none;
     transition: all 0.3s ease;
 }
 
 .blog .copy-btn:hover {
-    background-color: var(--blogCopyHover);
-    color: var(--blogCopyHover-color);
+    background-color: var(--white);
+    color: var(--black-1b);
 }
 
 @media (max-width: 767px) {
     .blog .blog-container {
-        width: 100%;
+        width: 90%;
     }
 }

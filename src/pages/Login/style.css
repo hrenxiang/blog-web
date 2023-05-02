@@ -6,14 +6,14 @@
   font-family: var(--blogFont);
   font-size: 16px;
   font-weight: 400;
-  color: var(--loginColor);
+  color: var(--white);
   user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   min-height: 100vh;
-  background-color: var(--loginBg);
+  background-color: var(--black-1b);
   overflow: hidden;
 }
 
@@ -23,7 +23,7 @@
 /*  width: 100%;*/
 /*  height: 100%;*/
 /*  !*background-image: url("https://images.huangrx.cn/uploads/2023/04/21/blog-web-log-1.jpg");*!*/
-/*  background-color: var(--loginBg);*/
+/*  background-color: var();*/
 /*  z-index: -1;*/
 /*  filter: blur(1px);*/
 /*}*/
@@ -79,22 +79,22 @@
   left: 0;
   width: 280px;
   height: 150px;
-  background: linear-gradient(to right, var(--loginGradientLeft), var(--loginGradientMiddle), var(--loginGradientRight));
+  background: linear-gradient(to right, var(--blue-192b45), var(--red), var(--red));
   z-index: -1;
   filter: blur(70px);
 }
 
 .auth .hero a {
   font-weight: 500;
-  color: var(--loginGoRegister);
+  color: var(--purple);
   transition: color 0.3s;
   border-radius: 5px;
-  box-shadow: var(var(--loginIconShadow)) 1px 5px 5px -3px;
+  box-shadow: var(var(--purple)) 1px 5px 5px -3px;
 }
 
 .auth .hero a:hover,
 .auth form .password a:hover {
-  color: var(--loginGoRegister-hover);
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -130,13 +130,13 @@
 }
 
 .auth input::placeholder {
-  color: var(--loginFormPlaceholder);
-  font-family: var(--selectFontFamily);
+  color: var(--white-219-60);
+  font-family: var(--zhuziawan);
   font-size: inherit;
 }
 
 .auth form input:not(.submit) {
-  background-color: var(--loginInputBg);
+  background-color: var(--white);
 }
 
 .auth form .password i {
@@ -150,21 +150,21 @@
 
 .auth form .password a {
   font-size: 13px;
-  color: var(--retrieveThePassword);
+  color: var(--white);
   float: right;
   margin: 5px 20px 0 0;
 }
 
 .auth form input.submit {
   font-weight: 700;
-  background-color: var(--loginInputButton);
-  box-shadow: var(--loginInputButton) 0 20px 30px -10px;
+  background-color: var(--purple);
+  box-shadow: var(--purple) 0 20px 30px -10px;
   cursor: pointer;
   transition: box-shadow 0.3s;
 }
 
 .auth form input.submit:hover {
-  box-shadow: var(--loginInputButton) 0 10px 30px -10px;
+  box-shadow: var(--purple) 0 10px 30px -10px;
 }
 
 .auth .separator {
@@ -178,7 +178,7 @@
   top: 50%;
   width: 100%;
   height: 1px;
-  background-color: var(--loginOtherLogin);
+  background-color: var(--white);
   opacity: 0.3;
   z-index: 1;
 }
@@ -187,7 +187,7 @@
   font-size: 14px;
   width: fit-content;
   padding: 0 10px;
-  color: var(--loginOtherLogin);
+  color: var(--white);
   /*background-color: var(--background-color);*/
   margin: 0 auto;
   position: relative;
@@ -208,13 +208,13 @@
   width: 60px;
   height: 60px;
   border-radius: 10px;
-  background-color: var(--loginIconBg);
-  box-shadow: var(--loginIconShadow) 1px 10px 20px -5px;
+  background-color: var(--black-1b);
+  box-shadow: var(--purple) 1px 10px 20px -5px;
   transition: all 0.3s ease-out;
 }
 
 .auth .options ul li a:hover {
-  color: var(--loginOtherLogin-hover);
+  color: var(--white);
   box-shadow: none;
 }
 

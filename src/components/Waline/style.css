@@ -1,0 +1,99 @@
+@import "../../style.css";
+
+#waline {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.wl-panel {
+    background: none !important;
+    border: none;
+    border-radius: 0.5em;
+
+}
+
+.wl-comment {
+    box-shadow: 0 0 3px 1px var(--white-219-30);
+}
+
+.wl-login-nick {
+    /*display: none !important;*/
+}
+
+/*输入框*/
+.wl-editor, .wl-input {
+    color: var(--white) !important;
+}
+
+.wl-editor {
+    min-height: 15rem;
+}
+
+/*输入框点击*/
+.wl-editor:focus, .wl-input:focus {
+    background: none !important;
+}
+
+/*表情 动图等图标*/
+.wl-action, .wl-card .wl-delete, .wl-card .wl-like, .wl-card .wl-reply, .wl-card .wl-edit {
+    color: var(--black-46);
+}
+
+/*登录按钮*/
+.wl-btn {
+    color: var(--white);
+}
+
+.wl-card {
+    border-bottom: none;
+}
+
+.wl-card .wl-meta>span {
+    background: none;
+}
+
+/*用户头像*/
+.wl-user {
+    display: none;
+}
+
+/*地址浏览器*/
+.wl-meta {
+    display: none;
+}
+
+/*标签*/
+.wl-badge {
+    /*display: none !important;*/
+}
+
+/*喜欢*/
+.wl-like {
+    display: none !important;
+}
+
+/*评论中的字体颜色*/
+[data-waline] p {
+    color: var(--white);
+}
+
+/*每个回复*/
+.wl-card-item {
+    background: var(--black-2b);
+    box-shadow: 0 0 3px 1px var(--white-219-30);
+    margin-bottom: var(--padding-middle);
+    padding: var(--padding-middle);
+}
+
+.wl-card .wl-quote {
+    border-inline-start: none;
+}
+
+
+
+
+@media screen and (max-width: 990px) {
+    #waline {
+        width: 100%;
+    }
+}
