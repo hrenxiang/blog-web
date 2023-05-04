@@ -60,7 +60,7 @@
     background-image: url("https://images.huangrx.cn/uploads/2023/05/01/1682880897904.jpg");
     background-size: cover;
     background-position: top center;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 .about-ch-profile h2 {
@@ -75,13 +75,13 @@
     line-height: 2;
 }
 
-h3 {
+.about h3 {
     /*border-bottom: 2px solid black;*/
     position: relative;
     line-height: 3rem;
 }
 
-h3:before {
+.about h3:before {
     position: absolute;
     background: transparent;
     content: "";
@@ -111,6 +111,7 @@ h3:before {
 .about-cr-skill {
     height: 100%;
     background-color: var(--black-2b);
+    box-shadow: 0 0 3px 1px var(--white-219-30);
     padding: 2rem;
 }
 

@@ -1,10 +1,9 @@
 import axios from 'axios';
 
-import BASE_API from "../process.dev.env"
-
 // 创建axios实例
 const service = axios.create({
-    baseURL: BASE_API,
+    // baseURL: 'http://localhost:8080',
+    baseURL: 'https://api.huangrx.cn',
     timeout: 10000,
     headers: {
 
@@ -32,7 +31,7 @@ service.interceptors.response.use(
     },
     error => {
         // 对响应错误做些什么
-        console.error(error);
+        console.error('$$$$' + error);
         Promise.reject(error);
     }
 );

@@ -3,13 +3,13 @@ import React, {useEffect, useState} from 'react';
 import "./style.css"
 import {Avatar, Button, Card} from "antd";
 import Meta from "antd/es/card/Meta";
-import {downloadImage, fetchImages} from "../../api/unsplash";
+import {downloadImage, fetchImages} from "../../api/unsplash/unsplash";
 import {AiOutlineDownload, AiOutlineHeart} from "react-icons/ai";
 
 function Images() {
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [perPage] = useState(9);
+    const [perPage] = useState(10);
     const [images, setImages] = useState([]);
 
     useEffect(() => {

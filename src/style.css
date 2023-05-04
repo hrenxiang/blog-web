@@ -1,5 +1,34 @@
-:root {
+:root.light {
+    /*颜色*/
+    --black-10: #ffffff;
+    --black-1b: #ffffff;
+    --black-22: #b9b9b9;
+    --black-2b: #ffffff;
+    --black-31: #ffffff;
+    --black-46: #656565;
+    --white-219-30: rgba(0, 0, 0, 0.3);
+    --white-219-60: rgba(0, 0, 0, 0.6);
+    --white: #000000;
+    --shadow-80: hsla(0, 100%, 100%, 0.8);
+    --red-f80: #ff8080;
+    --red: #f64f59;
+    --blue: #6190e8;
+    --blue-192b45: #19245b;
+    --purple: #9398b3;
+    --green-63: rgba(136, 160, 125, 0.63);
+    --article: #ffffff;
+    --text: #000000;
+    /*间距高度*/
+    --padding-td: 2rem;
+    --padding-middle: 1.5rem;
+    --padding-lr: 1rem;
+    /*字体*/
+    --blogFont: "blog-font-1", sans-serif;
+    --zhuziawan: "zhuziawan", sans-serif;
+}
 
+/*手动暗黑*/
+:root.dark {
     /*颜色*/
     --black-10: #101010;
     --black-1b: #1b1b1b;
@@ -17,43 +46,12 @@
     --blue-192b45: #19245b;
     --purple: #9398b3;
     --green-63: rgba(136, 160, 125, 0.63);
-
+    --article: #ffffff;
+    --text: #000000;
     /*间距高度*/
     --padding-td: 2rem;
     --padding-middle: 1.5rem;
     --padding-lr: 1rem;
-
-    /*字体*/
-    --blogFont: "blog-font-1", sans-serif;
-    --zhuziawan: "zhuziawan", sans-serif;
-
-}
-
-/*手动暗黑*/
-.dark-mode {
-    /*颜色*/
-    --black-10: #ffffff;
-    --black-1b: #ffffff;
-    --black-22: #ffffff;
-    --black-2b: #ffffff;
-    --black-31: #ffffff;
-    --black-46: #ffffff;
-    --white-219-30: rgba(255, 255, 255, 0.3);
-    --white-219-60: rgba(255, 255, 255, 0.6);
-    --white: #000000;
-    --shadow-80: hsla(0, 100%, 100%, 0.8);
-    --red-f80: #ff8080;
-    --red: #f64f59;
-    --blue: #6190e8;
-    --blue-192b45: #19245b;
-    --purple: #9398b3;
-    --green-63: rgba(136, 160, 125, 0.63);
-
-    /*间距高度*/
-    --padding-td: 2rem;
-    --padding-middle: 1.5rem;
-    --padding-lr: 1rem;
-
     /*字体*/
     --blogFont: "blog-font-1", sans-serif;
     --zhuziawan: "zhuziawan", sans-serif;

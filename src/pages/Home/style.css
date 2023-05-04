@@ -6,7 +6,7 @@
 
 .home-container {
     background-color: var(--black-1b);
-    color: var(--white);
+    color: var(--article);
     font-family: var(--zhuziawan);
 
     width: 100%;
@@ -81,8 +81,8 @@
 .home-article-all {
     overflow: hidden;
     padding: 10vh 0;
-    background-color: var(--white);
-    color: var(--black-1b);
+    background-color: var(--article);
+    color: var(--text);
 }
 
 .home-article-inner {
@@ -217,13 +217,13 @@
 
 /*喜欢 gird示例*/
 .home-like {
-    background-color: var(--white);
+    background-color: var(--article);
     padding: 2rem 0;
     overflow: hidden;
 }
 
 .like-header {
-    color: var(--black-1b);
+    color: var(--text);
     font-size: 2rem;
     font-weight: 80;
     text-align: center;
@@ -251,12 +251,12 @@
 
 .card {
     min-height: 100%;
-    background: var(--white);
+    background: var(--article);
     box-shadow: 4px 12px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color: var(--black-46);
+    color: var(--text);
     position: relative;
     top: 0;
     transition: all .1s ease-in;
@@ -293,7 +293,7 @@
 .card h1 {
     font-size: 20px;
     margin: 0;
-    color: var(--black-31);
+    color: var(--white);
 }
 
 .card span {

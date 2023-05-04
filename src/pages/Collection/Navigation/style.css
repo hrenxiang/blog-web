@@ -19,7 +19,7 @@
 .navigation-title {
     font-size: 18px;
     position: relative;
-    color: white;
+    color: var(--white);
 }
 
 .navigation-body-item {

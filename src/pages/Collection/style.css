@@ -20,7 +20,7 @@
     position: fixed !important;
     height: 100vh !important;
     overflow-y: auto;
-    border: 1px solid black;
+    box-shadow: 0 5px 20px var(--white-219-60);
 }
 
 .collection-layout-sider::-webkit-scrollbar {
@@ -71,9 +71,14 @@
 }
 
 .collection-layout-content {
-    background-color: #000000 !important;
+    background-color: var(--black-1b) !important;
     position: relative;
     left: 200px;
+}
+
+.collection-layout-content .ant-card-bordered {
+    border-radius: 0.5rem;
+    border: 1px solid var(--white-219-30);
 }
 
 @media screen and (max-width: 990px) {

@@ -14,6 +14,7 @@
 
 .wl-comment {
     box-shadow: 0 0 3px 1px var(--white-219-30);
+    border-radius: 0.5rem;
 }
 
 .wl-login-nick {
@@ -81,6 +82,7 @@
 .wl-card-item {
     background: var(--black-2b);
     box-shadow: 0 0 3px 1px var(--white-219-30);
+    border-radius: 0.5rem;
     margin-bottom: var(--padding-middle);
     padding: var(--padding-middle);
 }

@@ -1,0 +1,31 @@
+@import "../../style.css";
+
+.footer-quick div:nth-child(1){
+    border-radius: 0.5rem !important;
+}
+
+.footer-quick div button:nth-child(1) {
+
+}
+
+.footer-quick div button:nth-child(2) {
+    display: none;
+}
+
+.footer-quick div button:nth-child(3) {
+    display: none;
+}
+
+.footer-quick .active {
+    display: block !important;
+}
+
+.ant-float-btn-square:first-child {
+    border-start-start-radius: 0 !important;
+    border-start-end-radius: 0 !important;
+}
+
+.ant-float-btn-square:last-child {
+    border-end-start-radius: 0 !important;
+    border-end-end-radius: 0 !important;
+}

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Form, Input, message, notification} from 'antd';
 import {EmailRegExp, PasswordRegExp} from "../../constants/RegExpConst";
 import TsParticles from "../../components/TsParticles";
 import {RiEmotionLine, RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiSmartphoneLine} from "react-icons/ri";
+import {toRegister} from "../../api/login/login"
 
 import "./style.css"
 
@@ -19,6 +20,8 @@ const Register = () => {
     const [messageApi, contextHolder] = message.useMessage();
 
     const [notificationApi, contextHolderNotification] = notification.useNotification();
+
+    const navigate = useNavigate();
 
     const handleEyeClick = () => {
         setState((prevState) => (
@@ -41,7 +44,7 @@ const Register = () => {
         notificationApi.open({
             message: '密码规范',
             description:
-                '密码长度最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符。',
+                '密码长度最少6位，包括至少1个大写字母，1个小写字母，1个数字。',
             icon: <RiEmotionLine/>,
             duration: 6,
             key: notificationKey
@@ -78,11 +81,27 @@ const Register = () => {
             messageApi.error('两次输入的密码不匹配！').then(() => {
             });
         } else {
+            let params = {
+                username: state.email,
+                password: state.password
+            }
             // 调用注册方法
-            console.log("注册")
+            toRegister(params).then((res) => {
+                if (res.code === 0) {
+                    messageApi.info("注册成功").then(() => {
+                    });
+                    let timer = setTimeout(() => {
+                        navigate("/login");
+                        clearTimeout(timer);
+                    }, 2000);
+
+                } else {
+                    messageApi.error(res.message).then(() => {
+                    });
+                }
+            });
         }
     }
-
     return (
         <div className="auth">
 
@@ -120,7 +139,7 @@ const Register = () => {
                                     onClick={openNotification}
                                 />
 
-                                <i onClick={handleEyeClick}>{state.eyeState ? <RiEyeLine/>: <RiEyeOffLine/>}</i>
+                                <i onClick={handleEyeClick}>{state.eyeState ? <RiEyeLine/> : <RiEyeOffLine/>}</i>
                             </p>
 
                             <p className="password">
@@ -132,7 +151,7 @@ const Register = () => {
                                     onClick={openNotification}
                                 />
 
-                                <i onClick={handleEyeClick}>{state.eyeState ? <RiEyeLine/>: <RiEyeOffLine/>}</i>
+                                <i onClick={handleEyeClick}>{state.eyeState ? <RiEyeLine/> : <RiEyeOffLine/>}</i>
                             </p>
 
                             <p>

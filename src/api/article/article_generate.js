@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../axios";
 
 // 每日一文
 const CHINESE_ARTICLE= "https://interface.meiriyiwen.com/article/random?dev=1";

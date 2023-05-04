@@ -1,19 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import {notification} from 'antd';
 import ReactMarkdown from 'react-markdown';
-import gfm from 'remark-gfm';
+import remarkToc from 'remark-toc';
+import Toc from 'remark-toc'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {HiOutlineCheck} from 'react-icons/hi'
 import {duotoneLight, atomDark} from "react-syntax-highlighter/dist/cjs/styles/prism";
-import {useParams} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import Chip from "../../components/Chip";
 import EmptyList from "../../components/EmptyList";
-import {blogList} from "../../assets/config/data";
 
 import "./style.css"
 import 'github-markdown-css';
 import Waline from "../../components/Waline";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 
 const Blog = () => {
 
@@ -23,12 +25,13 @@ const Blog = () => {
 
     const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const [blog, setBlog] = useState(null);
-
-    const {id} = useParams();
+    let location = useLocation();
+    let blog = location.state.blog;
 
     // markdown code template switch
     useEffect(() => {
+
+
         const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
         setIsDarkMode(mediaQuery.matches);
 
@@ -42,22 +45,13 @@ const Blog = () => {
         };
     }, []);
 
-    // 临时读取文件内容
     useEffect(() => {
         // 读取 Markdown 文件内容
-        fetch("https://huangrx.cn/document/MySql%20%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6.md")
+        fetch(blog.document_url)
             .then(response => response.text())
             .then(text => setMarkdown(text))
             .catch(error => console.log(error));
-    }, []);
-
-    // 临时获取对应文章
-    useEffect(() => {
-        let blog = blogList.find((blog) => blog.id === parseInt(id));
-        if (blog) {
-            setBlog(blog);
-        }
-    }, [id]);
+    }, [blog.document_url]);
 
     const handleCopy = () => {
         notificationApi.open({
@@ -83,14 +77,20 @@ const Blog = () => {
                                     <img src={blog.cover} alt='cover'/>
                                 </div>
 
-                                <p className='blog-date'>Published {blog.createdAt}</p>
+                                <p className='blog-date'>上传日期 {blog.create_time}</p>
                                 <h1>{blog.title}</h1>
                                 <div className='blog-subCategory'>
-                                    {blog.subCategory.map((category, i) => (
-                                        <div key={i}>
-                                            <Chip label={category}/>
-                                        </div>
-                                    ))}
+                                    {/*{blog.category.map((category, i) => (*/}
+                                    {/*    <div key={i}>*/}
+                                    {/*        <Chip label={category}/>*/}
+                                    {/*    </div>*/}
+                                    {/*))}*/}
+                                    <div>
+                                        <Chip label={blog.category}/>
+                                    </div>
+                                    <div>
+                                        <Chip label={blog.subcategory}/>
+                                    </div>
                                 </div>
                             </header>
 
@@ -98,7 +98,9 @@ const Blog = () => {
                             {/*markdown 部分*/}
                             <ReactMarkdown
                                 className="markdown-body"
-                                remarkPlugins={[gfm]}
+                                plugins={remarkToc}
+                                remarkPlugins={[remarkGfm]}
+                                rehypePlugins={[rehypeRaw]}
                                 children={markdown}
                                 components={{
                                     code({node, inline, className, children, ...props}) {
@@ -123,13 +125,13 @@ const Blog = () => {
                                             )
                                             :
                                             (
-                                                <div className="code-wrapper">
-                                                    <div className="code code-not-language">
-                                                        <code className={className} {...props}>
-                                                            {children}
-                                                        </code>
-                                                    </div>
-                                                </div>
+
+                                                <span className="code code-not-language">
+                                                    <code className={className} {...props}>
+                                                        {children}
+                                                    </code>
+                                                </span>
+
                                             );
                                     },
                                 }}
@@ -140,8 +142,10 @@ const Blog = () => {
                         <EmptyList/>
                     )
                 }
-
                 <Waline/>
+            </div>
+            <div className="toc-container">
+                <Toc className="toc" />
             </div>
         </div>
     );

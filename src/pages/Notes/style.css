@@ -16,7 +16,7 @@
 }
 
 .ant-pagination, .ant-pagination-item a, .ant-pagination-item-link, .ant-pagination-item-ellipsis {
-    color: white !important;
+    color: var(--white) !important;
 }
 
 .ant-pagination-item-active {

@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 
 import "./style.css"
 import {Link} from "react-router-dom";
-import {acquireQuote} from "../../api/quote";
-import {acquireArticle} from "../../api/article_generate";
+import {acquireQuote} from "../../api/quote/quote";
+import {acquireArticle} from "../../api/article/article_generate";
 import {TbChevronsDown, TbChevronsUp} from "react-icons/tb";
 
 
@@ -37,7 +37,7 @@ const Home = () => {
     const toggleArticle = () => {
         acquireArticle().then((res) => {
             // console.log(res)
-            let data = res.data.data;
+            let data = res.data;
             if (data !== null) {
                 setArticle(() => ({
                     author: data.author,
@@ -45,8 +45,6 @@ const Home = () => {
                     title: data.title
                 }))
             }
-        }).catch((err) => {
-            console.log(err)
         })
     }
 

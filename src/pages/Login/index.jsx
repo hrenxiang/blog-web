@@ -6,6 +6,7 @@ import {RiEyeLine, RiEyeOffLine, RiQqLine, RiWechatLine, RiSmartphoneLine} from 
 import TsParticles from "../../components/TsParticles";
 
 import "./style.css"
+import {login} from "../../api/login/login";
 
 const Login = () => {
 
@@ -51,12 +52,25 @@ const Login = () => {
         } else if (!state.password) {
             messageApi.error('密码不能为空').then(() => {
             });
-        } else if (!PasswordRegExp.test(state.email)) {
+        } else if (!PasswordRegExp.test(state.password)) {
             messageApi.error('请输入格式正确的密码！').then(() => {
             });
         } else {
+            let params = {
+                username: state.email,
+                password: state.password
+            }
+
             // 调用登录方法
-            console.log("登录")
+            login(params).then((res) => {
+                if (res.code === 0) {
+                    messageApi.info("登录成功").then(() => {
+                    });
+                } else {
+                    messageApi.error(res.message).then(() => {
+                    });
+                }
+            });
         }
     }
 
@@ -95,7 +109,7 @@ const Login = () => {
                                     onChange={handleChange}
                                 />
 
-                                <i onClick={handleEyeClick}>{state.eyeState ? <RiEyeLine/>: <RiEyeOffLine/>}</i>
+                                <i onClick={handleEyeClick}>{state.eyeState ? <RiEyeLine/> : <RiEyeOffLine/>}</i>
 
                                 <Link to='/register'>找回密码</Link>
                             </p>

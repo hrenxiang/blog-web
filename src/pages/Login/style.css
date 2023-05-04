@@ -136,7 +136,8 @@
 }
 
 .auth form input:not(.submit) {
-  background-color: var(--white);
+  background-color: var(--article);
+  border: 1px solid var(--white-219-30);
 }
 
 .auth form .password i {

@@ -1,22 +1,54 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import EmptyList from '../../components/EmptyList';
 import BlogList from '../../components/BlogList';
-import {blogList} from '../../assets/config/data';
+
 
 import "./style.css"
 import {Pagination} from "antd";
+import {acquireDocumentData} from "../../api/document/document";
 
 const Notes = () => {
-    const [blogs] = useState(blogList);
+
+    const [state, setState] = useState({
+        documentData: [],
+        pageNum: 1,
+        pageSize: 12
+    })
+
+    useEffect(() => {
+        acquireDocumentData(state.pageNum, state.pageSize).then((res) => {
+            setState((prevState) => ({
+                documentData: res.data,
+                pageNum: prevState.pageNum,
+                pageSize: prevState.pageSize
+            }))
+        })
+    }, [state.pageNum, state.pageSize]);
+
+    function handlePageChange(currentPage, pageSize) {
+        // 将页码发送给后端
+        setState((prevState) => ({
+            documentData: prevState.documentData,
+            pageNum: currentPage,
+            pageSize: pageSize
+        }))
+    }
 
     return (
         <div className="notes">
-            {/* Blog List & Empty View */}
-            {!blogs.length ? <EmptyList/> : <BlogList blogs={blogs}/>}
+            {
+                state.documentData && state.documentData.records && state.documentData.records.length
+                    ?
+                    <BlogList blogs={state.documentData.records}/>
+                    :
+                    <EmptyList/>
+            }
 
             <div className="notes-pagination">
                 <Pagination
-                    total={0}
+                    onChange={handlePageChange}
+                    total={state.documentData && state.documentData.total ? state.documentData.total : 0}
+                    pageSize={12}
                     showSizeChanger={false}
                     showQuickJumper={false}
                     showLessItems

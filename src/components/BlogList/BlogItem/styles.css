@@ -41,6 +41,10 @@
   color: inherit;
 }
 
+.blogItem-link:hover {
+  cursor: pointer;
+}
+
 .blogItem-author {
   display: flex;
   align-items: center;
