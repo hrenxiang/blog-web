@@ -19,12 +19,12 @@ const FooterQuick = () => {
 
         if (uuid) {
             localStorage.removeItem('theme_uuid')
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('light');
+            document.documentElement.classList.add('dark');
         } else {
             uuid = generateUUID();
             localStorage.setItem('theme_uuid', uuid);
-            document.documentElement.classList.toggle('dark')
+            document.documentElement.classList.toggle('light')
         }
 
     }

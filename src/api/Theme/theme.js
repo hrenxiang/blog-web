@@ -2,8 +2,8 @@
 export const checkDarkTheme = () => {
     const uuid = localStorage.getItem('theme_uuid');
     if (uuid) {
-        document.documentElement.classList.toggle('dark');
-    } else {
         document.documentElement.classList.toggle('light');
+    } else {
+        document.documentElement.classList.toggle('dark');
     }
 }

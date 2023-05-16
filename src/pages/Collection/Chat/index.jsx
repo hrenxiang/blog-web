@@ -1,49 +1,43 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 
 import "./style.css"
-import {Button, Input, List, Space} from "antd";
-import {BsSend} from "react-icons/bs";
 
 const Chat = () => {
 
-    const [messages, setMessages] = useState([]);
-    const [inputValue, setInputValue] = useState('');
-    const messageListRef = useRef(null);
-    useRef(null);
-    const handleInputPressEnter = () => {
-        if (inputValue.trim() !== '') {
-            setMessages([...messages, { content: inputValue }]);
-            setInputValue('');
-            messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
-        }
-    };
-
     return (
         <div className="chat">
-            <p>Chat GPT</p>
-            <div className="chat-body">
-
-                <div className="chat-body-messages" ref={messageListRef}>
-                    <List
-                        dataSource={messages}
-                        renderItem={(message) => (
-                            <List.Item>
-                                <div>{message.content}</div>
-                            </List.Item>
-                        )}
-                    />
+            <section className="chat-side-bar">
+                <button>+ New chat</button>
+                <ul className="chat-history">
+                    <li>生活常识</li>
+                    <li>编程知识</li>
+                    <li>营养搭配</li>
+                    <li>运动健身</li>
+                    <li>网站推荐</li>
+                </ul>
+                <nav>
+                    <p>
+                        Made By Huangrx
+                    </p>
+                </nav>
+            </section>
+            <section className="chat-body">
+                <h1>Huangrx‘s GPT</h1>
+                <ul className="feed">
+                    难受啊! 网络不通！！！！！！
+                </ul>
+                <div className="chat-body-input">
+                    <div className="chat-input-container">
+                        <input/>
+                        <div className="chat-send-button">➢</div>
+                    </div>
+                    <div className="chat-body-input-bottom">
+                        <p>
+                            Free Research Preview.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <Space className="chat-body-space">
-                <Space.Compact>
-                    <Input defaultValue="请输入您的内容"
-                           value = {inputValue}
-                           onChange={(e) => setInputValue(e.target.value)}
-                           onPressEnter={handleInputPressEnter}
-                    />
-                    <Button icon={<BsSend/>} className="chat-body-send-button" onClick={handleInputPressEnter}/>
-                </Space.Compact>
-            </Space>
+            </section>
         </div>
     );
 };

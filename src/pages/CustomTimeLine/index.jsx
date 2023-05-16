@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import "./style.css"
 import timeAnimation from "../../assets/animation/time.json";
 import {useLottie} from "lottie-react";
+import {acquireTimeline} from "../../api/timeline/timeline";
 
 const CustomTimeLine = () => {
 
@@ -18,18 +19,13 @@ const CustomTimeLine = () => {
 
     const { View: lottie } = useLottie(defaultOptions);
 
-    const data = {
-        "2023": [
-            {
-                "timeline_info": '2023-05-03 00:56:00',
-                "timeline_title": '前端后端基本完工',
-                "timeline_content": '今天对于我来说,是一个里程的结束.' +
-                    '也算是谋划已久吧,这些年用git,github的pages,以及自己的服务器都部署过hexo静态博客,' +
-                    '但总是感觉不满足,我总想自己动手去实现(可能我脑子有炮吧哈哈),不过最终来说,今天我算是实现了我自己博客的绝大的一部分.' +
-                    '目前还剩下数据的补充和前后端的联调了,其实这部分内容目前来说并不多(因为需要的地方比极少),也就笔记、笔记分类、时间线、收藏中的导航及色卡数据的上传与获取.这个对本来就是后端的我来说,我认为并没有难度.所以,很开心,🎇!'
-            }
-        ]
-    }
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        acquireTimeline().then((res) => {
+            setData(res.data)
+        })
+    }, [])
 
     // period
     return (
@@ -56,16 +52,16 @@ const CustomTimeLine = () => {
                                             </div>
                                         </li>
                                         {
-                                            value.map((event, index) => (
-                                                <li className="custom-timeline-item" key={event.timeline_info}>
+                                            value.map((event) => (
+                                                <li className="custom-timeline-item" key={event.id}>
 
                                                     <div className="timeline-item-glass">
-                                                        <div className="custom-timeline-info">{event.timeline_info}</div>
+                                                        <div className="custom-timeline-info">{event.title}</div>
                                                         <div className="custom-timeline-marker">
                                                         </div>
                                                         <div className="custom-timeline-content">
-                                                            <h2 className="timeline-title">{event.timeline_title}</h2>
-                                                            <p>{event.timeline_content}</p>
+                                                            <p className="timeline-title">{event.create_time}</p>
+                                                            <p>{event.content}</p>
                                                         </div>
                                                     </div>
                                                 </li>
