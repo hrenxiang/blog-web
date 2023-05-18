@@ -24,6 +24,7 @@ const FooterQuick = () => {
         } else {
             uuid = generateUUID();
             localStorage.setItem('theme_uuid', uuid);
+            document.documentElement.classList.remove('dark');
             document.documentElement.classList.toggle('light')
         }
 

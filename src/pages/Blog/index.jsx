@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {notification} from 'antd';
 import ReactMarkdown from 'react-markdown';
-import remarkToc from 'remark-toc';
-import Toc from 'remark-toc'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {HiOutlineCheck} from 'react-icons/hi'
@@ -10,48 +8,74 @@ import {duotoneLight, atomDark} from "react-syntax-highlighter/dist/cjs/styles/p
 import {useLocation} from "react-router-dom";
 import Chip from "../../components/Chip";
 import EmptyList from "../../components/EmptyList";
-
 import "./style.css"
 import 'github-markdown-css';
 import Waline from "../../components/Waline";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import {MarkdownNavbar} from "markdown-navbar";
 
 const Blog = () => {
 
+    // 代码块复制通知
     const [notificationApi, contextHolderNotification] = notification.useNotification();
 
+    // 文章内容
     const [markdown, setMarkdown] = useState('');
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    // 预处理后的文章目录内容
+    const [tocMarkdown, setTocMarkdown] = useState('');
 
-    let location = useLocation();
-    let blog = location.state.blog;
+    const [blog, setBlog] = useState({
+        cover: '',
+        title: '',
+        documentUrl: '',
+        category: '',
+        subcategory: '',
+        createTime: ''
+    })
 
-    // markdown code template switch
-    useEffect(() => {
+    // TODO：代码块颜色模式，目前待定
+    const [isDarkMode] = useState(false);
 
-
-        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-        setIsDarkMode(mediaQuery.matches);
-
-        const onChange = (e) => {
-            setIsDarkMode(e.matches);
-        };
-
-        mediaQuery.addEventListener("change", onChange);
-        return () => {
-            mediaQuery.removeEventListener("change", onChange);
-        };
-    }, []);
+    const location = useLocation();
 
     useEffect(() => {
+
+        const searchParams = new URLSearchParams(location.search);
+
+        // 获取参数的值
+
+        const title = searchParams.get('title');
+        const category = searchParams.get('category');
+        const subcategory = searchParams.get('subcategory');
+        const createTime = searchParams.get('create_time');
+        const cover = searchParams.get('cover');
+        const documentUrl = searchParams.get('document_url');
+
+        setBlog(() => ({
+            cover: cover,
+            title: title,
+            documentUrl: documentUrl,
+            category: category,
+            subcategory: subcategory,
+            createTime: createTime
+        }))
+
         // 读取 Markdown 文件内容
-        fetch(blog.document_url)
-            .then(response => response.text())
-            .then(text => setMarkdown(text))
-            .catch(error => console.log(error));
-    }, [blog.document_url]);
+        if (blog.documentUrl) {
+            fetch(documentUrl)
+                .then(response => response.text())
+                .then(text => {
+                    setMarkdown(text)
+
+                    // 预处理markdown内容，将代码块全部删除，以防止代码块中的#误使markdown-navbar生成标题。
+                    const processedText = text.replace(/```[\s\S]*?```/g, '');
+                    setTocMarkdown(processedText);
+                })
+                .catch(error => console.log(error));
+        }
+    }, [location.search, blog.documentUrl]);
 
     const handleCopy = () => {
         notificationApi.open({
@@ -68,84 +92,85 @@ const Blog = () => {
             <div className='blog-container'>
                 {contextHolderNotification}
 
-                {blog ?
+                {blog && markdown ?
                     (
-                        <div className='blog-wrap'>
+                        <>
+                            {tocMarkdown ? <div className="blog-markdown-toc"><MarkdownNavbar
+                                className='blog-markdown-toc-container' source={tocMarkdown} ordered={false}/>
+                            </div> : ''}
+                            <div className='blog-wrap'>
 
-                            <header>
-                                <div className="blog-cover">
-                                    <img src={blog.cover} alt='cover'/>
-                                </div>
-
-                                <p className='blog-date'>上传日期 {blog.create_time}</p>
-                                <h1>{blog.title}</h1>
-                                <div className='blog-subCategory'>
-                                    {/*{blog.category.map((category, i) => (*/}
-                                    {/*    <div key={i}>*/}
-                                    {/*        <Chip label={category}/>*/}
-                                    {/*    </div>*/}
-                                    {/*))}*/}
-                                    <div>
-                                        <Chip label={blog.category}/>
+                                <header>
+                                    <div className="blog-cover">
+                                        <img src={blog.cover} alt='cover'/>
                                     </div>
-                                    <div>
-                                        <Chip label={blog.subcategory}/>
+
+                                    <p className='blog-date'>上传日期 {blog.createTime}</p>
+                                    <h1>{blog.title}</h1>
+                                    <div className='blog-subCategory'>
+                                        {/*{blog.category.map((category, i) => (*/}
+                                        {/*    <div key={i}>*/}
+                                        {/*        <Chip label={category}/>*/}
+                                        {/*    </div>*/}
+                                        {/*))}*/}
+                                        <div>
+                                            <Chip label={blog.category}/>
+                                        </div>
+                                        <div>
+                                            <Chip label={blog.subcategory}/>
+                                        </div>
                                     </div>
-                                </div>
-                            </header>
+                                </header>
 
 
-                            {/*markdown 部分*/}
-                            <ReactMarkdown
-                                className="markdown-body"
-                                plugins={remarkToc}
-                                remarkPlugins={[remarkGfm]}
-                                rehypePlugins={[rehypeRaw]}
-                                children={markdown}
-                                components={{
-                                    code({node, inline, className, children, ...props}) {
-                                        const match = /language-(\w+)/.exec(className || '');
-                                        return !inline && match ?
-                                            (
-                                                <CopyToClipboard text={String(children).replace(/\n$/, '')}>
-                                                    <div className="code-wrapper">
-                                                        <SyntaxHighlighter
-                                                            style={isDarkMode ? duotoneLight : atomDark}
-                                                            language={match[1]}
-                                                            PreTag="div"
-                                                            children={String(children).replace(/\n$/, '')}
-                                                            {...props}
-                                                            className='code'
-                                                        />
-                                                        <div className="copy-btn" onClick={handleCopy}>
-                                                            复制
+                                {/*markdown 部分*/}
+                                <ReactMarkdown
+                                    className="markdown-body"
+                                    remarkPlugins={[remarkGfm]}
+                                    rehypePlugins={[rehypeRaw]}
+                                    children={markdown}
+                                    components={{
+                                        code({node, inline, className, children, ...props}) {
+                                            const match = /language-(\w+)/.exec(className || '');
+                                            return !inline && match ?
+                                                (
+                                                    <CopyToClipboard text={String(children).replace(/\n$/, '')}>
+                                                        <div className="code-wrapper">
+                                                            <SyntaxHighlighter
+                                                                style={isDarkMode ? duotoneLight : atomDark}
+                                                                language={match[1]}
+                                                                PreTag="div"
+                                                                children={String(children).replace(/\n$/, '')}
+                                                                {...props}
+                                                                className='code'
+                                                            />
+                                                            <div className="copy-btn" onClick={handleCopy}>
+                                                                复制
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </CopyToClipboard>
-                                            )
-                                            :
-                                            (
+                                                    </CopyToClipboard>
+                                                )
+                                                :
+                                                (
 
-                                                <span className="code code-not-language">
+                                                    <span className="code code-not-language">
                                                     <code className={className} {...props}>
                                                         {children}
                                                     </code>
                                                 </span>
 
-                                            );
-                                    },
-                                }}
-                            />
-                        </div>
+                                                );
+                                        },
+                                    }}
+                                />
+                            </div>
+                        </>
                     ) :
                     (
                         <EmptyList/>
                     )
                 }
                 <Waline/>
-            </div>
-            <div className="toc-container">
-                <Toc className="toc" />
             </div>
         </div>
     );

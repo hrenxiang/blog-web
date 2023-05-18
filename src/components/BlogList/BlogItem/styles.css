@@ -63,3 +63,8 @@
   color: var(--white-219-60);
   font-weight: 600;
 }
+
+.blogItem-link a {
+  text-decoration: none;
+  color: inherit;
+}

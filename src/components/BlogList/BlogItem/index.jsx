@@ -1,6 +1,6 @@
 import React from 'react';
 import Chip from '../../Chip';
-import {useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import './styles.css';
 
@@ -9,20 +9,15 @@ const BlogItem = ({blog}) => {
     const {
         author,
         author_avatar,
-        // category,
+        category,
         cover,
         create_time,
         description,
         id,
         subcategory,
         title,
+        document_url
     } = blog;
-
-    const navigate = useNavigate();
-
-    function handleClick(id) {
-        navigate('/blog/' + id, { state: { blog: blog } });
-    }
 
     return (
         <div className='blogItem-wrap'>
@@ -38,11 +33,8 @@ const BlogItem = ({blog}) => {
                         <p>{create_time}</p>
                     </div>
                 </div>
-                <p className='blogItem-link' onClick={() => {
-                    handleClick(id)
-                }}
-                >
-                    ➝
+                <p className='blogItem-link'>
+                    <Link to={'/blog/' + id + '?title=' + title + '&category=' + category+ '&subcategory=' + subcategory + '&create_time=' + create_time + '&cover=' + cover + '&document_url=' + document_url}>➝</Link>
                 </p>
             </footer>
         </div>
