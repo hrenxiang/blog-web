@@ -21,7 +21,10 @@ const BlogItem = ({blog}) => {
 
     return (
         <div className='blogItem-wrap'>
-            <img className='blogItem-cover' src={cover} alt='cover'/>
+            <div className="blogItem-cover-container">
+                <img className='blogItem-cover' src={cover} alt='cover'/>
+            </div>
+
             <Chip label={subcategory}/>
             <h4>{title}</h4>
             <p className='blogItem-desc'>{description}</p>
