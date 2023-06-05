@@ -169,6 +169,11 @@
     margin: 0;
 }
 
+.custom-timeline-content img {
+    width: 45%;
+    margin-top: 20px;
+}
+
 @media only screen and (max-width: 990px) {
 
 
@@ -176,5 +181,9 @@
         margin: 0;
         min-width: 100%;
         max-width: 100%;
+    }
+
+    .custom-timeline-content img {
+        width: 100%;
     }
 }

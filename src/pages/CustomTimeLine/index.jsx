@@ -4,6 +4,7 @@ import "./style.css"
 import timeAnimation from "../../assets/animation/time.json";
 import {useLottie} from "lottie-react";
 import {acquireTimeline} from "../../api/timeline/timeline";
+import DOMPurify from 'dompurify';
 
 const CustomTimeLine = () => {
 
@@ -61,7 +62,8 @@ const CustomTimeLine = () => {
                                                         </div>
                                                         <div className="custom-timeline-content">
                                                             <p className="timeline-title">{event.create_time}</p>
-                                                            <p>{event.content}</p>
+                                                            {/*<p>{event.content}</p>*/}
+                                                            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(event.content) }}/>
                                                         </div>
                                                     </div>
                                                 </li>

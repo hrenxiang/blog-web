@@ -41,7 +41,7 @@ const Palette = (props) => {
                 <div className="palettes">
                     {
                         state.paletteData ? state.paletteData.map((palette) => (
-                            <CopyToClipboard text={palette.from + " , " + palette.to} onCopy={handleCopy}
+                            <CopyToClipboard text={palette.palette_from + " , " + palette.palette_to} onCopy={handleCopy}
                                              key={palette.id}>
                                 <figure className="palette-figure" key={Math.random()}>
                                     <div className="aspect-ratio" style={{paddingTop: `${100}%`}}>

@@ -159,6 +159,10 @@
         margin: auto;
     }
 
+    .blog .markdown-body {
+        padding: 1rem 0;
+    }
+
     .blog-markdown-toc {
         display: none;
         visibility: hidden;
@@ -170,7 +174,6 @@
     position: fixed;
     top: 5rem;
     right: 15%;
-    padding: 0 2rem;
     width: 18%;
     height: calc(100vh - 10rem);
     margin-left: 2%;
@@ -201,6 +204,10 @@
     line-height: 2em;
     padding-right: 1.8em;
     cursor: pointer;
+
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 超出部分隐藏 */
+    text-overflow: ellipsis; /* 使用省略号表示多余部分 */
 }
 
 .markdown-navigation .title-anchor:hover {
@@ -213,39 +220,39 @@
 
 .markdown-navigation .title-level1 {
     color: var(--white);
-    font-size: 1.2em;
+    font-size: 1.2rem;
     padding-left: 1em;
     font-weight: normal;
 }
 
 .markdown-navigation .title-level2 {
     color: var(--white);
-    font-size: 1.1em;
+    font-size: 1.1rem;
     padding-left: 1.5em;
     font-weight: normal;
 }
 
 .markdown-navigation .title-level3 {
     color: var(--white);
-    font-size: 1em;
+    font-size: 1rem;
     padding-left: 3em;
     font-weight: normal;
 }
 
 .markdown-navigation .title-level4 {
     color: var(--white-219-60);
-    font-size: 0.9em;
+    font-size: 0.9rem;
     padding-left: 5em;
 }
 
 .markdown-navigation .title-level5 {
     color: var(--white-219-60);
-    font-size: 0.9em;
+    font-size: 0.9rem;
     padding-left: 6.5em;
 }
 
 .markdown-navigation .title-level6 {
     color: var(--white-219-60);
-    font-size: 0.9em;
+    font-size: 0.9rem;
     padding-left: 8em;
 }

@@ -92,8 +92,8 @@ const Footer = () => {
                 <div className="footer-record">
                     <div className="footer-record-body">
                         <Link to="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">
-                            <h5>&copy; 豫ICP备2022017977号</h5></Link>
-
+                            <h5 className="footer-record-text">&copy; 豫ICP备2022017977号</h5>
+                        </Link>
 
                         <Link to="https://github.com/hrenxiang" target="_blank">
                             <button><AiFillGithub/></button>

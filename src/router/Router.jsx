@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
@@ -15,6 +17,14 @@ import Gallery from "../pages/Collection/Gallery";
 import CustomTimeLine from "../pages/CustomTimeLine"
 import Message from "../pages/Message";
 
+const loadingComponent = (component) => {
+    return (
+        <React.Suspense fallback={<div>Loading...</div>}>
+            {component}
+        </React.Suspense>
+    );
+}
+
 const routers = [
     {
         path: "/",
@@ -26,63 +36,63 @@ const routers = [
             },
             {
                 path: '/notes',
-                element: <Notes/>
+                element: loadingComponent(<Notes/>)
             },
             {
                 path: '/blog/:id',
-                element: <Blog/>
+                element: loadingComponent(<Blog/>)
             },
             {
                 path: '/categories',
-                element: <Categories/>
+                element: loadingComponent(<Categories/>)
             },
             {
                 path: '/images',
-                element: <Images/>
+                element: loadingComponent(<Images/>)
             },
             {
                 path: '/timeline',
-                element: <CustomTimeLine/>
+                element: loadingComponent(<CustomTimeLine/>)
             },
             {
                 path: '/message',
-                element: <Message/>
+                element: loadingComponent(<Message/>)
             },
             {
                 path: '/about',
-                element: <About/>
+                element: loadingComponent(<About/>)
             }
         ]
     },
     {
         path: '/collection',
-        element: <Collection/>,
+        element: loadingComponent(<Collection/>),
         children: [
             {
                 path: "navigation",
-                element: <Navigation/>
+                element: loadingComponent(<Navigation/>)
             },
             {
                 path: "chat",
-                element: <Chat/>
+                element: loadingComponent(<Chat/>)
             },
             {
                 path: "palette",
-                element: <Palette/>
+                element: loadingComponent(<Palette/>)
             },
             {
                 path: "gallery",
-                element: <Gallery/>
+                element: loadingComponent(<Gallery/>)
             }
         ]
     },
     {
         path: "/register",
-        element: <Register/>,
+        element: loadingComponent(<Register/>),
     },
     {
         path: "/login",
-        element: <Login/>,
+        element: loadingComponent(<Login/>),
     },
 ]
 
