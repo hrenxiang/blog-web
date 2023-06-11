@@ -3,28 +3,27 @@
 
 .navigation {
     width: 100%;
-    height: 100%;
-    overflow: auto;
+    overflow-y: auto;
+    padding: 0 10rem;
 }
 
 .navigation-container {
     overflow: hidden;
-    width: calc(100vw - 200px);
 }
 
 .navigation-body {
-    padding: 2rem;
+    padding: 3.8rem 0;
 }
 
 .navigation-title {
-    font-size: 18px;
+    font-size: 1rem;
     position: relative;
     color: var(--white);
 }
 
 .navigation-body-item {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     margin: 0 auto;
 }
@@ -44,6 +43,10 @@
     transform: scale(1.05);
 }
 
+.navigation-body-item a {
+    text-decoration: none;
+}
+
 /*上滑效果*/
 @keyframes slideInUp {
     0% {
@@ -54,8 +57,12 @@
     }
 }
 
-
-.navigation-body-card-description {
+.ant-card-meta-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.navigation-body-item .ant-card-meta-description {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -63,24 +70,14 @@
     -webkit-line-clamp: 2;
 }
 
-@media screen and (max-width: 1500px) {
-    .navigation-body-item {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width: 990px) {
-    .navigation-container {
-        width: 100vw;
-    }
-
-    .navigation-body-item {
-        grid-template-columns: repeat(2, 1fr);
+@media screen and (max-width: 1400px) {
+    .navigation {
+        padding: 0 5rem;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .navigation-body-item {
-        grid-template-columns: repeat(1, 1fr);
+    .navigation {
+        padding: 0 2rem;
     }
 }

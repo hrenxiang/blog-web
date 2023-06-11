@@ -36,14 +36,9 @@ const Navigation = () => {
                                         <Link to={item.site_link} key={item.id} target="_blank">
                                             <Card style={{height: 115, marginTop: 16}}>
                                                 <Meta
-                                                    avatar={<Avatar
-                                                        src={item.site_avatar}/>}
+                                                    avatar={<Avatar src={item.site_avatar}/>}
                                                     title={item.site_name}
-                                                    description={
-                                                        <div className="navigation-body-card-description">
-                                                            {item.site_intro}
-                                                        </div>
-                                                    }
+                                                    description={item.site_intro}
                                                 />
                                             </Card>
                                         </Link>

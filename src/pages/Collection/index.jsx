@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
-import {Button, Layout, Menu} from 'antd';
+import {Menu} from 'antd';
 import {Link, Outlet} from "react-router-dom";
 import {VscSymbolColor} from "react-icons/vsc";
 import {BiNavigation} from "react-icons/bi";
 import {LogoIcon} from "../../constants/IconConst";
-import {RiGalleryLine} from "react-icons/ri";
-import {BsRobot} from "react-icons/bs";
+import {RiCloseFill, RiGalleryLine} from "react-icons/ri";
 import {IoArrowBackCircleOutline} from "react-icons/io5";
 
 import "./style.css"
+import {CgMenu} from "react-icons/cg";
+import {AiOutlineMenuFold, AiOutlineMenuUnfold} from "react-icons/ai";
 
 const Collection = () => {
 
@@ -22,66 +23,67 @@ const Collection = () => {
 
         <div className="collection">
             <div className="collection-body">
-                <Layout hasSider className="collection-layout">
-                    <div className={`collection-layout-sider-logo ${opacity ? 'collection-layout-sider-show' : ''}`}>
-                        <img src={LogoIcon} alt="logo"/>
-                        <p>收藏箱</p>
-                    </div>
-                    <div className={`collection-layout-sider ${opacity ? 'collection-layout-sider-show' : ''}`}>
-                        <Menu className="collection-layout-sider-menu"
-                              defaultSelectedKeys={['2']}
-                              items={[
-                                  {
-                                      key: 1,
-                                      icon: <IoArrowBackCircleOutline/>,
-                                      label: '主页',
-                                      to: '/'
-                                  },
-                                  {
-                                      key: 2,
-                                      icon: <BiNavigation/>,
-                                      label: '导航',
-                                      to: '/collection/navigation'
-                                  },
-                                  {
-                                      key: 5,
-                                      icon: <RiGalleryLine/>,
-                                      label: '图库',
-                                      to: '/collection/gallery'
-                                  },
-                                  {
-                                      key: 3,
-                                      icon: <BsRobot/>,
-                                      label: '智能',
-                                      to: '/collection/chat'
-                                  },
-                                  {
-                                      key: 4,
-                                      icon: <VscSymbolColor/>,
-                                      label: '色卡',
-                                      to: '/collection/palette'
-                                  }
-                              ].map(item => ({
-                                  ...item,
-                                  label: <Link to={item.to}>{item.label}</Link>
+                <div className="collection-layout">
+                   <div className={`collection-layout-sider ${opacity ? 'collection-layout-sider-close' : ''}`}>
+                       <div className={`collection-layout-sider-top`}>
+                           <div>
+                               <img src={LogoIcon} alt="logo"/>
+                           </div>
+                           <div className="collection-lst-right">
+                               <p>收藏箱</p>
+                               <AiOutlineMenuFold className="collection-lstr-icon" onClick={handlerShowMenu}/>
+                           </div>
 
-                              }))}>
-                        </Menu>
-                    </div>
-                    <div className={`collection-layout-sider-bottom ${opacity ? 'collection-layout-sider-show' : ''}`}>
-                        <Link to="/register">注册</Link>
-                        <Link to="/login">登录</Link>
-                    </div>
 
-                    <Layout className="collection-layout-content">
-                        <div
-                            className={`collection-layout-sider-button ${opacity ? 'collection-layout-sider-button-show' : ''}`}>
-                            <Button icon={<IoArrowBackCircleOutline/>}
-                                    onClick={handlerShowMenu}/>
+                       </div>
+                       <div className={`collection-layout-sider-content`}>
+                           <Menu className="collection-layout-sider-menu"
+                                 defaultSelectedKeys={['2']}
+                                 items={[
+                                     {
+                                         key: 1,
+                                         icon: <IoArrowBackCircleOutline/>,
+                                         label: '主页',
+                                         to: '/'
+                                     },
+                                     {
+                                         key: 2,
+                                         icon: <BiNavigation/>,
+                                         label: '导航',
+                                         to: '/collection/navigation'
+                                     },
+                                     {
+                                         key: 4,
+                                         icon: <VscSymbolColor/>,
+                                         label: '色卡',
+                                         to: '/collection/palette'
+                                     },
+                                     {
+                                         key: 5,
+                                         icon: <RiGalleryLine/>,
+                                         label: '图库',
+                                         to: '/collection/gallery'
+                                     },
+                                 ].map(item => ({
+                                     ...item,
+                                     label: <Link to={item.to}>{item.label}</Link>
+
+                                 }))}>
+                           </Menu>
+                       </div>
+                       <div className={`collection-layout-sider-bottom`}>
+                           <Link to="/register">注册</Link>
+                           <Link to="/login">登录</Link>
+                       </div>
+                   </div>
+
+                    <div className={`collection-layout-content ${opacity ? 'collection-lc-active' : ''}`}>
+                        <div className={`collection-layout-sider-open ${opacity ? 'collection-lso-active' : ''}`} onClick={handlerShowMenu}>
+                            <AiOutlineMenuUnfold/>
                         </div>
                         <Outlet/>
-                    </Layout>
-                </Layout>
+                    </div>
+                </div>
             </div>
         </div>
 

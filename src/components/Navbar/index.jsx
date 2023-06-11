@@ -42,42 +42,47 @@ const Navbar = () => {
                     <ul>
                         <li>
                             <Link to="/" onClick={handlerToggle}>
-                                首页
+                                Home
                             </Link>
                         </li>
                         <li>
                             <Link to="/notes" onClick={handlerToggle}>
-                                笔记
+                                Blog
                             </Link>
                         </li>
                         <li>
                             <Link to="/categories" onClick={handlerToggle}>
-                                分类
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/images" onClick={handlerToggle}>
-                                摄影师
+                                Categories
                             </Link>
                         </li>
                         <li>
                             <Link to="/timeline" onClick={handlerToggle}>
-                                时光轴
+                                Timeline
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/chat" onClick={handlerToggle}>
+                                Chat AI
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/images" onClick={handlerToggle}>
+                                Unsplash
                             </Link>
                         </li>
                         <li>
                             <Link to="/message" onClick={handlerToggle}>
-                                留言板
+                                Leave Comments
                             </Link>
                         </li>
                         <li>
                             <Link to="/about" onClick={handlerToggle}>
-                                关于我
+                                About Me
                             </Link>
                         </li>
                         <li>
                             <Link to="/collection/navigation" onClick={handlerToggle}>
-                                收藏家
+                                Other Collections
                             </Link>
                         </li>
                     </ul>
