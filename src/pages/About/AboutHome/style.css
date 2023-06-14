@@ -1,0 +1,236 @@
+.about_home_section h1 {
+    font-weight: 600;
+}
+
+.about_home_section h3 {
+    font-weight: 400;
+    margin: 0;
+}
+
+.about_home_section a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.about_home_section {
+    height: 100vh;
+    width: 100%;
+    padding: 12vh 15vw;
+}
+
+.about_home_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about_home_button {
+    display: inline-flex;
+    background-color: var(--white);
+    color: var(--black-1b) !important;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+.about_home_button:hover {
+    background-color: var(--blue);
+}
+
+.about_home_content {
+    display: grid;
+    grid-template-columns: 6vw 1fr 1fr;
+    align-items: center;
+    gap: 1vw;
+    padding-top: 15vh;
+}
+
+.about_home_social {
+    display: grid;
+    grid-template-columns: max-content;
+    gap: 2rem;
+}
+
+.about_home_social_icon {
+    font-size: 1.25rem;
+}
+
+.about_home_social_icon:hover {
+    color: var(--blue);
+}
+
+.about_home_img_container {
+    order: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about_home_img {
+    background-image: url("https://images.huangrx.cn/uploads/2023/06/14/profile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 360px;
+    height: 360px;
+
+
+    box-shadow: inset 0 0 0 9px rgba(255, 255, 255, 0.5);
+
+    animation: profile-animate 8s ease-in-out infinite 1s;
+
+    justify-content: end;
+}
+
+.about_home_title {
+    font-size: 4.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.about_home_hand {
+    width: 38px;
+    height: 38px;
+    margin-left: 0.5rem;
+}
+
+.about_home_subtitle {
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: 2rem 0 5rem;
+    color: var(--white-219-60);
+}
+
+.about_home_description {
+    font-size: 1rem;
+    color: var(--white-219-30);
+    margin: 0;
+}
+
+@keyframes profile-animate {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+.about_home_scroll {
+ margin-left: 7vw;
+    padding-top: 15vh;
+}
+
+.about_home_scroll_button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about_home_scroll_name {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.about_home_scroll .wheel {
+    animation: scroll 2s ease infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    0% {
+        transform: translateY(3.75rem);
+    }
+}
+
+@media screen and (max-width: 1400px) {
+
+    .about_home_section {
+        padding: 12vh 6vw;
+    }
+
+    .about_home_img {
+        width: 300px !important;
+        height: 300px !important;
+    }
+
+    .about_home_button {
+        margin-top: 2rem;
+    }
+
+    .about_home_title {
+        font-size: 3rem;
+    }
+
+    .about_home_hand {
+        width: 24px;
+        height: 24px;
+    }
+
+    .about_home_subtitle {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .about_home_description {
+        font-size: 1rem;
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about_home_content {
+        grid-template-columns: 0.5fr 3fr;
+        padding-top: 0;
+        gap: 1rem;
+    }
+
+    .about_home_img_container {
+        order: initial;
+        justify-self: initial;
+    }
+
+    .about_home_data {
+        grid-column: 1/3;
+
+    }
+
+    .about_home_img {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .about_home_title {
+        font-size: 2rem;
+        padding-top: 2rem;
+    }
+
+    .about_home_hand {
+        width: 16px;
+        height: 16px;
+    }
+
+    .about_home_subtitle {
+        font-size: 1rem;
+        padding-bottom: 3rem;
+    }
+
+    .about_home_description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .about_home_scroll {
+        display: none;
+    }
+
+}

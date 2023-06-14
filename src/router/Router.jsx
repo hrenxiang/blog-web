@@ -27,11 +27,15 @@ const loadingComponent = (component) => {
 
 const routers = [
     {
+        path: '/',
+        element: loadingComponent(<About/>)
+    },
+    {
         path: "/",
         element: <Layout/>,
         children: [
             {
-                path: '/',
+                path: '/home',
                 element: <Home/>
             },
             {
@@ -57,12 +61,12 @@ const routers = [
             {
                 path: '/message',
                 element: loadingComponent(<Message/>)
-            },
-            {
-                path: '/about',
-                element: loadingComponent(<About/>)
             }
         ]
+    },
+    {
+        path: '/about',
+        element: loadingComponent(<About/>)
     },
     {
         path: "/chat",

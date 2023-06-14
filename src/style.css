@@ -6,6 +6,7 @@
     --black-2b: #ffffff;
     --black-31: #ffffff;
     --black-46: #656565;
+    --white-fa: #fafafa;
     --white-219-30: rgba(0, 0, 0, 0.3);
     --white-219-60: rgba(0, 0, 0, 0.6);
     --white: #000000;
@@ -25,6 +26,7 @@
     /*字体*/
     --blogFont: "blog-font-1", sans-serif;
     --zhuziawan: "zhuziawan", sans-serif;
+
 }
 
 /*手动暗黑*/
@@ -36,6 +38,7 @@
     --black-2b: #2b2b2b;
     --black-31: #313131;
     --black-46: #464646;
+    --white-fa: rgba(27, 27, 27, 0.992);
     --white-219-30: rgb(219, 219, 219, 30%);
     --white-219-60: rgb(219, 219, 219, 60%);
     --white: #FFFFFF;

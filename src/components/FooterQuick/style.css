@@ -20,12 +20,32 @@
     display: block !important;
 }
 
-.ant-float-btn-square:first-child {
-    border-start-start-radius: 0 !important;
-    border-start-end-radius: 0 !important;
+.footer-quick .ant-float-btn-square:first-child {
+
 }
 
-.ant-float-btn-square:last-child {
-    border-end-start-radius: 0 !important;
-    border-end-end-radius: 0 !important;
+.footer-quick .ant-float-btn-square:last-child {
+
+}
+
+.footer-quick .ant-float-btn-default {
+    background-color: var(--black-1b);
+    border: 1px solid var(--white-219-30) !important;
+    border-radius: 0.5rem !important;
+}
+
+.footer-quick .ant-float-btn-group-square-shadow {
+    box-shadow: none !important;
+}
+
+.footer-quick .ant-float-btn-body {
+    background-color: var(--black-1b) !important;
+}
+
+.footer-quick .ant-float-btn-icon {
+    color: var(--white) !important;
+}
+
+.footer-quick .ant-float-btn-icon:hover {
+    color: var(--blue) !important;
 }

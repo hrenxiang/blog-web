@@ -64,7 +64,7 @@ const Home = () => {
 
                 {/*视频*/}
                 <section className="home-banner">
-                    <video autoPlay="autoplay" loop="loop" muted="muted" src="https://huangrx.cn/video/home-video.mp4"></video>
+                    <video autoPlay="autoplay" loop="loop" muted="muted" src="https://huangrx.cn/video/home_video_2.mp4"></video>
                     <div className="inner">
                         <h1>Huangrx</h1>
                         <p>{quote}</p>

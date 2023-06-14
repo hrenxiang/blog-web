@@ -41,23 +41,23 @@ const Navbar = () => {
                     </button>
                     <ul>
                         <li>
-                            <Link to="/" onClick={handlerToggle}>
-                                Home
+                            <Link to="/home" onClick={handlerToggle}>
+                                博客主页
                             </Link>
                         </li>
                         <li>
                             <Link to="/notes" onClick={handlerToggle}>
-                                Blog
+                                博客文章
                             </Link>
                         </li>
                         <li>
                             <Link to="/categories" onClick={handlerToggle}>
-                                Categories
+                                文章分类
                             </Link>
                         </li>
                         <li>
                             <Link to="/timeline" onClick={handlerToggle}>
-                                Timeline
+                                时间线
                             </Link>
                         </li>
                         <li>
@@ -72,17 +72,17 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link to="/message" onClick={handlerToggle}>
-                                Leave Comments
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/about" onClick={handlerToggle}>
-                                About Me
+                                留言板块
                             </Link>
                         </li>
                         <li>
                             <Link to="/collection/navigation" onClick={handlerToggle}>
-                                Other Collections
+                                其他功能
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/" onClick={handlerToggle}>
+                                个人主页 📌
                             </Link>
                         </li>
                     </ul>

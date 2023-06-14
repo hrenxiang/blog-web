@@ -1,0 +1,221 @@
+.about_qualification_section a {
+    text-decoration: none;
+    color: initial;
+}
+
+.about_qualification_section ul,
+.about_qualification_section ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about_qualification_section li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about_qualification_section h3 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.about_qualification_section {
+    display: flex;
+    flex-direction: column;
+    padding: 12vh 15vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.about_qualification_section_title,
+.about_qualification_section_subtitle {
+    text-align: center;
+}
+
+.about_qualification_section_title {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+.about_qualification_section_subtitle {
+    padding-bottom: 5rem;
+    font-size: 1.2rem;
+    color: var(--white-219-60);
+}
+
+.about_qualification_container {
+    max-width: 768px;
+
+    margin: 0 auto;
+}
+
+.about_qualification_tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.about_qualification_button {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.about_qualification_button:hover {
+   color: var(--blue);
+}
+
+.about_qualification_button_active {
+    /*color: var(--blue);*/
+}
+
+.about_qualification_icon {
+    margin-right: 0.25rem;
+}
+
+.about_qualification_sections {
+    display: grid;
+    justify-content: center;
+}
+
+.about_qualification_content {
+    display: none;
+}
+
+.about_qualification_content_active {
+    display: block;
+}
+
+.about_qualification_data {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    gap: 5rem;
+    padding-bottom: 2rem;
+}
+
+.about_qualification_title {
+    font-size: 1.2rem;
+}
+
+.about_qualification_subtitle {
+    display: inline-block;
+    margin: 0.6rem 0 1.2rem 0;
+    font-size: 1rem;
+    color: var(--white-219-60);
+}
+
+.about_qualification_calender {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white-219-60);
+}
+
+.about_qualification_rounder {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: var(--white-219-60);
+    border-radius: 50%;
+}
+
+.about_qualification_line {
+    display: block;
+    width: 1px;
+    height: 130%;
+    background-color: var(--white-219-60);
+    transform: translate(6px, -7px);
+}
+
+
+@media screen and (max-width: 1400px) {
+    .about_qualification_section {
+        padding: 12vh 6vw;
+        height: auto;
+    }
+
+    .about_qualification_section_title {
+        font-size: 3rem;
+    }
+
+    .about_qualification_section_subtitle {
+        font-size: 1rem;
+        padding-bottom: 3rem;
+    }
+
+    .about_qualification_tabs {
+        margin-bottom: 2rem;
+    }
+
+    .about_qualification_button {
+        font-size: 1.2rem;
+    }
+
+    .about_qualification_title {
+        font-size: 1rem;
+        font-weight: 600 !important;
+    }
+
+    .about_qualification_subtitle {
+        display: inline-block;
+        margin: 0.8rem 0 1rem 0;
+        font-size: 0.8rem;
+        color: var(--white-219-60);
+    }
+
+    .about_qualification_calender {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about_qualification_section {
+        gap: 0.5rem;
+        overflow: auto;
+        height: auto;
+    }
+
+    .about_qualification_section_title {
+        font-size: 2rem;
+    }
+
+    .about_qualification_section_subtitle {
+        padding-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .about_qualification_button {
+        font-size: 1rem;
+    }
+
+    .about_qualification_title {
+        font-size: 0.8rem;
+        font-weight: 600 !important;
+    }
+
+    .about_qualification_subtitle {
+        display: inline-block;
+        margin: 0.5rem 0 0.8rem 0;
+        font-size: 0.6rem;
+        color: var(--white-219-60);
+    }
+
+    .about_qualification_calender {
+        font-size: 0.6rem;
+    }
+
+    .about_qualification_data {
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+}

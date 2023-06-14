@@ -1,0 +1,136 @@
+.about_navbar ul,
+.about_navbar ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about_navbar li {
+    padding: 0;
+    margin: 0;
+}
+
+.about_navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.about_navbar a:hover {
+    color: var(--blue);
+}
+
+.about_navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--black-1b);
+    color: var(--white);
+    padding: 0 15vw;
+    font-size: 1rem;
+}
+
+.about_navbar_container {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.about_navbar_logo,
+.about_navbar_toggle {
+    font-size: 1rem;
+}
+
+.about_navbar_menu {
+
+}
+
+.about_navbar_items {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.about_navbar_link {
+    display: flex;
+    gap: 0.3rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about_navbar_link_active {
+    color: var(--blue) !important;
+}
+
+.about_navbar_item_icon,
+.about_navbar_close,
+.about_navbar_toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .about_navbar {
+        top: inherit;
+        bottom: 0;
+        padding: 0 6vw;
+    }
+
+    .about_navbar_menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        padding: 2rem 1.5rem 8vh;
+        box-shadow: 0 -1px 4px var(--black-46);
+        background-color: var(--black-1b);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+    }
+
+    .about_navbar .show_menu {
+        bottom: 0;
+    }
+
+    .about_navbar_items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 2rem;
+        column-gap: 1rem;
+    }
+
+    .about_navbar_close {
+        position: absolute;
+        right: 1.2rem;
+        top: .5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--white);
+    }
+
+    .about_navbar_toggle {
+        cursor: pointer;
+    }
+
+    .about_navbar_toggle:hover,
+    .about_navbar_close:hover {
+        color: var(--blue);
+    }
+
+    .about_navbar_item_icon,
+    .about_navbar_close,
+    .about_navbar_toggle {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .about_navbar {
+        padding: 0 6vw;
+    }
+}
