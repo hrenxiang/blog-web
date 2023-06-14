@@ -40,14 +40,14 @@ const AboutContact = () => {
 
                 <div className="about_contact_container">
                     <div className="about_contact_content">
-                        <h3 className="about_contact_title">和我谈谈</h3>
+                        <h3 className="about_contact_title">交个朋友 🥰</h3>
                         <div className="about_contact_info">
                             <div className="about_contact_card">
                                 <i className="about_contact_card_icon"><BiMailSend/></i>
                                 <h3 className="about_contact_card_title">邮箱</h3>
                                 <span className="about_contact_card_data">huang.rx.life@hotmail.com</span>
 
-                                <a href="/" className="about_contact_button">写给我 <i
+                                <a href="#about_contact" className="about_contact_button">写给我吧 <i
                                     className="about_contact_card_icon"><BiRightArrowAlt/></i></a>
                             </div>
 
@@ -56,7 +56,7 @@ const AboutContact = () => {
                                 <h3 className="about_contact_card_title">电话</h3>
                                 <span className="about_contact_card_data">152 - ****** - 27</span>
 
-                                <a href="/" className="about_contact_button">打给我 <i
+                                <a href="#about_contact" className="about_contact_button">打给我吧 <i
                                     className="about_contact_card_icon"><BiRightArrowAlt/></i></a>
                             </div>
 
@@ -65,14 +65,14 @@ const AboutContact = () => {
                                 <h3 className="about_contact_card_title">QQ</h3>
                                 <span className="about_contact_card_data">2295701930</span>
 
-                                <a href="/" className="about_contact_button">添加好友 <i
+                                <a href="#about_contact" className="about_contact_button">加个好友吧 <i
                                     className="about_contact_card_icon"><BiRightArrowAlt/></i></a>
                             </div>
                         </div>
                     </div>
 
                     <div className="about_contact_content">
-                        <h3 className="about_contact_title">把你的计划写下来</h3>
+                        <h3 className="about_contact_title">立即联系 🤣</h3>
 
                         <form ref={form} onSubmit={sendEmail} className="about_contact_form">
                             <div className="about_contact_form_div">

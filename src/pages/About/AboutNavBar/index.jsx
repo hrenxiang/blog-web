@@ -96,7 +96,7 @@ const AboutNavBar = () => {
                                     <i className="about_navbar_item_icon">
                                         <UilScenery size={16}/>
                                     </i>
-                                    <div>取得联系</div>
+                                    <div>联系方式</div>
                                 </a>
                             </li>
 

@@ -132,6 +132,10 @@
     gap: 1rem;
 }
 
+.about_home_scroll_button:hover {
+    color: var(--blue);
+}
+
 .about_home_scroll_name {
     display: flex;
     align-items: center;
@@ -151,7 +155,7 @@
     }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
 
     .about_home_section {
         padding: 12vh 6vw;

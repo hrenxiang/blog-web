@@ -1,6 +1,6 @@
 .about_footer a {
     text-decoration: none;
-    color: initial;
+    color: var(--white);
 }
 
 .about_footer ul,
@@ -80,7 +80,7 @@
     color: var(--blue) !important;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
 
 }
 
