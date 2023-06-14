@@ -26,7 +26,6 @@
     flex-direction: column;
     padding: 12vh 15vw;
     height: 100vh;
-
 }
 
 .about_service_section_title,
@@ -35,7 +34,7 @@
 }
 
 .about_service_section_title {
-    font-size: 4.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: normal;
 }
@@ -101,7 +100,7 @@
     left: 0;
     bottom: 0;
     background-color: var(--white-fa);
-    z-index: 98;
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,7 +156,7 @@
     }
 
     .about_service_section_title {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .about_service_section_subtitle {

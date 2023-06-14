@@ -24,7 +24,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 101;
     background-color: var(--black-1b);
     color: var(--white);
     padding: 0 15vw;
@@ -132,5 +132,6 @@
 @media screen and (max-width: 1500px) {
     .about_navbar {
         padding: 0 6vw;
+        font-size: 0.8rem;
     }
 }

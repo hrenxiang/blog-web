@@ -33,6 +33,7 @@
     align-items: center;
     gap: 1rem;
     font-size: 1rem;
+    margin-top: 2rem;
 }
 
 .about_home_button:hover {
@@ -84,7 +85,7 @@
 }
 
 .about_home_title {
-    font-size: 4.5rem;
+    font-size: 3rem;
     margin-bottom: 0.25rem;
 }
 
@@ -122,7 +123,7 @@
 }
 
 .about_home_scroll {
- margin-left: 7vw;
+    margin-left: 7vw;
     padding-top: 15vh;
 }
 
@@ -171,7 +172,7 @@
     }
 
     .about_home_title {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .about_home_hand {

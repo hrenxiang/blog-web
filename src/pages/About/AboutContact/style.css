@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     padding: 12vh 15vw;
-    overflow: hidden;
 }
 
 .about_contact_section button {
@@ -15,7 +14,7 @@
 }
 
 .about_contact_section_title {
-    font-size: 4.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: normal;
 }
@@ -57,7 +56,7 @@
 
 .about_contact_title {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
@@ -167,7 +166,7 @@
     }
 
     .about_contact_section_title {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .about_contact_section_subtitle {

@@ -1,6 +1,7 @@
 .about {
     background-color: var(--white-fa);
     color: var(--white);
+    font-family: var(--zhuziawan);
 }
 
 .about_hr {

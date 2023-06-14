@@ -26,7 +26,6 @@
     flex-direction: column;
     padding: 12vh 15vw;
     height: 100vh;
-    overflow: hidden;
 }
 
 .about_qualification_section_title,
@@ -35,7 +34,7 @@
 }
 
 .about_qualification_section_title {
-    font-size: 4.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: normal;
 }
@@ -59,7 +58,7 @@
 }
 
 .about_qualification_button {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin: 0 1rem;
     cursor: pointer;
@@ -68,7 +67,7 @@
 }
 
 .about_qualification_button:hover {
-   color: var(--blue);
+    color: var(--blue);
 }
 
 .about_qualification_button_active {
@@ -141,7 +140,7 @@
     }
 
     .about_qualification_section_title {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .about_qualification_section_subtitle {
