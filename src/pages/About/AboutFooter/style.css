@@ -1,6 +1,6 @@
 .about_footer a {
     text-decoration: none;
-    color: initial;
+    color: var(--white);
 }
 
 .about_footer ul,

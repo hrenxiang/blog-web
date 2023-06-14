@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+.about_contact_section button {
+    border: none;
+}
+
 .about_contact_section_title,
 .about_contact_section_subtitle {
     text-align: center;

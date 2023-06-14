@@ -132,6 +132,10 @@
     gap: 1rem;
 }
 
+.about_home_scroll_button:hover {
+    color: var(--blue);
+}
+
 .about_home_scroll_name {
     display: flex;
     align-items: center;
