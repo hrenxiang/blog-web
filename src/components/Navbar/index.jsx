@@ -61,6 +61,16 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/navigation" onClick={handlerToggle}>
+                                导航
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/palette" onClick={handlerToggle}>
+                                渐变色
+                            </Link>
+                        </li>
+                        <li>
                             <Link to="/chat" onClick={handlerToggle}>
                                 Chat AI
                             </Link>
@@ -73,11 +83,6 @@ const Navbar = () => {
                         <li>
                             <Link to="/message" onClick={handlerToggle}>
                                 留言板块
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/collection/navigation" onClick={handlerToggle}>
-                                其他功能
                             </Link>
                         </li>
                         <li>

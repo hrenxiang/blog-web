@@ -74,7 +74,7 @@ const AboutNavBar = () => {
                                     <i className="about_navbar_item_icon">
                                         <UilBriefcase size={16}/>
                                     </i>
-                                    <div>服务范围</div>
+                                    <div>相关项目</div>
                                 </a>
                             </li>
 

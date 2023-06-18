@@ -9,11 +9,10 @@ import Categories from "../pages/Categories";
 import About from "../pages/About";
 import Notes from "../pages/Notes";
 import Blog from "../pages/Blog";
-import Collection from "../pages/Collection";
 import Chat from "../pages/Chat";
-import Palette from "../pages/Collection/Palette";
-import Navigation from "../pages/Collection/Navigation";
-import Gallery from "../pages/Collection/Gallery";
+import Palette from "../pages/Palette";
+import Navigation from "../pages/Navigation";
+import Gallery from "../pages/Gallery";
 import CustomTimeLine from "../pages/CustomTimeLine"
 import Message from "../pages/Message";
 
@@ -61,6 +60,18 @@ const routers = [
             {
                 path: '/message',
                 element: loadingComponent(<Message/>)
+            },
+            {
+                path: "/navigation",
+                element: loadingComponent(<Navigation/>)
+            },
+            {
+                path: "/palette",
+                element: loadingComponent(<Palette/>)
+            },
+            {
+                path: "/gallery",
+                element: loadingComponent(<Gallery/>)
             }
         ]
     },
@@ -71,24 +82,6 @@ const routers = [
     {
         path: "/chat",
         element: loadingComponent(<Chat/>)
-    },
-    {
-        path: '/collection',
-        element: loadingComponent(<Collection/>),
-        children: [
-            {
-                path: "navigation",
-                element: loadingComponent(<Navigation/>)
-            },
-            {
-                path: "palette",
-                element: loadingComponent(<Palette/>)
-            },
-            {
-                path: "gallery",
-                element: loadingComponent(<Gallery/>)
-            }
-        ]
     },
     {
         path: "/register",

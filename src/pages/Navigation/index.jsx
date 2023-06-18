@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Avatar, Card} from "antd";
 import Meta from "antd/es/card/Meta";
-import {acquireNavData} from "../../../api/navigation/navigation"
+import {acquireNavData} from "../../api/navigation/navigation"
 
 import "./style.css"
 import {BiTagAlt} from "react-icons/bi";

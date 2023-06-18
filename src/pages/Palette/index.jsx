@@ -4,7 +4,7 @@ import "./style.css"
 import {CopyToClipboard} from "react-copy-to-clipboard";
 import {HiOutlineCheck} from "react-icons/hi";
 import {notification} from "antd";
-import {acquirePaletteData} from "../../../api/palette/palette";
+import {acquirePaletteData} from "../../api/palette/palette";
 
 const Palette = (props) => {
 
