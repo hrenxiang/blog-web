@@ -3,19 +3,19 @@
 这是一个使用 React 和 Ant Design 等技术实现的个人博客 Web 端应用。该应用具备以下功能和特点：
 
 ## 个人信息主页
-[个人信息主页](https://images.huangrx.cn/uploads/2023/06/18/1687086059329.png)
+![个人信息主页](https://images.huangrx.cn/uploads/2023/06/18/1687086059329.png)
 
 ## 个人基本情况
-[个人基本情况](https://images.huangrx.cn/uploads/2023/06/18/1687086070889.png)
+![个人基本情况](https://images.huangrx.cn/uploads/2023/06/18/1687086070889.png)
 
 ## 个人技术范围
-[个人技术范围](https://images.huangrx.cn/uploads/2023/06/18/1687086079357.png)
+![个人技术范围](https://images.huangrx.cn/uploads/2023/06/18/1687086079357.png)
 
 ## 个人学历履历
-[个人学历履历](https://images.huangrx.cn/uploads/2023/06/18/1687086101342.png)
+![个人学历履历](https://images.huangrx.cn/uploads/2023/06/18/1687086101342.png)
 
 ## 个人邮件联系
-[个人邮件联系](https://images.huangrx.cn/uploads/2023/06/18/1687086110422.png)
+![个人邮件联系](https://images.huangrx.cn/uploads/2023/06/18/1687086110422.png)
 
 ## 博客主页
 ![博客主页](https://images.huangrx.cn/uploads/2023/06/18/huangrx_2023-06-18_19-02-26.png)
