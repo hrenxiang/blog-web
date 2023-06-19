@@ -13,8 +13,8 @@
     min-height: 100vh;
     margin: 0 auto 0 15%;
     padding: 1rem;
-    background-color: var(--black-31);
-    box-shadow: 0 0 3px 1px var(--white-219-60);
+    background-color: var(--black-1d);
+    border: 1px solid rgb(156, 163, 175, 0.4);
     border-radius: 1rem;
 
     position: relative;
@@ -50,9 +50,13 @@
 .blog .markdown-body {
     padding: 2rem 2rem;
     line-height: 2.6;
-    background-color: var(--black-31);
+    background-color: var(--black-1d);
     color: var(--white);
     font-family: var(--zhuziawan);
+}
+
+.blog .markdown-body hr {
+    height: 1px !important;
 }
 
 .blog .blog-date {
@@ -79,12 +83,12 @@
 }
 
 .markdown-body table tr {
-    background-color: var(--black-31) !important;
+    background-color: var(--black-1d) !important;
     border-top: 1px solid var(--white);
 }
 
 .markdown-body table tr:nth-child(2n) {
-    background-color: var(--black-31) !important;
+    background-color: var(--black-1d) !important;
     border-top: 1px solid var(--white);
 }
 
@@ -102,7 +106,7 @@
 }
 
 .markdown-body .code {
-    /*background-color: var(--black-31) !important;*/
+    /*background-color: var(--black-1d) !important;*/
     margin: 0 !important;
 }
 
@@ -118,7 +122,7 @@
 
 .markdown-body .code::-webkit-scrollbar-track {
     /* Add styles to the scrollbar track */
-    background-color: var(--black-31);
+    background-color: var(--black-1d);
 }
 
 .blog .code-wrapper:hover .copy-btn {
@@ -137,7 +141,7 @@
     cursor: pointer;
     font-size: 0.6rem;
     padding: 2px 4px;
-    background-color: var(--black-31);
+    background-color: var(--black-1d);
     color: var(--white);
     border-radius: 5px;
     user-select: none;

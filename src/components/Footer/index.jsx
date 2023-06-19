@@ -6,7 +6,7 @@ import {Modal} from "antd";
 
 import "./style.css"
 import snowAnimation from "../../assets/animation/snow-beard.json";
-import treeAnimation from "../../assets/animation/christmas-tree.json";
+// import treeAnimation from "../../assets/animation/christmas-tree.json";
 import {Link} from "react-router-dom";
 
 
@@ -21,17 +21,17 @@ const Footer = () => {
         }
     };
 
-    const treeOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: treeAnimation,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    };
+    // const treeOptions = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: treeAnimation,
+    //     rendererSettings: {
+    //         preserveAspectRatio: "xMidYMid slice"
+    //     }
+    // };
+    // const {View: treeLottie} = useLottie(treeOptions);
 
     const {View: snowLottie} = useLottie(snowOptions);
-    const {View: treeLottie} = useLottie(treeOptions);
 
     const [state, setState] = useState({
         isModalOpen: false,
@@ -91,20 +91,30 @@ const Footer = () => {
 
                 <div className="footer-record">
                     <div className="footer-record-body">
-                        <Link to="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">
-                            <h5 className="footer-record-text">&copy; 豫ICP备2022017977号</h5>
-                        </Link>
+                        <div>
+                            <h3 className="footer-record-body-title">Huangrx</h3>
+                        </div>
+                        <div className="footer-record-body-link">
+                            <Link to="https://github.com/hrenxiang" target="_blank">
+                                <button><AiFillGithub/></button>
+                            </Link>
+                            <button onClick={() => {
+                                showModal("qq")
+                            }}>
+                                <RiQqLine/>
+                            </button>
+                            <button onClick={() => {
+                                showModal("wechat")
+                            }}>
+                                <RiWechatLine/>
+                            </button>
+                        </div>
 
-                        <Link to="https://github.com/hrenxiang" target="_blank">
-                            <button><AiFillGithub/></button>
-                        </Link>
-                        <button onClick={() => {
-                            showModal("qq")
-                        }}><RiQqLine/></button>
-                        <button onClick={() => {
-                            showModal("wechat")
-                        }}><RiWechatLine/></button>
-
+                        <div>
+                            <Link to="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">
+                                <p className="footer-record-text">&copy; 豫ICP备2022017977号</p>
+                            </Link>
+                        </div>
 
                         <Modal title="天选的缘分！"
                                open={state.isModalOpen}
@@ -131,7 +141,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-emoticon footer-emoticon-right">
-                    {treeLottie}
+                    {/*{treeLottie}*/}
                 </div>
             </div>
 

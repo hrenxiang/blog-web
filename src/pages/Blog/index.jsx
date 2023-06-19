@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {HiOutlineCheck} from 'react-icons/hi'
-import {duotoneLight, atomDark} from "react-syntax-highlighter/dist/cjs/styles/prism";
+import {duotoneLight, materialDark} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import {useLocation} from "react-router-dom";
 import Chip from "../../components/Chip";
 import EmptyList from "../../components/EmptyList";
@@ -36,16 +36,14 @@ const Blog = () => {
     })
 
     // TODO：代码块颜色模式，目前待定
-    const [isDarkMode] = useState(false);
+    const [currentMode] = useState('');
 
     const location = useLocation();
 
     useEffect(() => {
-
         const searchParams = new URLSearchParams(location.search);
 
         // 获取参数的值
-
         const title = searchParams.get('title');
         const category = searchParams.get('category');
         const subcategory = searchParams.get('subcategory');
@@ -137,7 +135,7 @@ const Blog = () => {
                                                     <CopyToClipboard text={String(children).replace(/\n$/, '')}>
                                                         <div className="code-wrapper">
                                                             <SyntaxHighlighter
-                                                                style={isDarkMode ? duotoneLight : atomDark}
+                                                                style={currentMode === "light" ? duotoneLight : materialDark}
                                                                 language={match[1]}
                                                                 PreTag="div"
                                                                 children={String(children).replace(/\n$/, '')}

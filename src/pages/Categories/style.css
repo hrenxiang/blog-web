@@ -16,7 +16,7 @@
     min-height: 30vh;
     margin: 3rem auto;
     border-radius: 1rem;
-    border: 1px solid var(--white);
+    border: 1px solid rgb(156, 163, 175, 0.4);
     padding: 2rem 0;
     overflow: hidden;
 

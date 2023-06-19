@@ -74,8 +74,9 @@
     position: relative;
     margin-left: 3.2rem;
 
-    background: var(--black-2b);
-    box-shadow: 0 0 3px 1px var(--white-219-30);
+    background: var(--black-1d);
+    border: 1px solid rgb(156, 163, 175, 0.4);
+    border-radius: 1rem;
     padding: var(--padding-lr);
     margin-bottom: var(--padding-lr);
 }
@@ -121,7 +122,7 @@
 .custom-timeline-marker:after {
     content: "";
     width: 0.2rem;
-    background: var(--white);
+    background: var(--white-219-60);
     display: block;
     position: absolute;
     top: 24px;
@@ -157,8 +158,8 @@
     top: 0;
     bottom: 30px;
     position: absolute;
-    border-top: 3px solid var(--white);
-    border-bottom: 3px solid var(--white);
+    border-top: 3px solid var(--white-219-60);
+    border-bottom: 3px solid var(--white-219-60);
 }
 
 .period-timeline-content {

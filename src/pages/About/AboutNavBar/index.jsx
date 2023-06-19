@@ -30,7 +30,7 @@ const AboutNavBar = () => {
         <>
             <div className="about_navbar">
                 <nav className="about_navbar_container">
-                    <a href="/about/home" className="about_navbar_logo">Huangrx</a>
+                    <a href="/" className="about_navbar_logo">Huangrx</a>
 
                     <div className={`about_navbar_menu ${showMenu ? 'show_menu' : ''}`}>
                         <ul className="about_navbar_items">

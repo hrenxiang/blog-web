@@ -45,7 +45,7 @@ const FooterQuick = () => {
 
     return (
         <div className="footer-quick">
-            <FloatButton.Group shape="square" style={{right: 24, bottom: 120}}>
+            <FloatButton.Group shape="square" style={{right: 20, bottom: 20}}>
                 <FloatButton icon={<CgToolbox/>} onClick={handlerExpanded}/>
                 <FloatButton icon={<IoMdSwitch/>} className={expanded ? 'active' : ''} onClick={toggleTheme}/>
                 <FloatButton.BackTop visibilityHeight={0} className={expanded ? 'active' : ''}/>

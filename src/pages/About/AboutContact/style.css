@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     padding: 12vh 15vw;
+    min-height: 100vh;
 }
 
 .about_contact_section button {

@@ -60,6 +60,10 @@
     text-shadow: 0.03em 0.01em #9890e3, -0.03em -0.01em #b1f4cf;
 }
 
+.home-banner .inner a {
+    color: inherit !important;
+}
+
 .inner-button {
     width: 10em;
     height: 3em;

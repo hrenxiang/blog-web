@@ -6,14 +6,16 @@
 }
 
 .wl-panel {
-    background: none !important;
+    background: var(--black-1d) !important;
     border: none;
     border-radius: 0.5em;
 
 }
 
 .wl-comment {
-    box-shadow: 0 0 3px 1px var(--white-219-30);
+    background: var(--black-1d) !important;
+    border: 1px solid rgb(156, 163, 175, 0.4) !important;
+    box-shadow: none !important;
     border-radius: 0.5rem;
 }
 
@@ -80,8 +82,8 @@
 
 /*每个回复*/
 .wl-card-item {
-    background: var(--black-2b);
-    box-shadow: 0 0 3px 1px var(--white-219-30);
+    background: var(--black-1d);
+    border: 1px solid rgb(156, 163, 175, 0.4) !important;
     border-radius: 0.5rem;
     margin-bottom: var(--padding-middle);
     padding: var(--padding-middle);

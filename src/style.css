@@ -1,7 +1,8 @@
 :root.light {
     /*颜色*/
     --black-10: #ffffff;
-    --black-1b: #ffffff;
+    --black-1b: #FAFBFB;
+    --black-1d: #ffffff;
     --black-22: #b9b9b9;
     --black-2b: #ffffff;
     --black-31: #ffffff;
@@ -33,7 +34,8 @@
 :root.dark {
     /*颜色*/
     --black-10: #101010;
-    --black-1b: #1b1b1b;
+    --black-1b: #1d1d1d;
+    --black-1d: #1b1b1b;
     --black-22: #222222;
     --black-2b: #2b2b2b;
     --black-31: #313131;

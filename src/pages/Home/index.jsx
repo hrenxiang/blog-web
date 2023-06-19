@@ -68,7 +68,7 @@ const Home = () => {
                     <div className="inner">
                         <h1>Huangrx</h1>
                         <p>{quote}</p>
-                        <Link to="/about">
+                        <Link to="https://blog.huangrx.cn">
                             <button className="inner-button"><span>了解更多</span></button>
                         </Link>
                     </div>

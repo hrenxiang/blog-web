@@ -124,14 +124,6 @@ const AboutService = () => {
                                     </li>
                                 </ul>
 
-
-                                <li className="about_service_model_service">
-                                    <UilCheckCircle/>
-
-                                    <p className="about_service_model_info">具备云平台部署和管理的经验，能够将应用程序部署到云服务商平台，如利用Coding将应用部署到腾讯云。</p>
-                                </li>
-
-
                                 <p className="about_service_model_description">
                                     我参与开发了以下几个后端应用：
                                     <li className="about_service_model_service">
@@ -185,7 +177,7 @@ const AboutService = () => {
                                 <i className="about_service_modal_content_close" onClick={() => toggleTab(0)}><UilTimes/></i>
 
                                 <h3 className="about_service_model_title">服务器方向</h3>
-                                <p className="about_service_model_description">Service with more than 3 years of experience.Providing quality work to clients and companies.</p>
+                                <p className="about_service_model_description">具备服务器及云平台部署和管理的经验，能够将应用程序部署到云服务商平台，如利用Coding将应用部署到腾讯云。</p>
 
                                 <ul className="about_service_model_services">
                                     <li className="about_service_model_service">

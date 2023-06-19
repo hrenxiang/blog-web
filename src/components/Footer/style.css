@@ -22,11 +22,12 @@
   background: var(--black-1b);
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   justify-content: center;
 
   overflow: hidden;
+  padding: 1rem 0;
   /*position: absolute;*/
   /*bottom: 0;*/
 }
@@ -103,15 +104,26 @@
   margin: 0;
   color: var(--white);
   font-size: 1.2rem;
-  padding: 0 0 2rem 1rem;
-
   cursor: pointer;
+  text-align: center;
 }
 
 .footer-record button:hover, .footer-record-body h5:hover {
   color: var(--blue);
 }
 
+.footer-record-body-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer-record-body-link {
+  margin: 1.5rem 0;
+}
+
+.footer-record-text {
+  font-size: 0.625rem;
+}
 
 /*====================
  emoticon
