@@ -1,28 +1,25 @@
 @import "../../style.css";
 
-
 .blog {
-    background-color: var(--black-1b);
+    background-color: var(--black-1d);
     padding: 5rem 0 3rem 0;
 }
 
 .blog-container {
-    /* max-width: 1200px;
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.7); */
-    width: 50%;
     min-height: 100vh;
-    margin: 0 auto 0 15%;
-    padding: 1rem;
-    background-color: var(--black-1d);
-    border: 1px solid rgb(156, 163, 175, 0.4);
-    border-radius: 1rem;
+}
 
+.blog-container-body {
+    margin: 0 10%;
+    background-color: var(--black-1d);
     position: relative;
+    display: flex;
 }
 
 .blog .blog-wrap {
-    margin: 0 auto;
+    margin: 0;
     color: var(--white);
+    width: 70%;
 }
 
 .blog .blog-goBack {
@@ -33,12 +30,18 @@
     display: block;
 }
 
-.blog .blog-wrap header {
+.blog-container-header {
+    color: var(--white);
     text-align: center;
+    width: 80%;
+    margin: auto auto 5rem auto;
+    font-size: 1rem;
 }
 
-.blog-cover {
-    margin-bottom: 2rem;
+.blog-container-header h1 {
+    font-size: 6rem;
+    margin: 1rem 0 !important;
+    filter: drop-shadow(0 5px 0 #692dca);
 }
 
 .blog-cover img {
@@ -48,11 +51,12 @@
 }
 
 .blog .markdown-body {
-    padding: 2rem 2rem;
-    line-height: 2.6;
+    line-height: 2rem !important;
     background-color: var(--black-1d);
     color: var(--white);
-    font-family: var(--zhuziawan);
+    font-family: var(--zhuziawan) !important;
+    margin: 0 0 5rem 0;
+
 }
 
 .blog .markdown-body hr {
@@ -108,11 +112,12 @@
 .markdown-body .code {
     /*background-color: var(--black-1d) !important;*/
     margin: 0 !important;
+    line-height: 2rem !important;
 }
 
 /* Code block */
 .markdown-body .code::-webkit-scrollbar {
-    height: 8px;
+    height: 3px;
 }
 
 .markdown-body .code::-webkit-scrollbar-thumb {
@@ -131,6 +136,8 @@
 
 .blog .code-wrapper {
     position: relative;
+    font-size: 0.875rem !important;
+    font-family: var(--zhuziawan) !important;
 }
 
 .blog .copy-btn {
@@ -141,8 +148,8 @@
     cursor: pointer;
     font-size: 0.6rem;
     padding: 2px 4px;
-    background-color: var(--black-1d);
-    color: var(--white);
+    background-color: rgb(195 165 245);
+    color: var(--black-1b);
     border-radius: 5px;
     user-select: none;
     transition: all 0.3s ease;
@@ -154,49 +161,39 @@
 }
 
 .blog #waline {
-    width: 95% !important;
+    width: 100% !important;
 }
-
-@media (max-width: 767px) {
-    .blog-container {
-        width: 96%;
-        margin: auto;
-    }
-
-    .blog .markdown-body {
-        padding: 1rem 0;
-    }
-
-    .blog-markdown-toc {
-        display: none;
-        visibility: hidden;
-    }
-}
-
 
 .blog-markdown-toc {
-    position: fixed;
-    top: 5rem;
-    right: 15%;
-    width: 18%;
-    height: calc(100vh - 10rem);
-    margin-left: 2%;
-    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 0 auto;
+    position: relative;
+    max-width: 20%;
 }
 
 /* 隐藏滚动条轨道样式 */
-.blog-markdown-toc::-webkit-scrollbar {
+.blog-markdown-toc-container::-webkit-scrollbar {
     width: 0; /* 设置滚动条宽度为0 */
     background-color: transparent; /* 设置背景颜色为透明 */
 }
 
-.blog-markdown-toc::-webkit-scrollbar-thumb {
+.blog-markdown-toc-container::-webkit-scrollbar-thumb {
     background-color: transparent; /* 设置滚动条拇指颜色为透明 */
 }
 
 .blog-markdown-toc-container {
     background-color: transparent;
     text-align: left;
+    position: sticky;
+    top: 5rem;
+    border: 2px solid rgb(195 165 245);
+    border-radius: 10px;
+    overflow: scroll;
+    max-height: calc(100vh - 15rem);
+    padding: 2rem 0 ;
+    width: 100%;
 }
 
 .markdown-navigation .title-anchor {
@@ -259,4 +256,49 @@
     color: var(--white-219-60);
     font-size: 0.9rem;
     padding-left: 8em;
+}
+
+.markdown-body blockquote {
+    background-color: rgb(195 165 245);
+    color: var(--black-1b) !important;
+    border-color: rgb(105 45 202) !important;
+}
+
+.markdown-body .code-not-language code {
+    color: rgb(255 169 175);
+    padding: 2px 4px;
+    border-radius: 2px;
+    background-color: rgba(255,169,175,.15);
+}
+
+@media (max-width: 1800px) {
+    .blog-container-header h1 {
+        font-size: 3rem;
+        margin: 0 0 2rem 0;
+        filter: drop-shadow(0 3px 0 #692dca);
+    }
+
+    .blog .blog-wrap {
+        width: 60%;
+    }
+
+    .blog-markdown-toc {
+        max-width: 35%;
+    }
+}
+
+@media (max-width: 1023px) {
+    .blog-container-header h1 {
+        font-size: 2rem;
+        filter: drop-shadow(0 2px 0 #692dca);
+    }
+
+    .blog .blog-wrap {
+        width: 100%;
+    }
+
+    .blog-markdown-toc {
+        display: none;
+        visibility: hidden;
+    }
 }

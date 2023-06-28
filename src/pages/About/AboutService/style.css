@@ -175,10 +175,12 @@
     text-align: center;
     padding: 1rem;
     border-radius: 1rem;
+    margin-top: 1rem;
 }
 
 .about_service_model_service_button:hover {
     cursor: pointer;
+    color: var(--blue);
 }
 
 @media screen and (max-width: 1500px) {

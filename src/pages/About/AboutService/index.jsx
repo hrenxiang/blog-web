@@ -63,7 +63,7 @@ const AboutService = () => {
                                     <p className="about_service_model_info">通过合理的动画和交互设计，提升用户对网站或应用程序的使用体验。</p>
                                 </li>
 
-                                <p className="about_service_model_description">
+                                <div className="about_service_model_description">
                                     我自主开发了以下几个前端应用：
                                     <li className="about_service_model_service">
                                         <AiOutlineStar/>
@@ -81,7 +81,7 @@ const AboutService = () => {
                                         <p className="about_service_model_info">ChatAi: chat-ai-web</p>
                                     </li>
                                     <Link to="https://github.com/hrenxiang"><button className="about_service_model_service_button">查看相关代码和界面</button></Link>
-                                </p>
+                                </div>
 
                             </div>
                         </div>
@@ -124,7 +124,7 @@ const AboutService = () => {
                                     </li>
                                 </ul>
 
-                                <p className="about_service_model_description">
+                                <div className="about_service_model_description">
                                     我参与开发了以下几个后端应用：
                                     <li className="about_service_model_service">
                                         <AiOutlineStar/>
@@ -157,7 +157,7 @@ const AboutService = () => {
                                         <p className="about_service_model_info">个人SpringBoot整合应用: huangrx-demo</p>
                                     </li>
                                     <Link to="https://github.com/hrenxiang"><button className="about_service_model_service_button">查看相关代码和界面</button></Link>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
