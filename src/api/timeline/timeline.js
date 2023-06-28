@@ -1,7 +1,11 @@
 import service from "../axios";
 
-export const acquireTimeline = async () => {
-    return await service.get(
-        "/timeline/acquire"
+export const acquireTimeline = async (pageNum, pageSize) => {
+    return await service.post(
+        "/timeline/acquire",
+        {
+            "page_num": pageNum,
+            "page_size": pageSize
+        }
     );
 }

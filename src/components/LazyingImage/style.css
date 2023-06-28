@@ -1,0 +1,32 @@
+/*.lazying_image .lazying_image_lottie {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    object-fit: cover;*/
+/*    border-radius: 20px;*/
+/*    margin-bottom: 0.5rem;*/
+/*}*/
+
+/*.lazying_image .lazying_image_lottie div {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    object-fit: cover;*/
+/*    border-radius: 20px;*/
+/*    margin-bottom: 0.5rem;*/
+/*}*/
+
+.lazying_image,
+.lazying_image .lazy-load-image-loaded {
+    width: 100%;
+    height: 100%;
+}
+
+.lazying_image .lazy-load-image-loaded img {
+    object-fit: cover;
+    border-radius: 10px;
+}

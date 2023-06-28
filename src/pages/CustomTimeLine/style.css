@@ -175,6 +175,26 @@
     margin-top: 20px;
 }
 
+.timeline-pagination {
+    padding: 3rem 0;
+    margin: 0 auto;
+
+    text-align: center;
+    color: white !important;
+}
+
+.ant-pagination, .ant-pagination-item a, .ant-pagination-item-link, .ant-pagination-item-ellipsis {
+    color: var(--white) !important;
+}
+
+.ant-pagination-item-active {
+    background: none !important;
+}
+
+.custom-timeline-item-illustration {
+    width: 50%;
+}
+
 @media only screen and (max-width: 990px) {
 
 
@@ -184,7 +204,7 @@
         max-width: 100%;
     }
 
-    .custom-timeline-content img {
+    .custom-timeline-item-illustration {
         width: 100%;
     }
 }

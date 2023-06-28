@@ -93,6 +93,9 @@
     border-inline-start: none;
 }
 
+.wl-count {
+    color: var(--white);
+}
 
 
 

@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {notification} from 'antd';
 import ReactMarkdown from 'react-markdown';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {HiOutlineCheck} from 'react-icons/hi'
 import {duotoneLight, materialDark} from "react-syntax-highlighter/dist/cjs/styles/prism";
-import {useLocation} from "react-router-dom";
 import Chip from "../../components/Chip";
 import EmptyList from "../../components/EmptyList";
 import "./style.css"
@@ -14,6 +13,8 @@ import Waline from "../../components/Waline";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import {MarkdownNavbar} from "markdown-navbar";
+import {useSelector} from "react-redux";
+import LazyingImage from "../../components/LazyingImage";
 
 const Blog = () => {
 
@@ -38,31 +39,36 @@ const Blog = () => {
     // TODO：代码块颜色模式，目前待定
     const [currentMode] = useState('');
 
-    const location = useLocation();
+    // const location = useLocation();
+
+    const blogParameters = useSelector(state => state.blogParameterReducer);
 
     useEffect(() => {
-        const searchParams = new URLSearchParams(location.search);
-
+        // 获取url后的拼接数据
+        // const searchParams = new URLSearchParams(location.search);
         // 获取参数的值
-        const title = searchParams.get('title');
-        const category = searchParams.get('category');
-        const subcategory = searchParams.get('subcategory');
-        const createTime = searchParams.get('create_time');
-        const cover = searchParams.get('cover');
-        const documentUrl = searchParams.get('document_url');
+        // const title = searchParams.get('title');
+        // const category = searchParams.get('category');
+        // const subcategory = searchParams.get('subcategory');
+        // const createTime = searchParams.get('create_time');
+        // const cover = searchParams.get('cover');
+        // const documentUrl = searchParams.get('document_url');
+
+
+        console.log(blogParameters)
 
         setBlog(() => ({
-            cover: cover,
-            title: title,
-            documentUrl: documentUrl,
-            category: category,
-            subcategory: subcategory,
-            createTime: createTime
+            cover: blogParameters.cover,
+            title: blogParameters.title,
+            documentUrl: blogParameters.document_url,
+            category: blogParameters.category,
+            subcategory: blogParameters.subcategory,
+            createTime: blogParameters.create_time
         }))
 
         // 读取 Markdown 文件内容
         if (blog.documentUrl) {
-            fetch(documentUrl)
+            fetch(blog.documentUrl)
                 .then(response => response.text())
                 .then(text => {
                     setMarkdown(text)
@@ -73,7 +79,7 @@ const Blog = () => {
                 })
                 .catch(error => console.log(error));
         }
-    }, [location.search, blog.documentUrl]);
+    }, [blogParameters, blog.documentUrl]);
 
     const handleCopy = () => {
         notificationApi.open({
@@ -100,7 +106,7 @@ const Blog = () => {
 
                                 <header>
                                     <div className="blog-cover">
-                                        <img src={blog.cover} alt='cover'/>
+                                        <LazyingImage src={blog.cover} alt='cover'/>
                                     </div>
 
                                     <p className='blog-date'>上传日期 {blog.createTime}</p>

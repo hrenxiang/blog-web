@@ -4,7 +4,8 @@ import "./style.css"
 import timeAnimation from "../../assets/animation/time.json";
 import {useLottie} from "lottie-react";
 import {acquireTimeline} from "../../api/timeline/timeline";
-import DOMPurify from 'dompurify';
+import {Pagination} from "antd";
+import LazyingImage from "../../components/LazyingImage";
 
 const CustomTimeLine = () => {
 
@@ -20,13 +21,32 @@ const CustomTimeLine = () => {
 
     const { View: lottie } = useLottie(defaultOptions);
 
-    const [data, setData] = useState([]);
+    const [state, setState] = useState({
+        data: [],
+        pageNum: 1,
+        pageSize: 6
+    })
 
     useEffect(() => {
-        acquireTimeline().then((res) => {
-            setData(res.data)
+        acquireTimeline(state.pageNum, state.pageSize).then((res) => {
+            if (res.data) {
+                setState((prevState) => ({
+                    data: res.data,
+                    pageNum: prevState.pageNum,
+                    pageSize: prevState.pageSize
+                }))
+            }
         })
-    }, [])
+    }, [state.pageNum, state.pageSize])
+
+    function handlePageChange(currentPage, pageSize) {
+        // 将页码发送给后端
+        setState((prevState) => ({
+            data: prevState.data,
+            pageNum: currentPage,
+            pageSize: pageSize
+        }))
+    }
 
     // period
     return (
@@ -43,7 +63,7 @@ const CustomTimeLine = () => {
                     <div>
                         <ul className="custom-timeline-body custom-timeline-split">
                             {
-                                Object.entries(data).map(([year, value]) => (
+                                state.data.records && state.data.records.length > 0 && Object.entries(state.data.records[0])?.map(([year, value]) => (
                                     <div key={year}>
                                         <li className="custom-timeline-item period">
                                             <div className="period-timeline-info"></div>
@@ -62,8 +82,10 @@ const CustomTimeLine = () => {
                                                         </div>
                                                         <div className="custom-timeline-content">
                                                             <p className="timeline-title">{event.create_time}</p>
-                                                            {/*<p>{event.content}</p>*/}
-                                                            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(event.content) }}/>
+                                                            <p>{event.content}</p>
+                                                            <div className="custom-timeline-item-illustration">
+                                                                <LazyingImage src={event.illustration}/>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -75,6 +97,17 @@ const CustomTimeLine = () => {
                         </ul>
                     </div>
                 </div>
+            </div>
+
+            <div className="timeline-pagination">
+                <Pagination
+                    onChange={handlePageChange}
+                    total={state.data && state.data.total ? state.data.total : 0}
+                    pageSize={6}
+                    showSizeChanger={false}
+                    showQuickJumper={false}
+                    showLessItems
+                />
             </div>
         </div>
     );

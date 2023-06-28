@@ -17,11 +17,13 @@ const Notes = () => {
 
     useEffect(() => {
         acquireDocumentData(state.pageNum, state.pageSize).then((res) => {
-            setState((prevState) => ({
-                documentData: res.data,
-                pageNum: prevState.pageNum,
-                pageSize: prevState.pageSize
-            }))
+            if (res.data) {
+                setState((prevState) => ({
+                    documentData: res.data,
+                    pageNum: prevState.pageNum,
+                    pageSize: prevState.pageSize
+                }))
+            }
         })
     }, [state.pageNum, state.pageSize]);
 
