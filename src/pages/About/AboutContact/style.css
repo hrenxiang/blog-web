@@ -45,6 +45,7 @@
 
 .about_home_button:hover {
     background-color: var(--blue);
+    cursor: pointer;
 }
 
 .about_contact_container {

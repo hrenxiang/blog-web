@@ -21,6 +21,9 @@
     font-size: 1rem;
     position: relative;
     color: var(--white);
+    align-items: center;
+    display: flex;
+    gap: 1rem;
 }
 
 .navigation-body-item {

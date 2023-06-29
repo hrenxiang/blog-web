@@ -129,32 +129,53 @@ const Blog = () => {
                                         components={{
                                             code({node, inline, className, children, ...props}) {
                                                 const match = /language-(\w+)/.exec(className || '');
-                                                return !inline && match ?
-                                                    (
-                                                        <CopyToClipboard text={String(children).replace(/\n$/, '')}>
-                                                            <div className="code-wrapper">
-                                                                <SyntaxHighlighter
-                                                                    style={currentMode === "light" ? duotoneLight : atomDark}
-                                                                    language={match[1]}
-                                                                    PreTag="div"
-                                                                    children={String(children).replace(/\n$/, '')}
-                                                                    {...props}
-                                                                    className='code'
-                                                                />
-                                                                <div className="copy-btn" onClick={handleCopy}>
-                                                                    复制
-                                                                </div>
-                                                            </div>
-                                                        </CopyToClipboard>
-                                                    )
-                                                    :
+                                                return inline ?
                                                     (
                                                         <span className="code code-not-language">
                                                             <code className={className} {...props}>
                                                                 {children}
                                                             </code>
                                                         </span>
-                                                    );
+                                                    )
+                                                    :
+                                                    (
+                                                        match ?
+                                                            (
+                                                                <CopyToClipboard text={String(children).replace(/\n$/, '')}>
+                                                                    <div className="code-wrapper">
+                                                                        <SyntaxHighlighter
+                                                                            style={currentMode === "light" ? duotoneLight : atomDark}
+                                                                            language={match[1]}
+                                                                            PreTag="div"
+                                                                            children={String(children).replace(/\n$/, '')}
+                                                                            {...props}
+                                                                            className='code'
+                                                                        />
+                                                                        <div className="copy-btn" onClick={handleCopy}>
+                                                                            复制
+                                                                        </div>
+                                                                    </div>
+                                                                </CopyToClipboard>
+                                                            )
+                                                            :
+                                                            (
+                                                                <CopyToClipboard text={String(children).replace(/\n$/, '')}>
+                                                                    <div className="code-wrapper">
+                                                                        <SyntaxHighlighter
+                                                                            style={currentMode === "light" ? duotoneLight : atomDark}
+                                                                            language={"bash"}
+                                                                            PreTag="div"
+                                                                            children={String(children).replace(/\n$/, '')}
+                                                                            {...props}
+                                                                            className='code'
+                                                                        />
+                                                                        <div className="copy-btn" onClick={handleCopy}>
+                                                                            复制
+                                                                        </div>
+                                                                    </div>
+                                                                </CopyToClipboard>
+                                                            )
+                                                    )
                                             },
                                         }}
                                     />

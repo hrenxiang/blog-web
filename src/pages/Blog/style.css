@@ -41,7 +41,7 @@
 .blog-container-header h1 {
     font-size: 6rem;
     margin: 1rem 0 !important;
-    filter: drop-shadow(0 5px 0 #692dca);
+    filter: drop-shadow(0 5px 0 var(--blue));
 }
 
 .blog-cover img {
@@ -148,7 +148,7 @@
     cursor: pointer;
     font-size: 0.6rem;
     padding: 2px 4px;
-    background-color: rgb(195 165 245);
+    background-color: var(--blue);
     color: var(--black-1b);
     border-radius: 5px;
     user-select: none;
@@ -188,7 +188,7 @@
     text-align: left;
     position: sticky;
     top: 5rem;
-    border: 2px solid rgb(195 165 245);
+    border: 2px solid var(--blue);
     border-radius: 10px;
     overflow: scroll;
     max-height: calc(100vh - 15rem);
@@ -259,23 +259,25 @@
 }
 
 .markdown-body blockquote {
-    background-color: rgb(195 165 245);
+    background-color: var(--blue-117);
     color: var(--black-1b) !important;
-    border-color: rgb(105 45 202) !important;
+    border-color: var(--blue) !important;
+    padding: 1rem !important;
+    border-radius: 5px;
 }
 
 .markdown-body .code-not-language code {
-    color: rgb(255 169 175);
-    padding: 2px 4px;
-    border-radius: 2px;
-    background-color: rgba(255,169,175,.15);
+    color: var(--white);
+    background-color: rgba(255, 169, 175, 0.51);
+    padding: 2px 5px;
+    margin: 0 0.5rem;
 }
 
 @media (max-width: 1800px) {
     .blog-container-header h1 {
         font-size: 3rem;
         margin: 0 0 2rem 0;
-        filter: drop-shadow(0 3px 0 #692dca);
+        filter: drop-shadow(0 3px 0 var(--blue));
     }
 
     .blog .blog-wrap {
@@ -290,7 +292,7 @@
 @media (max-width: 1023px) {
     .blog-container-header h1 {
         font-size: 2rem;
-        filter: drop-shadow(0 2px 0 #692dca);
+        filter: drop-shadow(0 2px 0 var(--blue));
     }
 
     .blog .blog-wrap {
