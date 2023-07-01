@@ -1,7 +1,7 @@
 .chip {
   font-size: 0.7rem;
-  background: linear-gradient(to right, #6190e8, #a7bfe8);
-  /*background: linear-gradient(to right, rgb(195 165 245), rgb(181, 145, 241));*/
+  /*background: linear-gradient(to right, #6190e8, #a7bfe8);*/
+  background: linear-gradient(to right, rgb(195 165 245), rgb(181, 145, 241));
   color: var(--black-1b);
   padding: 0.3rem 0.5rem;
   border-radius: 5px;

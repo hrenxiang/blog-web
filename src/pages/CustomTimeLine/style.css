@@ -23,7 +23,7 @@
 .custom-timeline-title-header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     justify-content: center;
     align-items: center;
 
@@ -35,7 +35,9 @@
 }
 
 .custom-timeline-title-header > h2 {
+    font-size: 3rem;
     justify-self: start;
+    filter: drop-shadow(0 3px 0 var(--red-f80));
 }
 
 .custom-timeline-time-lottie > div {
@@ -206,5 +208,9 @@
 
     .custom-timeline-item-illustration {
         width: 100%;
+    }
+
+    .custom-timeline-title-header > h2 {
+        font-size: 2rem;
     }
 }

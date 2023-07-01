@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {notification} from 'antd';
 import ReactMarkdown from 'react-markdown';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
@@ -39,8 +39,8 @@ const Blog = () => {
     // TODO：代码块颜色模式，目前待定
     const [currentMode] = useState('');
 
+    // 参数传递 url拼接 或 redux
     // const location = useLocation();
-
     const blogParameters = useSelector(state => state.blogParameterReducer);
 
     useEffect(() => {
@@ -112,10 +112,6 @@ const Blog = () => {
                                         <Chip label={blog.subcategory}/>
                                     </div>
                                 </div>
-
-                                <div className="blog-cover">
-                                    <LazyingImage src={blog.cover} alt='cover'/>
-                                </div>
                             </div>
 
                             <div className="blog-container-body">
@@ -185,8 +181,14 @@ const Blog = () => {
 
                                 {tocMarkdown ?
                                     <div className="blog-markdown-toc">
-                                        <MarkdownNavbar className='blog-markdown-toc-container' source={tocMarkdown}
-                                                        ordered={false}/>
+                                        <div className="blog-markdown-toc-sticky">
+                                            <MarkdownNavbar className='blog-markdown-toc-container' source={tocMarkdown} headingTopOffset={0}
+                                                            ordered={false}/>
+
+                                            <div className="blog-cover">
+                                                <LazyingImage src={blog.cover} alt='cover'/>
+                                            </div>
+                                        </div>
                                     </div>
                                     :
                                     ''

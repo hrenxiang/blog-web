@@ -8,15 +8,21 @@
 
 .message-container {
     min-height: 100vh;
-    padding: var(--padding-td) var(--padding-lr);
+    padding: var(--padding-td);
 }
 
 .message header {
     text-align: center;
-    padding-bottom: var(--padding-td);
+    padding: var(--padding-td) 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3rem;
+}
+
+.message header h2 {
+    font-size: 3rem;
+    filter: drop-shadow(0 3px 0 var(--blue));
 }
 
 .message-animation {
@@ -25,4 +31,16 @@
 
 .message-waline-body {
 
+}
+
+
+@media only screen and (max-width: 990px) {
+
+    .message header {
+        margin-bottom: 1rem;
+    }
+
+    .message header h2 {
+        font-size: 2rem;
+    }
 }

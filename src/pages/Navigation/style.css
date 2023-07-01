@@ -7,6 +7,7 @@
     padding: 0 10rem;
     background-color: var(--black-1b);
     color: var(--white);
+    min-height: 100vh;
 }
 
 .navigation-container {

@@ -58,7 +58,6 @@ const CustomTimeLine = () => {
                             <span className="custom-timeline-time-lottie">{lottie}</span>
                             <h2>时光机器</h2>
                         </div>
-                        <p>“别把时间浪费在为别人活着上面，做自己喜欢的事情，就算不成功，也不会遗憾。” —— 卢梭</p>
                     </div>
                     <div>
                         <ul className="custom-timeline-body custom-timeline-split">
