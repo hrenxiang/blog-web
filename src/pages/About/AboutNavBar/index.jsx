@@ -100,16 +100,16 @@ const AboutNavBar = () => {
                                 </a>
                             </li>
 
-                            <li className="about_navbar_item">
-                                <a href="/home"
-                                   className={`about_navbar_link ${toggleState === 7 ? 'about_navbar_link_active' : ''}`}
-                                   onClick={() => toggleTab(7)}>
-                                    <i className="about_navbar_item_icon">
-                                        <UilMessage size={16}/>
-                                    </i>
-                                    <div>博客主页📌</div>
-                                </a>
-                            </li>
+                            {/*<li className="about_navbar_item">*/}
+                            {/*    <a href="/home"*/}
+                            {/*       className={`about_navbar_link ${toggleState === 7 ? 'about_navbar_link_active' : ''}`}*/}
+                            {/*       onClick={() => toggleTab(7)}>*/}
+                            {/*        <i className="about_navbar_item_icon">*/}
+                            {/*            <UilMessage size={16}/>*/}
+                            {/*        </i>*/}
+                            {/*        <div>博客主页📌</div>*/}
+                            {/*    </a>*/}
+                            {/*</li>*/}
 
                             <i className={`about_navbar_close`} onClick={handleShowMenu}>
                                 <UilTimes size={16}/>
